@@ -1,3 +1,91 @@
 \section{Polar Coordinates and Complex Numbers}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question.} What happens when we describe a point by its distance and direction instead of its horizontal and vertical coordinates?
+
+\subsection{Two descriptions of the same point}
+Cartesian coordinates specify $(x,y)$. Polar coordinates specify $(r,\theta)$, where $r$ is the directed radial distance and $\theta$ is an angle from the positive horizontal axis:
+\[
+\boxed{x=r\cos\theta,\qquad y=r\sin\theta.}
+\]
+For $r\ge0$, the distance is $r=\sqrt{x^2+y^2}$. The angle must be chosen using the signs of both coordinates, not just $\arctan(y/x)$.
+\begin{example}
+The polar point $(4,5\pi/6)$ corresponds to
+$(x,y)=(-2\sqrt3,2)$. Its distance from the origin is $4$, and it lies in Quadrant II.
+\end{example}
+\begin{practice}Convert $(r,\theta)=(6,-\pi/3)$ to Cartesian coordinates. Then describe its direction using an angle in $[0,2\pi)$.\end{practice}
+
+\subsection{Polar coordinates are not unique}
+Angles that differ by $2\pi$ represent the same direction, so $(r,\theta)$ and $(r,\theta+2\pi k)$ describe the same point. A negative radius reverses the ray:
+\[
+(r,\theta)=(-r,\theta+\pi).
+\]
+For example, $(2,\pi/3)$, $(2,7\pi/3)$, and $(-2,4\pi/3)$ are three descriptions of the same point. At the origin $r=0$, every angle describes the same location.
+
+\subsection{Complex numbers as plane vectors}
+Introduce $i$ satisfying $i^2=-1$. A complex number $z=a+bi$ corresponds to the point $(a,b)$ in the complex plane. Its modulus and argument are
+\[
+|z|=\sqrt{a^2+b^2},\qquad \arg z=\theta \quad\text{when }z=|z|(\cos\theta+i\sin\theta).
+\]
+The argument of $z=0$ is undefined. As with polar angles, nonzero arguments are only unique after choosing a branch, such as $(-\pi,\pi]$.
+\begin{example}
+For $z=-\sqrt3+i$, the modulus is $2$ and one argument is $5\pi/6$. Thus
+\[
+z=2\left(\cos\frac{5\pi}{6}+i\sin\frac{5\pi}{6}\right).
+\]
+\end{example}
+
+\subsection{Addition and multiplication mean different geometries}
+Complex addition follows the vector rule:
+\[
+(a+bi)+(c+di)=(a+c)+(b+d)i.
+\]
+Complex multiplication uses $i^2=-1$:
+\[
+(a+bi)(c+di)=(ac-bd)+(ad+bc)i.
+\]
+If $z=r(\cos\alpha+i\sin\alpha)$ and $w=s(\cos\beta+i\sin\beta)$, the angle-addition formulas give
+\[
+\boxed{zw=rs\bigl(\cos(\alpha+\beta)+i\sin(\alpha+\beta)\bigr).}
+\]
+Therefore multiplying complex numbers multiplies distances from the origin and \emph{adds angles}. A unit complex number acts as a rotation. This unifies the unit circle from Module 1 with vector geometry from Module 6.
+
+\begin{example}
+Multiplying $2+i$ by $i$ gives $i(2+i)=-1+2i$. The vector $(2,1)$ rotates counterclockwise by $90^\circ$ to $(-1,2)$, without changing its length.
+\end{example}
+
+\subsection{De Moivre's theorem and roots}
+For integer $n$, repeated multiplication gives
+\[
+\boxed{[r(\cos\theta+i\sin\theta)]^n=r^n(\cos n\theta+i\sin n\theta)}
+\]
+whenever the expression makes sense; for negative $n$, require $r>0$. For example,
+$(\cos(\pi/6)+i\sin(\pi/6))^3=i$.
+To solve $z^n=R(\cos\phi+i\sin\phi)$ with $R>0$, take
+\[
+z_k=R^{1/n}\left(\cos\frac{\phi+2\pi k}{n}
++i\sin\frac{\phi+2\pi k}{n}\right),\qquad k=0,\ldots,n-1.
+\]
+These $n$ distinct roots are equally spaced around a circle.
+\begin{example}
+The four fourth roots of $1$ are $1,i,-1,-i$. They are separated by a quarter-turn.
+\end{example}
+
+\subsection{Polar graphs: a different way to draw a curve}
+In a polar equation such as $r=2\cos\theta$, the radius changes with the angle. Multiply by $r$:
+$r^2=2r\cos\theta$, or $x^2+y^2=2x$. Completing the square yields
+\[
+(x-1)^2+y^2=1.
+\]
+Thus a simple polar equation can represent an ordinary circle displaced from the origin.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Convert $(5,2\pi/3)$ to Cartesian coordinates.
+\item Give two distinct polar coordinate representations of $(\sqrt2,\sqrt2)$.
+\item Write $-1-\sqrt3 i$ in polar form with argument in $[0,2\pi)$.
+\item Calculate $(2+i)(1-3i)$ in rectangular form.
+\item Interpret multiplication by $-i$ as a plane transformation.
+\item Evaluate $(\cos(\pi/4)+i\sin(\pi/4))^4$.
+\item Find all three cube roots of $1$ and plot them on the unit circle.
+\item Convert the polar curve $r=4\sin\theta$ into a Cartesian equation and identify the curve.
+\end{enumerate}
 \clearpage
