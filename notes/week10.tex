@@ -1,3 +1,75 @@
 \section{Synthesis: Motion and Patterns}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question.} How can the different mathematical languages of this course describe one evolving system?
+
+\subsection{One motion, several descriptions}
+Imagine a point traveling counterclockwise around a circle of radius $R$ with angular speed $\omega$. Its angle at time $t$ is $\theta(t)=\theta_0+\omega t$. In parametric form,
+\[
+x(t)=R\cos(\theta_0+\omega t),\qquad
+y(t)=R\sin(\theta_0+\omega t).
+\]
+Its polar form is $(r,\theta)=(R,\theta_0+\omega t)$, and its complex form is
+\[
+\boxed{z(t)=R\bigl(\cos(\theta_0+\omega t)+i\sin(\theta_0+\omega t)\bigr)}.
+\]
+These are not competing models: they encode the same physical position in different coordinate languages.
+
+\subsection{Velocity, vectors, and periodicity}
+Over a short time interval $\Delta t$, the displacement vector is
+\[
+\Delta\mathbf r=\langle x(t+\Delta t)-x(t),y(t+\Delta t)-y(t)\rangle.
+\]
+For constant angular speed the point completes a revolution after $T=2\pi/|\omega|$ when $\omega\ne0$. Its horizontal and vertical coordinates repeat with that period. The direction of motion is tangent to the circle and perpendicular to the radius: this is the geometric heart of circular motion.
+
+\subsection{Sampling creates a sequence}
+Suppose we record the position every $\Delta t$ seconds. The resulting sequence of complex positions is
+\[
+z_n=R\bigl(\cos(\theta_0+n\delta)+i\sin(\theta_0+n\delta)\bigr),
+\qquad \delta=\omega\Delta t.
+\]
+Writing $u=\cos\delta+i\sin\delta$ gives
+\[
+\boxed{z_{n+1}=uz_n,\qquad z_n=u^nz_0.}
+\]
+De Moivre's theorem then explains every sample as a repeated rotation. If $\delta=2\pi/m$ for a positive integer $m$, the sampled orbit closes after $m$ steps (provided this is the smallest such positive step count). If $\delta/(2\pi)$ is irrational, no two different samples have exactly the same position.
+
+\subsection{Scaling and rotation together}
+Now consider the recurrence $z_{n+1}=qz_n$ where
+\[
+q=\rho(\cos\delta+i\sin\delta).
+\]
+Its explicit solution is $z_n=q^nz_0$. Consequently,
+\[
+|z_n|=\rho^n|z_0|,\qquad \arg z_n\equiv\arg z_0+n\delta\pmod{2\pi}
+\]
+for nonzero terms. If $0<\rho<1$, the points spiral toward the origin; if $\rho>1$, they spiral outward; and if $\rho=1$, they remain on a circle. Thus a geometric sequence and a rotation combine to produce a spiral.
+
+\subsection{Sums represent accumulated effects}
+If a system moves by step vectors $\mathbf v_0,\mathbf v_1,\ldots$, its total displacement after $N$ steps is the vector sum $\sum_{n=0}^{N-1}\mathbf v_n$. For a complex-valued geometric pattern $\Delta z_n=aq^n$ with $q\ne1$,
+\[
+z_N-z_0=\sum_{n=0}^{N-1}aq^n=a\frac{1-q^N}{1-q}.
+\]
+Notice that the location sequence $z_n$ and the step sequence $\Delta z_n$ are different objects. Careful modeling starts by distinguishing what is being measured.
+
+\subsection{Different curves arise from different constraints}
+Circular and elliptical motion can be expressed parametrically. A projectile follows a parabola when horizontal velocity is constant and vertical acceleration is constant. Polar formulas express rays and radial patterns directly. The useful representation depends on whether we need a shape, a position, a direction, or a rule for change.
+
+\subsection{A complete example}
+A sensor begins at $z_0=2$ in the complex plane. Every second its controller multiplies the position by $q=\tfrac12(\cos60^\circ+i\sin60^\circ)$. After $n$ steps,
+\[
+z_n=2\left(\frac12\right)^n
+\bigl(\cos(60^\circ n)+i\sin(60^\circ n)\bigr).
+\]
+After three steps the modulus is $1/4$, and the direction is $180^\circ$. Hence $z_3=-1/4$. The modulus obeys a geometric sequence, the direction obeys an arithmetic progression of angles, and the position follows a discrete inward spiral.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Write Cartesian, polar, and complex formulas for a circle of radius 5 rotating once every 20 seconds, starting on the positive horizontal axis.
+\item Sample that motion every five seconds. Give its first five complex positions and identify its repetition period in samples.
+\item For $z_{n+1}=iz_n$ and $z_0=1+i$, calculate $z_1,\ldots,z_4$ and describe the geometry.
+\item For $z_{n+1}=(1/2)iz_n$, $z_0=4$, find $z_4$ and explain the change in magnitude and argument.
+\item A point travels along $x=3\cos t$, $y=2\sin t$. Eliminate the parameter and describe one complete traversal.
+\item Explain why a constant-speed circular trajectory is periodic but the spiral $z_n=(0.8e^{i\pi/3})^nz_0$ is not periodic when $z_0\ne0$.
+\item Compute the finite sum $1+i+i^2+i^3$ and interpret its geometric cancellation.
+\item Describe a real-world process that could be analyzed with at least three of the course's mathematical representations.
+\end{enumerate}
 \clearpage
