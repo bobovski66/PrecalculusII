@@ -15,6 +15,19 @@ For a circle of radius $r$ with intercepted arc length $s$, define the radian me
 \begin{example}Convert $150^\circ$ to radians: $150(\pi/180)=5\pi/6$. Convert $7\pi/4$ radians to degrees: $(7\pi/4)(180/\pi)=315^\circ$.\end{example}
 \begin{practice}Convert $225^\circ$ to radians and $-\pi/3$ radians to degrees, and sketch their terminal rays.\end{practice}
 
+\begin{center}
+\begin{tikzpicture}[scale=1.05]
+\draw[thick,courseblue] (0,0) circle (1.7);
+\draw[very thick,coursegreen] (1.7,0) arc[start angle=0,end angle=60,radius=1.7];
+\draw[thick,coursegold] (0,0)--(1.7,0) node[midway,below] {$r$};
+\draw[thick,coursegold] (0,0)--(60:1.7);
+\draw[->,coursegold] (.5,0) arc[start angle=0,end angle=60,radius=.5];
+\node at (.75,.34) {$\theta$};
+\node[coursegreen] at (30:2.15) {$s=r\theta$};
+\node[below] at (0,-2.1) {Angle measured by the arc it intercepts};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Arc length and angular speed}
 Rearrange the definition of radian measure to obtain $s=r\theta$. If rotation through $\theta$ takes time $t$, angular speed is $\omega=\theta/t$ and tangential speed is $v=r\omega$.
 \begin{example}A wheel of radius $0.4$ m turns through $3\pi/2$ radians. A point on its rim travels $s=0.4(3\pi/2)=0.6\pi$ m.\end{example}
