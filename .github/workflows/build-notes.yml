@@ -60,6 +60,11 @@ jobs:
         with:
           root_file: module09.tex
           working_directory: notes
+      - name: Compile Module 10 reading
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: module10.tex
+          working_directory: notes
       - name: Compile collected textbook
         uses: xu-cheng/latex-action@v3
         with:
@@ -70,6 +75,11 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: midterm_exam.tex
+          working_directory: assessments
+      - name: Compile final examination
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: final_exam.tex
           working_directory: assessments
       - name: Publish PDFs
         run: |
@@ -83,8 +93,10 @@ jobs:
           cp notes/module07.pdf pdfs/PrecalcII_Week07.pdf
           cp notes/module08.pdf pdfs/PrecalcII_Week08.pdf
           cp notes/module09.pdf pdfs/PrecalcII_Week09.pdf
+          cp notes/module10.pdf pdfs/PrecalcII_Week10.pdf
           cp notes/master.pdf pdfs/PrecalculusII_Complete_Reader.pdf
           cp assessments/midterm_exam.pdf pdfs/PrecalcII_Midterm_Exam.pdf
+          cp assessments/final_exam.pdf pdfs/PrecalcII_Final_Exam.pdf
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add pdfs
