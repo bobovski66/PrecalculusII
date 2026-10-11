@@ -1,20 +1,11 @@
 \section{The Six Trigonometric Functions}
-\noindent\textbf{Central question.} How do six functions arise naturally from the same moving point on a circle?
+\noindent The six trigonometric functions are defined by coordinates on the unit circle and ratios of those coordinates. Their relationships determine their signs, domains, and graphs.
 
 
 \medskip
-The six functions are easier to remember when we begin with one moving
-point rather than six separate formulas. Picture a point going around the
-unit circle. Its horizontal coordinate is $x=\cos\theta$ and its vertical
-coordinate is $y=\sin\theta$. The remaining functions compare those
-coordinates or take their reciprocals. Thus a single geometric position
-contains all six pieces of information.
+Let $P=(x,y)$ be the point at angle $\theta$ on the unit circle. Its coordinates are $x=\cos\theta$ and $y=\sin\theta$. The remaining four functions are formed from quotients and reciprocals of these coordinates.
 
-\noindent\textbf{Learning goals.} By the end of this chapter, you should
-be able to define all six functions on the unit circle, find exact values
-in any quadrant, explain where each function is undefined, sketch their
-traditional graphs, and use trigonometry to interpret measured lengths
-and angles.
+\noindent\textbf{Learning objectives.} Define the six functions on the unit circle, calculate exact values in each quadrant, determine their domains, identify characteristic graph features, and apply trigonometric ratios to measurement problems.
 
 
 \subsection{From a point to six functions}
@@ -27,7 +18,7 @@ Last week we studied the unit-circle point $P=(x,y)=(\cos\theta,\sin\theta)$. Th
 \cot\theta&=\frac{x}{y}.
 \end{aligned}
 \]
-These are not six unrelated measurements. They are six different ways of reading the same geometric information.
+Thus the six functions encode related properties of a single point.
 
 \begin{definition}The \emph{tangent} function is $\tan\theta=\sin\theta/\cos\theta$ where $\cos\theta\neq0$. The functions $\csc,\sec,\cot$ are the reciprocals of $\sin,\cos,\tan$ respectively, wherever defined.\end{definition}
 
@@ -47,18 +38,13 @@ These are not six unrelated measurements. They are six different ways of reading
 \end{center}
 
 
-\subsection{Why tangent is a slope}
-Imagine the ray from the origin through the point
-$P=(\cos\theta,\sin\theta)$. Where cosine is nonzero, the slope of
-that ray is
+\subsection{Tangent as a slope}
+For $\cos\theta\ne0$, the line through the origin and $P=(\cos\theta,\sin\theta)$ has slope
 \[
 m=\frac{\text{rise}}{\text{run}}
 =\frac{\sin\theta}{\cos\theta}=\tan\theta.
 \]
-This connects a familiar idea from linear equations to circular
-geometry: tangent records the \emph{directional slope} of the ray.
-A nearly vertical ray has a very large positive or negative slope.
-A vertical ray has no finite slope at all.
+Tangent therefore gives the slope of the terminal line. Its magnitude increases without bound as the line approaches a vertical position, at which the slope is undefined.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.7]
@@ -79,9 +65,7 @@ A vertical ray has no finite slope at all.
 \end{tikzpicture}
 \end{center}
 
-On the vertical line $x=1$, the extension of the ray reaches height
-$\tan\theta$. This construction shows why the function is named
-\emph{tangent}: it can be read along a line tangent to the unit circle.
+The terminal line intersects $x=1$ at $(1,\tan\theta)$, whenever $\cos\theta\ne0$. Hence tangent also has a geometric interpretation as a directed length on a line tangent to the unit circle.
 
 \begin{example}
 At $30^\circ$, the unit-circle coordinates are
@@ -89,8 +73,7 @@ $(\sqrt3/2,1/2)$. The slope of the corresponding ray is
 \[
 \tan30^\circ=\frac{1/2}{\sqrt3/2}=\frac{\sqrt3}{3}.
 \]
-The same slope describes a ramp rising one unit for every $\sqrt3$
-units of horizontal travel.
+This is also the slope of a line rising one unit for every $\sqrt3$ units of horizontal displacement.
 \end{example}
 
 
@@ -109,8 +92,7 @@ and secant are negative, and tangent and cotangent are negative:
 \sec(5\pi/6)=-\frac{2\sqrt3}{3},\qquad
 \csc(5\pi/6)=2.
 \]
-Notice that no signs were memorized separately. All of them followed
-from the two coordinates.
+The signs of the six functions follow directly from the signs of sine and cosine.
 
 \begin{center}
 \begin{tabular}{c|ccc|ccc}
@@ -129,15 +111,14 @@ and their reciprocals, showing how the quadrant tells you the signs.
 \end{practice}
 
 
-\subsection{Where are the functions undefined?}
-Division by zero has no meaning. In particular, $\tan\theta$ and $\sec\theta$ do not exist where $\cos\theta=0$, at $\pi/2+k\pi$. Similarly $\cot\theta$ and $\csc\theta$ do not exist where $\sin\theta=0$, at $k\pi$, for any integer $k$. The word \emph{undefined} matters: an undefined value is not the number zero.
+\subsection{Domains and undefined values}
+Division by zero is undefined. In particular, $\tan\theta$ and $\sec\theta$ do not exist where $\cos\theta=0$, at $\pi/2+k\pi$. Similarly $\cot\theta$ and $\csc\theta$ do not exist where $\sin\theta=0$, at $k\pi$, for any integer $k$. Undefined values must be distinguished from zeros of a function.
 
 \begin{practice}Find all six trig-function values at $\theta=3\pi/2$, identifying every undefined value.\end{practice}
 
 
-\subsection{Zeros, poles, and disconnected graphs}
-A denominator becomes small as its reciprocal becomes large. This
-is the main visual idea behind tangent, cotangent, secant, and cosecant.
+\subsection{Zeros and vertical asymptotes}
+Near zeros of their denominators, trigonometric quotients may become arbitrarily large in magnitude. This behavior accounts for their vertical asymptotes.
 
 For example, as $\theta$ approaches $\pi/2$ from the left,
 $\cos\theta$ approaches zero from above. Consequently
@@ -145,9 +126,7 @@ $\sec\theta=1/\cos\theta$ increases without bound. From the right,
 cosine is slightly negative, and secant becomes a large negative
 number. At $\pi/2$ itself, secant has no value.
 
-On an ordinary graph, the vertical line $x=\pi/2$ is a
-\emph{vertical asymptote} of secant and tangent. The picture
-shows why a graph cannot be joined through that line.
+The line $\theta=\pi/2$ is a vertical asymptote of both tangent and secant.
 
 \begin{center}
 \begin{tikzpicture}[x=.9cm,y=.62cm]
@@ -170,10 +149,7 @@ plot (\x,{1/cos(\x r)});
 \end{tikzpicture}
 \end{center}
 
-Here the green curve has been drawn only where its values fit in the
-viewing window. It continues upward or downward without touching its
-asymptotes. The graph does \emph{not} cross the asymptote, and we
-must not connect the separated branches.
+Only those portions of the secant graph within the displayed vertical range are shown. Its branches are separated by vertical asymptotes.
 
 \begin{practice}
 Describe the same phenomenon for $\csc\theta$ near $\theta=0$.
@@ -181,20 +157,20 @@ Explain why a zero of sine becomes an undefined value of cosecant.
 \end{practice}
 
 
-\subsection{Right triangles are a special case}
+\subsection{Right-triangle ratios}
 For an acute angle $\theta$ in a right triangle, scale the triangle so its hypotenuse has length $1$. The opposite and adjacent sides then give the coordinates $\sin\theta$ and $\cos\theta$. Restoring a general hypotenuse $h$ gives
 \[
 \sin\theta=\frac{\text{opposite}}{h},\quad
 \cos\theta=\frac{\text{adjacent}}{h},\quad
 \tan\theta=\frac{\text{opposite}}{\text{adjacent}}.
 \]
-The unit circle is more general than the right-triangle definitions: it handles negative angles, obtuse angles, and angles exceeding a full revolution.
+The unit-circle definitions extend the right-triangle ratios to arbitrary real angles.
 
 \begin{example}A ramp rises $1.5$ meters over a horizontal run of $6$ meters. Its angle of inclination satisfies $\tan\theta=1.5/6=1/4$. Therefore $\theta=\arctan(1/4)\approx14.0^\circ$.\end{example}
 
 
 \medskip
-This gives us the complete right-triangle set of six ratios:
+Writing $o$, $a$, and $h$ for opposite side, adjacent side, and hypotenuse, respectively, gives
 \[
 \begin{array}{c|ccc}
 &\text{opposite and hypotenuse}&
@@ -203,9 +179,7 @@ This gives us the complete right-triangle set of six ratios:
 \text{reciprocal}&\csc\theta=h/o&\sec\theta=h/a&\cot\theta=a/o
 \end{array}
 \]
-All six ratios come from the same three lengths. The unit-circle
-definitions extend them beyond acute angles without changing the
-relationships.
+The six ratios describe the same triangle and agree with the unit-circle definitions for acute angles.
 
 \begin{example}
 A support cable stretches $13$ meters from the ground to a point
@@ -220,11 +194,11 @@ then
 \sec\theta=\frac{13}{5},\quad
 \cot\theta=\frac5{12}.
 \]
-The reciprocal values describe the same geometry, not new triangles.
+Each quotient expresses a relation between lengths of the same triangle.
 \end{example}
 
 
-\subsection{Special angles without memorizing a disconnected table}
+\subsection{Exact values at special angles}
 An equilateral triangle of side $2$ splits into two right triangles with sides $1,\sqrt3,2$. This produces $\sin30^\circ=1/2$ and $\cos30^\circ=\sqrt3/2$. A square of side $1$ has diagonal $\sqrt2$, producing $\sin45^\circ=\cos45^\circ=\sqrt2/2$.
 
 \begin{center}
@@ -242,12 +216,8 @@ An equilateral triangle of side $2$ splits into two right triangles with sides $
 \end{center}
 
 
-\subsection{Reading the traditional trigonometric graphs}
-A graph changes the question we ask. On the unit circle, we hold
-an angle fixed and locate a point. On a Cartesian graph, we let the
-angle vary along the horizontal axis and watch one numerical output
-rise and fall. The graph of a trigonometric function is not the circular
-path of the point; it is a record of one coordinate or ratio.
+\subsection{Graphs of the trigonometric functions}
+On a trigonometric graph, the independent variable is an angle and the dependent variable is a coordinate or ratio at that angle. Such a graph is distinct from the circular trajectory of the associated point.
 
 Sine and cosine remain between $-1$ and $1$. Both repeat after a
 full rotation, so their fundamental period is $2\pi$ radians,
@@ -272,28 +242,19 @@ plot(\x,{sin(\x r)});
 \end{tikzpicture}
 \end{center}
 
-\noindent\textbf{Three questions to ask of any trig graph.}
-Where does the function cross the horizontal axis? Where is it
-undefined? How far must the input angle increase before the graph
-repeats? Together, these questions reveal most of its global shape.
+The zeros, excluded inputs, and fundamental period determine important features of a trigonometric graph.
 
 \begin{example}
-Why does tangent repeat after only $\pi$? Rotating the unit-circle
-point by $180^\circ$ changes both coordinate signs:
+Rotation by $\pi$ changes the signs of both unit-circle coordinates. Thus
 \[
 \frac{\sin(\theta+\pi)}{\cos(\theta+\pi)}
 =\frac{-\sin\theta}{-\cos\theta}
 =\tan\theta.
 \]
-The quotient repeats even though the point moves to the opposite
-side of the circle.
+Therefore tangent has period $\pi$ on its domain.
 \end{example}
 
-\noindent\textbf{Explore interactively.}
-The course's Six Trigonometric Graphs Explorer lets you compare all six
-functions. The Reciprocal Trigonometric Graphs Explorer places each
-function beside its reciprocal; watch how the zeros of one function
-become asymptotes of the other.
+The accompanying Six Trigonometric Graphs and Reciprocal Trigonometric Graphs demonstrations illustrate these functions and their asymptotes.
 
 \begin{practice}
 Sketch $y=\tan x$ and $y=\cot x$ on $(0,\pi)$, marking their
@@ -310,12 +271,8 @@ Suppose an observer stands $40$ m from the foot of a vertical tower. The angle o
 Here the tangent function links an angle to a ratio of lengths. Always sketch the physical situation and label which distances are opposite and adjacent before calculating.
 
 
-\subsection{Measuring height and choosing the right ratio}
-In a physical measurement problem, the right triangle should come
-\emph{before} the calculator. A horizontal distance and a vertical
-height are related by tangent. A direct line-of-sight distance and a
-vertical height are related by sine. Recognizing the geometry is more
-important than memorizing which button to press.
+\subsection{Measurement with trigonometric ratios}
+The appropriate trigonometric ratio depends on the available lengths. Tangent relates height to horizontal distance; sine relates height to line-of-sight distance.
 
 \begin{center}
 \begin{tikzpicture}[scale=.8]
@@ -332,7 +289,7 @@ important than memorizing which button to press.
 \end{tikzpicture}
 \end{center}
 
-\noindent\textbf{Worked example: estimate a tree height.}
+\noindent\textbf{Worked example: height measurement.}
 An observer is $20$ meters from the base of a tree and measures an
 angle of elevation of $40^\circ$ to its top. If the observer's eyes
 are $1.6$ meters above ground, the elevation of the treetop above
@@ -341,8 +298,7 @@ eye level is
 h_{\text{above eyes}}=20\tan40^\circ\approx16.8\text{ m}.
 \]
 The tree height is therefore about $16.8+1.6=18.4$ meters.
-The final addition matters: a correct trig ratio still needs an
-accurate interpretation of the measured height.
+The observer's eye height must be added to determine the height above ground.
 
 \begin{practice}
 A rescue drone is observed at an elevation angle of $25^\circ$
