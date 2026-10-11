@@ -1,3 +1,77 @@
 \section{Sequences and Series}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question.} How do repeated steps produce patterns, and how can we predict both a later value and a cumulative total?
+
+\subsection{A sequence is an ordered list}
+A sequence assigns a number $a_n$ to each positive integer $n$. For example, $a_n=3+2(n-1)$ produces $3,5,7,9,\ldots$. We distinguish the \emph{term} $a_n$ from a \emph{partial sum} $S_n=a_1+\cdots+a_n$.
+
+\subsection{Arithmetic sequences: repeated addition}
+An arithmetic sequence has a fixed common difference $d$:
+\[
+a_{n+1}=a_n+d,\qquad \boxed{a_n=a_1+(n-1)d}.
+\]
+\begin{example}
+A theater's first row has 12 seats, with two more seats in each successive row. Row 15 has $12+14(2)=40$ seats.
+\end{example}
+Adding the first and last terms in reverse order gives
+\[
+\boxed{S_n=\frac{n}{2}(a_1+a_n)
+=\frac{n}{2}\bigl(2a_1+(n-1)d\bigr)}.
+\]
+
+\subsection{Geometric sequences: repeated multiplication}
+A geometric sequence has a fixed common ratio $q$:
+\[
+a_{n+1}=qa_n,\qquad \boxed{a_n=a_1q^{n-1}}.
+\]
+When $q>1$, positive terms grow exponentially. When $0<q<1$, they decay toward zero.
+\begin{example}
+A population of 500 organisms increases by 8 percent each generation. The model is $a_n=500(1.08)^{n-1}$ if generation 1 is the initial observation.
+\end{example}
+For $q\ne1$, multiply the finite sum by $q$ and subtract:
+\[
+S_n=a_1+a_1q+\cdots+a_1q^{n-1},\qquad
+\boxed{S_n=a_1\frac{1-q^n}{1-q}}.
+\]
+If $q=1$, the sum is $na_1$. The formulas refer to \emph{finite} sums and work for ratios outside the interval $(0,1)$ as well.
+
+\subsection{Sigma notation}
+The compact expression $\sum_{k=1}^{n}a_k$ means add the terms for integer indices $k=1,\ldots,n$. For instance,
+\[
+\sum_{k=1}^{4}(2k+1)=3+5+7+9=24.
+\]
+The symbol $\sum$ tells us to add, while its bounds tell us which indices are included.
+
+\subsection{Infinite geometric series}
+If $|q|<1$, then $q^n\to0$. The finite geometric sum approaches
+\[
+\boxed{\sum_{n=0}^{\infty}aq^n=\frac{a}{1-q}},\qquad |q|<1.
+\]
+The condition matters: the series $1+2+4+\cdots$ does not approach a finite sum.
+\begin{example}
+A ball bounces to $60\%$ of its previous height. Released from height 5 m, the total vertical travel after infinitely many idealized bounces is
+$5+2(5)(0.6+0.6^2+\cdots)=5+10(0.6/0.4)=20$ m.
+\end{example}
+
+\subsection{Recursive rules beyond arithmetic and geometric patterns}
+Not every sequence is arithmetic or geometric. Consider
+\[
+a_{n+1}=\frac{a_n+6}{2},\qquad a_1=0.
+\]
+The first terms are $0,3,4.5,5.25,\ldots$. Let $e_n=a_n-6$ denote the difference from the fixed point. Then $e_{n+1}=e_n/2$, so $e_n=-6(1/2)^{n-1}$ and
+\[
+a_n=6-6(1/2)^{n-1}.
+\]
+The original recursion is not geometric, but its \emph{error from equilibrium} is. This is a useful bridge to feedback and dynamical models.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Write the first five terms of $a_n=7-3(n-1)$ and find $a_{20}$.
+\item An arithmetic sequence has $a_1=4$, $d=5$. Calculate $S_{30}$.
+\item A geometric sequence has $a_1=81$, $q=1/3$. Find $a_6$.
+\item Compute $\sum_{k=0}^{5}2(3/2)^k$ exactly.
+\item Explain the difference between $\sum_{k=1}^{n}k$ and its final term $n$.
+\item Determine whether $5+5/2+5/4+\cdots$ converges and find its sum.
+\item A machine loses 12 percent of its value per year. Express its value after $n$ years if it initially costs \$12,000.
+\item For $a_{n+1}=(a_n+10)/2$, $a_1=2$, find the fixed point and an explicit formula for $a_n$.
+\end{enumerate}
 \clearpage
