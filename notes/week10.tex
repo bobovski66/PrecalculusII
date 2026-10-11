@@ -32,6 +32,17 @@ Writing $u=\cos\delta+i\sin\delta$ gives
 \]
 De Moivre's theorem then explains every sample as a repeated rotation. If $\delta=2\pi/m$ for a positive integer $m$, the sampled orbit closes after $m$ steps (provided this is the smallest such positive step count). If $\delta/(2\pi)$ is irrational, no two different samples have exactly the same position.
 
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[->,gray] (-2.7,0)--(2.8,0);
+\draw[->,gray] (0,-2.6)--(0,2.7);
+\draw[courseblue!65,thick] plot coordinates {(2.4,0) (1.41,1.41) (0,1.66) (-.97,.97) (-1.15,0) (-.68,-.68) (0,-.80) (.47,-.47) (.55,0)};
+\foreach \x/\y in {2.4/0,1.41/1.41,0/1.66,-.97/.97,-1.15/0,-.68/-.68,0/-.80,.47/-.47,.55/0}
+{\fill[coursegold] (\x,\y) circle (.052);}
+\node at (0,-2.3) {\scriptsize $z_{n+1}=qz_n$, where $|q|<1$: inward spiral};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Scaling and rotation together}
 Now consider the recurrence $z_{n+1}=qz_n$ where
 \[
