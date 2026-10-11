@@ -19,6 +19,11 @@ jobs:
           root_file: standalone.tex
           working_directory: notes
           latexmk_use_xelatex: false
+      - name: Compile Module 2 reading
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: module02.tex
+          working_directory: notes
       - name: Compile collected textbook
         uses: xu-cheng/latex-action@v3
         with:
@@ -29,6 +34,7 @@ jobs:
         run: |
           mkdir -p pdfs
           cp notes/standalone.pdf pdfs/PrecalcII_Week01.pdf
+          cp notes/module02.pdf pdfs/PrecalcII_Week02.pdf
           cp notes/master.pdf pdfs/PrecalculusII_Complete_Reader.pdf
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
