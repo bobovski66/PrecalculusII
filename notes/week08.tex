@@ -27,6 +27,19 @@ y(t)=y_0+v_0\sin\theta\,t-\tfrac12gt^2.
 \]
 When the horizontal velocity is nonzero, eliminating $t$ gives a parabola. The motion model adds information the Cartesian curve alone does not supply, including direction and location at a given time.
 
+\begin{center}
+\begin{tikzpicture}[scale=.72]
+\draw[thick,courseblue] (-4,0) circle (1.2);
+\draw[thick,coursegreen] (0,0) ellipse (1.9 and 1.2);
+\draw[thick,coursegold,domain=-1.7:1.7,samples=70] plot(\x+4.6,{.42*\x*\x-.7});
+\fill[coursegreen] (-1.47,0) circle (.055);
+\fill[coursegreen] (1.47,0) circle (.055);
+\node[below] at (-4,-1.8) {circle};
+\node[below] at (0,-1.8) {ellipse with foci};
+\node[below] at (4.6,-1.8) {parabola};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Conics: circles and ellipses}
 A \emph{circle} is the set of points at a fixed distance $r$ from a center $(h,k)$:
 \[
