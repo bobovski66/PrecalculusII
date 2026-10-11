@@ -1,3 +1,78 @@
 \section{Parametric Equations and Conic Sections}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question.} How can the same curve be described by coordinates, by a moving point, or by a geometric rule?
+
+\subsection{A moving point traces a curve}
+In a parametric description, both coordinates depend on a parameter $t$:
+\[
+\boxed{x=f(t),\qquad y=g(t).}
+\]
+Think of $t$ as time when a particle moves. The curve records its location, while the parameterization also records direction and timing.
+\begin{example}For $x=2t+1$, $y=t-3$, eliminating $t=(x-1)/2$ gives $y=(x-7)/2$. If $t$ increases, the point moves up and right along this line.\end{example}
+
+\subsection{Eliminating the parameter}
+For $x=3\cos t$, $y=2\sin t$, square the normalized equations and add:
+\[
+\boxed{\frac{x^2}{9}+\frac{y^2}{4}=1.}
+\]
+The equation gives the whole ellipse when $t$ ranges over $[0,2\pi]$. A restricted interval, such as $[0,\pi]$, traces only its upper half. Different parameterizations may have the same image but different speeds or directions.
+\begin{example}
+Both $(x,y)=(\cos t,\sin t)$ and $(x,y)=(\cos 2t,\sin 2t)$ trace the unit circle for $0\le t\le2\pi$; the second makes two revolutions.
+\end{example}
+
+\subsection{Projectile motion as a parametric curve}
+Under constant downward acceleration $g$, a projectile launched from $(x_0,y_0)$ at speed $v_0$ and angle $\theta$ satisfies
+\[
+x(t)=x_0+v_0\cos\theta\,t,\qquad
+y(t)=y_0+v_0\sin\theta\,t-\tfrac12gt^2.
+\]
+When the horizontal velocity is nonzero, eliminating $t$ gives a parabola. The motion model adds information the Cartesian curve alone does not supply, including direction and location at a given time.
+
+\subsection{Conics: circles and ellipses}
+A \emph{circle} is the set of points at a fixed distance $r$ from a center $(h,k)$:
+\[
+(x-h)^2+(y-k)^2=r^2.
+\]
+An \emph{ellipse} can be defined by a constant sum of distances to two foci. In standard form, for $a\ge b>0$,
+\[
+\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1.
+\]
+Its horizontal semiaxis is $a$ and vertical semiaxis is $b$; when the major axis is horizontal, focal distance obeys $c^2=a^2-b^2$.
+\begin{example}
+For $x^2/25+y^2/9=1$, the vertices are $(\pm5,0)$, and the foci are $(\pm4,0)$.
+\end{example}
+
+\subsection{Parabolas and their focus}
+A \emph{parabola} is the set of points equidistant from a fixed point (focus) and a fixed line (directrix). The equation
+\[
+(x-h)^2=4p(y-k)
+\]
+has vertex $(h,k)$, focus $(h,k+p)$, and directrix $y=k-p$. Its axis is vertical; $p>0$ opens upward and $p<0$ downward.
+\begin{example}
+For $x^2=8y$, we have $4p=8$, so the focus is $(0,2)$ and the directrix is $y=-2$.
+\end{example}
+
+\subsection{Hyperbolas and differences of distances}
+A \emph{hyperbola} consists of points for which the absolute difference of distances to two foci is fixed. A horizontal hyperbola has standard form
+\[
+\frac{(x-h)^2}{a^2}-\frac{(y-k)^2}{b^2}=1.
+\]
+Its vertices are $(h\pm a,k)$, its foci are $(h\pm c,k)$ where $c^2=a^2+b^2$, and its asymptotes are $y-k=\pm(b/a)(x-h)$.
+\begin{example}
+The hyperbola $x^2/9-y^2/16=1$ has vertices $(\pm3,0)$, foci $(\pm5,0)$, and asymptotes $y=\pm4x/3$.
+\end{example}
+
+\subsection{Changing descriptions}
+A parametric curve may be easier to generate than to recognize from a Cartesian equation. A Cartesian equation reveals symmetry or an axis. A focal definition explains why the curve arises in optics, navigation, and geometry. None of these descriptions replaces the others; each answers a different question.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Eliminate $t$ from $x=t+2$, $y=3t-1$ and describe the motion as $t$ increases.
+\item Find the Cartesian equation traced by $x=4\cos t$, $y=3\sin t$.
+\item Explain how $(\cos t,\sin t)$ and $(\cos 3t,\sin 3t)$ differ as parameterizations.
+\item A projectile leaves the origin at $20$ m/s at $30^\circ$, with $g=9.8$ m/s$^2$. Write its parametric equations.
+\item Identify center and radius of $(x-2)^2+(y+1)^2=16$.
+\item Find the foci of $x^2/36+y^2/20=1$.
+\item Find the focus and directrix of $(x-1)^2=12(y+2)$.
+\item Find the vertices and asymptotes of $x^2/4-y^2/9=1$.
+\end{enumerate}
 \clearpage
