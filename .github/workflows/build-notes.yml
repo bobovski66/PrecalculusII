@@ -35,5 +35,16 @@ jobs:
           git add pdfs
           if ! git diff --cached --quiet; then
             git commit -m "Compile course reading PDFs"
-            git push
+            for attempt in 1 2 3 4 5; do
+              git fetch origin main
+              git rebase origin/main
+              if git push origin HEAD:main; then
+                echo "Published PDFs successfully"
+                exit 0
+              fi
+              echo "Concurrent update detected; retrying ($attempt/5)"
+              sleep 3
+            done
+            echo "Could not publish PDFs after retries"
+            exit 1
           fi
