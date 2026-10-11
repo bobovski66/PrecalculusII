@@ -1,6 +1,22 @@
 \section{The Six Trigonometric Functions}
 \noindent\textbf{Central question.} How do six functions arise naturally from the same moving point on a circle?
 
+
+\medskip
+The six functions are easier to remember when we begin with one moving
+point rather than six separate formulas. Picture a point going around the
+unit circle. Its horizontal coordinate is $x=\cos\theta$ and its vertical
+coordinate is $y=\sin\theta$. The remaining functions compare those
+coordinates or take their reciprocals. Thus a single geometric position
+contains all six pieces of information.
+
+\noindent\textbf{Learning goals.} By the end of this chapter, you should
+be able to define all six functions on the unit circle, find exact values
+in any quadrant, explain where each function is undefined, sketch their
+traditional graphs, and use trigonometry to interpret measured lengths
+and angles.
+
+
 \subsection{From a point to six functions}
 Last week we studied the unit-circle point $P=(x,y)=(\cos\theta,\sin\theta)$. The two coordinates determine four additional ratios whenever the denominators are nonzero:
 \[
@@ -30,15 +46,140 @@ These are not six unrelated measurements. They are six different ways of reading
 \end{tikzpicture}
 \end{center}
 
+
+\subsection{Why tangent is a slope}
+Imagine the ray from the origin through the point
+$P=(\cos\theta,\sin\theta)$. Where cosine is nonzero, the slope of
+that ray is
+\[
+m=\frac{\text{rise}}{\text{run}}
+=\frac{\sin\theta}{\cos\theta}=\tan\theta.
+\]
+This connects a familiar idea from linear equations to circular
+geometry: tangent records the \emph{directional slope} of the ray.
+A nearly vertical ray has a very large positive or negative slope.
+A vertical ray has no finite slope at all.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.7]
+\draw[->,gray] (-.35,0)--(1.85,0) node[right]{$x$};
+\draw[->,gray] (0,-.35)--(0,1.55) node[above]{$y$};
+\draw[thick,courseblue] (0,0) circle (1);
+\draw[very thick,coursegold] (0,0)--(35:1.5);
+\draw[dashed,coursegreen] (35:1)--({cos(35)},0);
+\draw[thick,coursegreen] (1,0)--(1,{tan(35)});
+\draw[dashed] (1,-.28)--(1,1.3);
+\fill[courseblue] (35:1) circle (.025);
+\node[right] at (1,{tan(35)/2}) {\scriptsize $\tan\theta$};
+\node[below] at (.6,0) {\scriptsize $\cos\theta$};
+\node[left] at ({cos(35)},{sin(35)/2}) {\scriptsize $\sin\theta$};
+\node at (.25,.12) {$\theta$};
+\draw[->] (.22,0) arc(0:35:.22);
+\node[above right] at (1,1.25) {\scriptsize tangent line $x=1$};
+\end{tikzpicture}
+\end{center}
+
+On the vertical line $x=1$, the extension of the ray reaches height
+$\tan\theta$. This construction shows why the function is named
+\emph{tangent}: it can be read along a line tangent to the unit circle.
+
+\begin{example}
+At $30^\circ$, the unit-circle coordinates are
+$(\sqrt3/2,1/2)$. The slope of the corresponding ray is
+\[
+\tan30^\circ=\frac{1/2}{\sqrt3/2}=\frac{\sqrt3}{3}.
+\]
+The same slope describes a ramp rising one unit for every $\sqrt3$
+units of horizontal travel.
+\end{example}
+
+
 \subsection{Signs and the quadrants}
 The coordinate signs determine every trig-function sign. In quadrant I both coordinates are positive; in II, only sine is positive; in III, tangent is positive because both coordinates are negative; and in IV, only cosine is positive. Reciprocal functions have the same signs as their corresponding original functions.
 
 \begin{example}For $\theta=5\pi/4$, the reference angle is $\pi/4$ and $P=(-\sqrt2/2,-\sqrt2/2)$. Therefore $\tan\theta=1$, $\sec\theta=-\sqrt2$, and $\csc\theta=-\sqrt2$.\end{example}
 
+
+\medskip
+For a useful sign check, consider $150^\circ=5\pi/6$. The point is
+$(-\sqrt3/2,1/2)$. Both sine and cosecant are positive, both cosine
+and secant are negative, and tangent and cotangent are negative:
+\[
+\tan(5\pi/6)=-\frac{\sqrt3}{3},\qquad
+\sec(5\pi/6)=-\frac{2\sqrt3}{3},\qquad
+\csc(5\pi/6)=2.
+\]
+Notice that no signs were memorized separately. All of them followed
+from the two coordinates.
+
+\begin{center}
+\begin{tabular}{c|ccc|ccc}
+& $\sin$ & $\cos$ & $\tan$ & $\csc$ & $\sec$ & $\cot$\\\hline
+Quadrant I & $+$ & $+$ & $+$ & $+$ & $+$ & $+$\\
+Quadrant II & $+$ & $-$ & $-$ & $+$ & $-$ & $-$\\
+Quadrant III & $-$ & $-$ & $+$ & $-$ & $-$ & $+$\\
+Quadrant IV & $-$ & $+$ & $-$ & $-$ & $+$ & $-$
+\end{tabular}
+\end{center}
+
+\begin{practice}
+The terminal point of an angle lies in quadrant IV and satisfies
+$\cos\theta=3/5$. Determine $\sin\theta$, $\tan\theta$,
+and their reciprocals, showing how the quadrant tells you the signs.
+\end{practice}
+
+
 \subsection{Where are the functions undefined?}
 Division by zero has no meaning. In particular, $\tan\theta$ and $\sec\theta$ do not exist where $\cos\theta=0$, at $\pi/2+k\pi$. Similarly $\cot\theta$ and $\csc\theta$ do not exist where $\sin\theta=0$, at $k\pi$, for any integer $k$. The word \emph{undefined} matters: an undefined value is not the number zero.
 
 \begin{practice}Find all six trig-function values at $\theta=3\pi/2$, identifying every undefined value.\end{practice}
+
+
+\subsection{Zeros, poles, and disconnected graphs}
+A denominator becomes small as its reciprocal becomes large. This
+is the main visual idea behind tangent, cotangent, secant, and cosecant.
+
+For example, as $\theta$ approaches $\pi/2$ from the left,
+$\cos\theta$ approaches zero from above. Consequently
+$\sec\theta=1/\cos\theta$ increases without bound. From the right,
+cosine is slightly negative, and secant becomes a large negative
+number. At $\pi/2$ itself, secant has no value.
+
+On an ordinary graph, the vertical line $x=\pi/2$ is a
+\emph{vertical asymptote} of secant and tangent. The picture
+shows why a graph cannot be joined through that line.
+
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.62cm]
+\draw[->,gray] (-.25,0)--(6.9,0) node[right]{$\theta$};
+\draw[->,gray] (0,-3.0)--(0,3.2) node[above]{$y$};
+\draw[dashed,coursegold] (1.5708,-2.9)--(1.5708,3);
+\draw[dashed,coursegold] (4.7124,-2.9)--(4.7124,3);
+\draw[courseblue,very thick,domain=0:6.28,samples=120]
+plot (\x,{cos(\x r)});
+\draw[coursegreen,very thick,domain=0:1.23,samples=55]
+plot (\x,{1/cos(\x r)});
+\draw[coursegreen,very thick,domain=1.91:4.37,samples=85]
+plot (\x,{1/cos(\x r)});
+\draw[coursegreen,very thick,domain=5.05:6.28,samples=55]
+plot (\x,{1/cos(\x r)});
+\node[below] at (1.57,0) {\scriptsize $\pi/2$};
+\node[below] at (4.71,0) {\scriptsize $3\pi/2$};
+\node[courseblue] at (5.7,.95) {\scriptsize cosine};
+\node[coursegreen] at (3.35,-2.7) {\scriptsize secant};
+\end{tikzpicture}
+\end{center}
+
+Here the green curve has been drawn only where its values fit in the
+viewing window. It continues upward or downward without touching its
+asymptotes. The graph does \emph{not} cross the asymptote, and we
+must not connect the separated branches.
+
+\begin{practice}
+Describe the same phenomenon for $\csc\theta$ near $\theta=0$.
+Explain why a zero of sine becomes an undefined value of cosecant.
+\end{practice}
+
 
 \subsection{Right triangles are a special case}
 For an acute angle $\theta$ in a right triangle, scale the triangle so its hypotenuse has length $1$. The opposite and adjacent sides then give the coordinates $\sin\theta$ and $\cos\theta$. Restoring a general hypotenuse $h$ gives
@@ -50,6 +191,38 @@ For an acute angle $\theta$ in a right triangle, scale the triangle so its hypot
 The unit circle is more general than the right-triangle definitions: it handles negative angles, obtuse angles, and angles exceeding a full revolution.
 
 \begin{example}A ramp rises $1.5$ meters over a horizontal run of $6$ meters. Its angle of inclination satisfies $\tan\theta=1.5/6=1/4$. Therefore $\theta=\arctan(1/4)\approx14.0^\circ$.\end{example}
+
+
+\medskip
+This gives us the complete right-triangle set of six ratios:
+\[
+\begin{array}{c|ccc}
+&\text{opposite and hypotenuse}&
+\text{adjacent and hypotenuse}&\text{opposite and adjacent}\\\hline
+\text{direct}&\sin\theta=o/h&\cos\theta=a/h&\tan\theta=o/a\\
+\text{reciprocal}&\csc\theta=h/o&\sec\theta=h/a&\cot\theta=a/o
+\end{array}
+\]
+All six ratios come from the same three lengths. The unit-circle
+definitions extend them beyond acute angles without changing the
+relationships.
+
+\begin{example}
+A support cable stretches $13$ meters from the ground to a point
+$12$ meters above it. The horizontal run is
+$\sqrt{13^2-12^2}=5$ meters. If $\theta$ is the angle with the ground,
+then
+\[
+\sin\theta=\frac{12}{13},\quad
+\cos\theta=\frac5{13},\quad
+\tan\theta=\frac{12}{5},\quad
+\csc\theta=\frac{13}{12},\quad
+\sec\theta=\frac{13}{5},\quad
+\cot\theta=\frac5{12}.
+\]
+The reciprocal values describe the same geometry, not new triangles.
+\end{example}
+
 
 \subsection{Special angles without memorizing a disconnected table}
 An equilateral triangle of side $2$ splits into two right triangles with sides $1,\sqrt3,2$. This produces $\sin30^\circ=1/2$ and $\cos30^\circ=\sqrt3/2$. A square of side $1$ has diagonal $\sqrt2$, producing $\sin45^\circ=\cos45^\circ=\sqrt2/2$.
@@ -68,12 +241,116 @@ An equilateral triangle of side $2$ splits into two right triangles with sides $
 \end{scope}\end{tikzpicture}
 \end{center}
 
+
+\subsection{Reading the traditional trigonometric graphs}
+A graph changes the question we ask. On the unit circle, we hold
+an angle fixed and locate a point. On a Cartesian graph, we let the
+angle vary along the horizontal axis and watch one numerical output
+rise and fall. The graph of a trigonometric function is not the circular
+path of the point; it is a record of one coordinate or ratio.
+
+Sine and cosine remain between $-1$ and $1$. Both repeat after a
+full rotation, so their fundamental period is $2\pi$ radians,
+or $360^\circ$. Tangent and cotangent repeat after half a turn,
+so their fundamental period is $\pi$ radians, or $180^\circ$.
+Secant and cosecant share the $2\pi$ period of their reciprocal partners.
+
+\begin{center}
+\begin{tikzpicture}[x=.8cm,y=.68cm]
+\draw[->,gray] (-.25,0)--(7.2,0) node[right]{$\theta$};
+\draw[->,gray] (0,-1.4)--(0,1.5) node[above]{$y$};
+\draw[courseblue,very thick,domain=0:6.28,samples=140]
+plot(\x,{cos(\x r)});
+\draw[coursegreen,very thick,dashed,domain=0:6.28,samples=140]
+plot(\x,{sin(\x r)});
+\node[below] at (1.5708,0) {\scriptsize $\pi/2$};
+\node[below] at (3.14159,0) {\scriptsize $\pi$};
+\node[below] at (4.71239,0) {\scriptsize $3\pi/2$};
+\node[below] at (6.28319,0) {\scriptsize $2\pi$};
+\node[courseblue] at (5.5,1.2) {\scriptsize cosine};
+\node[coursegreen] at (3.65,-1.18) {\scriptsize sine};
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Three questions to ask of any trig graph.}
+Where does the function cross the horizontal axis? Where is it
+undefined? How far must the input angle increase before the graph
+repeats? Together, these questions reveal most of its global shape.
+
+\begin{example}
+Why does tangent repeat after only $\pi$? Rotating the unit-circle
+point by $180^\circ$ changes both coordinate signs:
+\[
+\frac{\sin(\theta+\pi)}{\cos(\theta+\pi)}
+=\frac{-\sin\theta}{-\cos\theta}
+=\tan\theta.
+\]
+The quotient repeats even though the point moves to the opposite
+side of the circle.
+\end{example}
+
+\noindent\textbf{Explore interactively.}
+The course's Six Trigonometric Graphs Explorer lets you compare all six
+functions. The Reciprocal Trigonometric Graphs Explorer places each
+function beside its reciprocal; watch how the zeros of one function
+become asymptotes of the other.
+
+\begin{practice}
+Sketch $y=\tan x$ and $y=\cot x$ on $(0,\pi)$, marking their
+zeros and asymptotes. How do the two plots differ at the interval's
+endpoints?
+\end{practice}
+
+
 \subsection{Applications: orientation and measurement}
 Suppose an observer stands $40$ m from the foot of a vertical tower. The angle of elevation to its top is $35^\circ$. The tower's height $h$ satisfies
 \[
 \tan35^\circ=\frac{h}{40},\qquad h=40\tan35^\circ\approx28.0\text{ m}.
 \]
 Here the tangent function links an angle to a ratio of lengths. Always sketch the physical situation and label which distances are opposite and adjacent before calculating.
+
+
+\subsection{Measuring height and choosing the right ratio}
+In a physical measurement problem, the right triangle should come
+\emph{before} the calculator. A horizontal distance and a vertical
+height are related by tangent. A direct line-of-sight distance and a
+vertical height are related by sine. Recognizing the geometry is more
+important than memorizing which button to press.
+
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+\draw[thick] (0,0)--(6,0)--(6,3.3)--cycle;
+\draw (5.65,0) rectangle (6,.35);
+\draw[very thick,coursegreen] (0,0)--(6,0);
+\draw[very thick,coursegold] (6,0)--(6,3.3);
+\draw[very thick,courseblue] (0,0)--(6,3.3);
+\node[below] at (3,0) {$40$ m horizontal distance};
+\node[right] at (6,1.7) {$h$};
+\node[above left] at (3,1.65) {line of sight};
+\draw[->] (.7,0) arc(0:28.81:.7);
+\node at (1.22,.29) {$35^\circ$};
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Worked example: estimate a tree height.}
+An observer is $20$ meters from the base of a tree and measures an
+angle of elevation of $40^\circ$ to its top. If the observer's eyes
+are $1.6$ meters above ground, the elevation of the treetop above
+eye level is
+\[
+h_{\text{above eyes}}=20\tan40^\circ\approx16.8\text{ m}.
+\]
+The tree height is therefore about $16.8+1.6=18.4$ meters.
+The final addition matters: a correct trig ratio still needs an
+accurate interpretation of the measured height.
+
+\begin{practice}
+A rescue drone is observed at an elevation angle of $25^\circ$
+from an observer whose eye level is $1.7$ meters above ground.
+The point directly beneath the drone is $90$ meters away
+horizontally. Estimate the drone's altitude.
+\end{practice}
+
 
 \subsection{Exercises}
 \begin{enumerate}
@@ -85,5 +362,12 @@ Here the tangent function links an angle to a ratio of lengths. Always sketch th
 \item A ladder leans against a wall, reaching $8$ m high. Its foot is $3$ m from the wall. Find the angle with the ground.
 \item A drone is viewed at an elevation angle of $28^\circ$ from a point $75$ m horizontally from the point below it. Estimate its altitude.
 \item Show that $\sin^2\theta+\cos^2\theta=1$ implies $1+\tan^2\theta=\sec^2\theta$ wherever $\cos\theta\neq0$.
+\item Find the exact values of all six trig functions at $11\pi/6$.
+\item Describe the zeros and vertical asymptotes of $y=\tan x$ on $[-2\pi,2\pi]$.
+\item Sketch one period of $y=\sec x$, labeling asymptotes and its lowest positive and highest negative values.
+\item Explain why neither $\csc x$ nor $\sec x$ can equal $1/2$.
+\item If $\cos\theta=-12/13$ and $\theta$ lies in quadrant II, determine all other trig values exactly.
+\item Show using the unit circle that $\tan(\theta+\pi)=\tan\theta$ wherever both sides are defined.
+\item A point on a rotating wheel has unit-circle coordinates $(0,-1)$. Identify the angles in $[0,2\pi)$ and all four undefined or zero-valued functions.
 \end{enumerate}
 \clearpage
