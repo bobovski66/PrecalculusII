@@ -1,3 +1,69 @@
 \section{Periodic Functions and Their Graphs}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question.} How does rotation become a repeating signal, and how can we recover the motion from a graph?
+
+\subsection{The circle makes a wave}
+For a point traveling around the unit circle with angle $\theta$, its vertical coordinate is $y=\sin\theta$ and its horizontal coordinate is $x=\cos\theta$. Each revolution restores the same coordinates. Hence
+\[
+\sin(\theta+2\pi)=\sin\theta,\qquad \cos(\theta+2\pi)=\cos\theta.
+\]
+The \emph{period} is the smallest positive input change that repeats the full function. Both sine and cosine have period $2\pi$. Sine starts at $0$ and initially rises; cosine starts at $1$.
+\begin{center}
+\begin{tikzpicture}[xscale=1.1,yscale=.75]
+\draw[->](-.3,0)--(7,0) node[right]{$\theta$};
+\draw[->](0,-1.35)--(0,1.45) node[above]{$y$};
+\draw[courseblue,thick,samples=120,domain=0:6.283] plot(\x,{sin(\x r)});
+\draw[orange!85!black,thick,dashed,samples=120,domain=0:6.283] plot(\x,{cos(\x r)});
+\node[below]at(3.1416,0){$\pi$};\node[below]at(6.283,0){$2\pi$};
+\node[right,courseblue]at(4.5,-1.15){$\sin\theta$};
+\node[right,orange!85!black]at(4.5,1.2){$\cos\theta$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Amplitude and vertical translation}
+Consider $y=A\sin x+D$. Its midline is $y=D$, its amplitude is $|A|$, and its range is $[D-|A|,D+|A|]$. A negative $A$ reflects the wave across the midline.
+\begin{example}The function $y=3\sin x-2$ has amplitude $3$, midline $y=-2$, maximum $1$, and minimum $-5$.\end{example}
+
+\subsection{Period and horizontal scaling}
+For $y=\sin(Bx)$ with $B\neq0$, one full cycle occurs when $Bx$ changes by $2\pi$; the period is $T=2\pi/|B|$.
+\begin{example}The graph of $y=\cos(4x)$ repeats every $\pi/2$ units of input.\end{example}
+When $x$ denotes time measured in seconds, the quantity $|B|$ is angular frequency in radians per second, and ordinary frequency is $f=1/T=|B|/(2\pi)$ cycles per second.
+
+\subsection{Phase shift}
+A useful general form is
+\[
+\boxed{y=A\sin(B(x-C))+D}.
+\]
+Here $C$ is the horizontal shift, $D$ the midline, $|A|$ the amplitude, and $2\pi/|B|$ the period. We should distinguish $B(x-C)$ from $Bx-C$: factoring first prevents an incorrect phase shift.
+\begin{example}For $y=2\sin(3x-\pi)+1=2\sin(3(x-\pi/3))+1$, the period is $2\pi/3$, the shift is $\pi/3$ to the right, the amplitude is $2$, and the midline is $1$.\end{example}
+
+\subsection{Five landmark points}
+Rather than sketching a sinusoid by guesswork, divide one period into four equal intervals. For $A>0$, sine begins on the midline, rises to a maximum after one quarter-period, returns to the midline, reaches a minimum, then returns to the midline. A negative amplitude reverses the rises and falls.
+
+\begin{practice}Find five landmark points of $y=-2\cos(\pi(x-1))+3$, showing one entire period.\end{practice}
+
+\subsection{Models of repeating motion}
+A Ferris wheel has radius $9$ m, its center is $11$ m above ground, and it makes one revolution every $30$ s. If a passenger begins at the rightmost position and travels counterclockwise, their height is
+\[
+h(t)=11+9\sin\left(\frac{2\pi}{30}t\right).
+\]
+Its amplitude is $9$ m, midline is $11$ m, and period is $30$ s. A sinusoidal model can describe a wheel, a spring, a tide, or a musical tone, provided its parameters actually correspond to the chosen physical quantities.
+
+\subsection{Tangent and reciprocal graphs}
+The tangent function repeats after $\pi$, not $2\pi$, because both sine and cosine change sign after a half turn and their ratio remains the same:
+\[
+\tan(x+\pi)=\tan x.
+\]
+Tangent has vertical asymptotes at $x=\pi/2+k\pi$. The secant and cosecant graphs arise as reciprocals of cosine and sine; their breaks occur wherever the respective denominator is zero.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Find the amplitude, midline, period, and range of $y=-4\sin(2x)+1$.
+\item Rewrite $y=3\cos(5x-\pi)+2$ in shifted form and identify the phase shift.
+\item Give five landmark points for $y=2\sin(x-\pi/2)$.
+\item Explain why $y=\sin(2x)$ completes two periods on $[0,2\pi]$.
+\item A wheel of radius $6$ m rotates once every $24$ seconds. Its center is $8$ m above the ground. Model the rider's height when starting at the rightmost point.
+\item Identify the vertical asymptotes of $y=\tan(2x)$ on $[0,2\pi)$.
+\item Sketch one period of $y=2\sec x$ and indicate all discontinuities.
+\item Explain how you can determine amplitude and midline directly from observed maximum and minimum values.
+\end{enumerate}
 \clearpage
