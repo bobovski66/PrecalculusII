@@ -17,6 +17,19 @@ These are not six unrelated measurements. They are six different ways of reading
 
 \begin{example}At $\theta=\pi/3$ the circle point is $(1/2,\sqrt3/2)$. Thus $\tan\theta=\sqrt3$, $\sec\theta=2$, $\csc\theta=2/\sqrt3=2\sqrt3/3$, and $\cot\theta=1/\sqrt3=\sqrt3/3$.\end{example}
 
+\begin{center}
+\begin{tikzpicture}[scale=1.35]
+\draw[->,gray] (-1.55,0)--(1.6,0) node[right] {$x$};
+\draw[->,gray] (0,-1.5)--(0,1.6) node[above] {$y$};
+\draw[thick,courseblue] (0,0) circle (1.15);
+\node at (.7,.7) {\scriptsize $\sin+,\cos+$};
+\node at (-.7,.7) {\scriptsize $\sin+,\cos-$};
+\node at (-.7,-.7) {\scriptsize $\sin-,\cos-$};
+\node at (.7,-.7) {\scriptsize $\sin-,\cos+$};
+\draw[thick,coursegold,-{Latex}] (0,0)--(140:1.15);
+\end{tikzpicture}
+\end{center}
+
 \subsection{Signs and the quadrants}
 The coordinate signs determine every trig-function sign. In quadrant I both coordinates are positive; in II, only sine is positive; in III, tangent is positive because both coordinates are negative; and in IV, only cosine is positive. Reciprocal functions have the same signs as their corresponding original functions.
 
