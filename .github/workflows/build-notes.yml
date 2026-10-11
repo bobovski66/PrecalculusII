@@ -1,0 +1,39 @@
+name: Build original LaTeX readings
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notes/**'
+      - '.github/workflows/build-notes.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile Module 1 reading
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: standalone.tex
+          working_directory: notes
+          latexmk_use_xelatex: false
+      - name: Compile collected textbook
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: master.tex
+          working_directory: notes
+          latexmk_use_xelatex: false
+      - name: Publish PDFs
+        run: |
+          mkdir -p pdfs
+          cp notes/standalone.pdf pdfs/PrecalcII_Week01.pdf
+          cp notes/master.pdf pdfs/PrecalculusII_Complete_Reader.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pdfs
+          if ! git diff --cached --quiet; then
+            git commit -m "Compile course reading PDFs"
+            git push
+          fi
