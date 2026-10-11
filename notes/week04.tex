@@ -1,3 +1,73 @@
 \section{Inverse Trigonometry and Identities}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question:} How can we recover an angle from its trigonometric value, and how do we prove two expressions represent the same function?
+
+\subsection{An inverse is not a reciprocal}
+The notation $\sin^{-1}x$ means the inverse function $\arcsin x$. It does not mean $1/\sin x=\csc x$. The inverse answers an angle question; the reciprocal answers a ratio question.
+
+Sine is periodic, so an inverse function requires choosing an interval on which sine is one-to-one. We use $[-\pi/2,\pi/2]$. In exactly the same way, cosine uses $[0,\pi]$ and tangent uses $(-\pi/2,\pi/2)$.
+\[
+\begin{array}{c|c|c}
+f(x)&\text{Domain}&\text{Range}\\\hline
+\arcsin x&[-1,1]&[-\pi/2,\pi/2]\\
+\arccos x&[-1,1]&[0,\pi]\\
+\arctan x&\mathbb R&(-\pi/2,\pi/2)
+\end{array}
+\]
+\begin{example}
+$\arcsin(1/2)=\pi/6$, $\arccos(-1/2)=2\pi/3$, and $\arctan(-1)=-\pi/4$.
+\end{example}
+\begin{example}
+$\arcsin(\sin(5\pi/6))=\pi/6$, not $5\pi/6$, because the inverse reports its principal value.
+\end{example}
+\subsection{Compositions and triangle geometry}
+The identity $\sin(\arcsin x)=x$ holds for $-1\leq x\leq1$, but $\arcsin(\sin\theta)=\theta$ only for $\theta$ in the principal range. Suppose $\theta=\arctan(3/4)$. Then a right triangle has legs $3,4$ and hypotenuse $5$, so
+\[
+\sin(\arctan(3/4))=\frac35.
+\]
+
+\subsection{An identity is true throughout its domain}
+From the unit-circle equation we obtain
+\[
+\boxed{\sin^2x+\cos^2x=1}.
+\]
+Dividing by $\cos^2x$ (only where $\cos x\ne0$) gives $1+\tan^2x=\sec^2x$. Dividing by $\sin^2x$ gives $1+\cot^2x=\csc^2x$ where $\sin x\ne0$.
+\begin{example}
+For $\sin x\ne0$,
+\[
+\frac{1-\cos^2x}{\sin x}
+=\frac{\sin^2x}{\sin x}=\sin x.
+\]
+This is an algebraic proof on the shared domain, not a numerical check at a few inputs.
+\end{example}
+
+\subsection{Angle addition and double angles}
+Two successive plane rotations produce the sum identities
+\[
+\begin{aligned}
+\cos(\alpha+\beta)&=\cos\alpha\cos\beta-\sin\alpha\sin\beta,\\
+\sin(\alpha+\beta)&=\sin\alpha\cos\beta+\cos\alpha\sin\beta.
+\end{aligned}
+\]
+Set $\beta=-\gamma$ for difference identities and $\beta=\alpha$ for double-angle identities:
+\[
+\sin(2x)=2\sin x\cos x,\qquad
+\cos(2x)=\cos^2x-\sin^2x=1-2\sin^2x.
+\]
+\begin{example}
+$\sin(75^\circ)=\sin(45^\circ+30^\circ)=(\sqrt6+\sqrt2)/4$.
+\end{example}
+\subsection{Applications: measured angles}
+An observation of a tower from $40$ m away gives $\tan\theta=3/4$. The elevation angle is $\arctan(3/4)\approx36.9^\circ$, while the height is exactly $40(3/4)=30$ m. Inverse functions recover angles; ratios can often recover distances directly.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Evaluate exactly $\arcsin(-\sqrt2/2)$ and $\arctan(\sqrt3)$.
+\item Explain why $\arcsin(\sin(3\pi/4))\ne3\pi/4$.
+\item Find $\cos(\arcsin(5/13))$ with a triangle.
+\item Find $\sin(\arctan(-2))$ exactly, including its sign.
+\item Prove $(\sec^2x-1)/\tan x=\tan x$ on its domain.
+\item Prove $(\sin x+\cos x)^2=1+\sin(2x)$.
+\item Calculate $\cos(75^\circ)$ exactly by angle addition.
+\item Express $\cos(2x)$ using $\sin x$ alone.
+\end{enumerate}
 \clearpage
