@@ -1,3 +1,92 @@
 \section{Vectors and Geometric Applications}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question.} How do we describe a quantity that has both a size and a direction?
+
+\subsection{From coordinates to directed displacements}
+In the first half of the course we used $(\cos\theta,\sin\theta)$ to locate a point on a circle. A vector uses the same coordinates to describe a \emph{displacement}: how far to move horizontally and vertically. Write $\mathbf v=\langle a,b\rangle$. Its magnitude is
+\[
+\boxed{\|\mathbf v\|=\sqrt{a^2+b^2}}.
+\]
+Vectors with the same components represent the same displacement even when drawn at different starting points.
+\begin{example}
+A walker moves $3$ km east and $4$ km north. The resulting vector is $\langle3,4\rangle$ km and its magnitude is $5$ km. The route traveled is $7$ km, while the displacement is only $5$ km.
+\end{example}
+
+\subsection{Vector arithmetic}
+Addition combines displacements:
+\[
+\langle a,b\rangle+\langle c,d\rangle=\langle a+c,b+d\rangle.
+\]
+Scalar multiplication changes their length, and a negative scalar reverses direction:
+\[
+k\langle a,b\rangle=\langle ka,kb\rangle.
+\]
+Subtracting vectors compares locations. If $P=(p_1,p_2)$ and $Q=(q_1,q_2)$, then $\overrightarrow{PQ}=\langle q_1-p_1,q_2-p_2\rangle$.
+\begin{example}
+For $\mathbf u=\langle2,-1\rangle$ and $\mathbf v=\langle-3,4\rangle$, we have $\mathbf u+\mathbf v=\langle-1,3\rangle$ and $2\mathbf u-\mathbf v=\langle7,-6\rangle$.
+\end{example}
+
+\subsection{Direction and trigonometry}
+A unit vector has magnitude $1$. The unit vector pointing at angle $\theta$ is
+\[
+\mathbf e_\theta=\langle\cos\theta,\sin\theta\rangle.
+\]
+A vector of magnitude $r$ in that direction is
+\[
+\boxed{\mathbf v=r\langle\cos\theta,\sin\theta\rangle}.
+\]
+Conversely, for a nonzero vector $\langle a,b\rangle$, the angle must be chosen in the appropriate quadrant. An inverse tangent applied only to $b/a$ may miss that quadrant.
+\begin{example}
+A force of $20$ N directed $30^\circ$ above the horizontal has components $\langle10\sqrt3,10\rangle$ N.
+\end{example}
+
+\subsection{The dot product measures alignment}
+Define
+\[
+\mathbf u\cdot\mathbf v=u_1v_1+u_2v_2.
+\]
+The geometric interpretation is
+\[
+\boxed{\mathbf u\cdot\mathbf v=\|\mathbf u\|\|\mathbf v\|\cos\phi},
+\]
+where $\phi$ is the angle between nonzero vectors. Positive dot product means an acute angle; negative means an obtuse angle; zero means perpendicular vectors.
+\begin{example}
+With $\mathbf u=\langle3,4\rangle$ and $\mathbf v=\langle4,-3\rangle$, the dot product is $12-12=0$. Both vectors are nonzero, so they are perpendicular.
+\end{example}
+
+\subsection{Projection and useful components}
+The scalar component of $\mathbf u$ in the direction of a nonzero vector $\mathbf v$ is
+\[
+\operatorname{comp}_{\mathbf v}\mathbf u
+=\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|}.
+\]
+The corresponding vector projection is
+\[
+\operatorname{proj}_{\mathbf v}\mathbf u
+=\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\mathbf v.
+\]
+Projection is the part of one vector aligned with another. In physics, the work done by a constant force $\mathbf F$ across displacement $\mathbf d$ is $W=\mathbf F\cdot\mathbf d$, measured in joules when force is in newtons and displacement in meters.
+\begin{example}
+A force $\langle10,5\rangle$ N acts during displacement $\langle3,0\rangle$ m. The work is $30$ J: only the horizontal force component contributes.
+\end{example}
+
+\subsection{A geometric connection to the Law of Cosines}
+For $\mathbf u,\mathbf v$ we have
+\[
+\|\mathbf u-\mathbf v\|^2
+=(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)
+=\|\mathbf u\|^2+\|\mathbf v\|^2-2\|\mathbf u\|\|\mathbf v\|\cos\phi.
+\]
+Thus the Law of Cosines from Module 5 is also a theorem about vector differences.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Find the vector from $P=(-2,3)$ to $Q=(5,-1)$ and its magnitude.
+\item For $\mathbf u=\langle2,5\rangle$, $\mathbf v=\langle-1,3\rangle$, compute $\mathbf u+\mathbf v$ and $3\mathbf u-2\mathbf v$.
+\item Find exact components of a displacement of magnitude $12$ at angle $150^\circ$.
+\item Find a unit vector in the direction of $\langle-3,4\rangle$.
+\item Compute $\langle2,-1\rangle\cdot\langle5,3\rangle$ and interpret its sign.
+\item Determine whether $\langle6,2\rangle$ and $\langle-1,3\rangle$ are perpendicular.
+\item Find $\operatorname{proj}_{\mathbf v}\mathbf u$ when $\mathbf u=\langle4,3\rangle$ and $\mathbf v=\langle1,0\rangle$.
+\item A force of $50$ N acts $60^\circ$ from the direction of a $4$ m displacement. Calculate the work done.
+\end{enumerate}
 \clearpage
