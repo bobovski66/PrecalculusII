@@ -1,3 +1,80 @@
 \section{Trigonometric Equations and Applications}
-\noindent\emph{Full instructional reading in development.}
+\noindent\textbf{Central question.} When a trigonometric function has a prescribed value, how can we find \emph{all} the angles that produce it? How can we use angles to solve triangles that are not right triangles?
+
+\subsection{A first equation on the unit circle}
+Consider $\sin x=1/2$. The unit circle has two points whose vertical coordinate is $1/2$, at $x=\pi/6$ and $x=5\pi/6$. Every full revolution reproduces these points:
+\[
+\boxed{x=\frac{\pi}{6}+2\pi k\quad\text{or}\quad x=\frac{5\pi}{6}+2\pi k,\qquad k\in\mathbb Z.}
+\]
+An inverse trigonometric function gives one principal angle, not necessarily every solution. The unit circle and periodicity give the complete answer.
+\begin{example}
+Solve $\cos x=-\sqrt2/2$ for $0\le x<2\pi$. The solutions are $3\pi/4$ and $5\pi/4$.
+\end{example}
+
+\subsection{Equations with transformations}
+To solve $\sin(2x)=\sqrt3/2$ on $[0,2\pi)$, first solve for $u=2x$ on $[0,4\pi)$. We obtain $u=\pi/3,2\pi/3,7\pi/3,8\pi/3$ and therefore
+\[
+x=\frac{\pi}{6},\frac{\pi}{3},\frac{7\pi}{6},\frac{4\pi}{3}.
+\]
+A changed frequency changes how many full cycles fit into the requested interval.
+\begin{example}
+Solve $2\cos x-1=0$ on $[0,2\pi)$. Isolating cosine gives $\cos x=1/2$, hence $x=\pi/3$ or $5\pi/3$.
+\end{example}
+
+\subsection{Factoring and checking domains}
+An equation may contain more than one trig function. Algebraic techniques still work:
+\[
+2\sin^2x-\sin x=0
+\quad\Longrightarrow\quad
+\sin x(2\sin x-1)=0.
+\]
+On $[0,2\pi)$ we obtain $x=0,\pi,\pi/6,5\pi/6$. Dividing by $\sin x$ at the outset would have lost two solutions.
+
+\subsection{Trigonometric identities in equations}
+For example, $2\cos^2x-1=0$ becomes $\cos^2x=1/2$, hence $\cos x=\pm\sqrt2/2$. There are four solutions on $[0,2\pi)$. Using identities can make equations simpler, but each transformation should preserve the original domain.
+
+\subsection{Solving triangles: notation}
+Write the vertices of a triangle as $A,B,C$, and the opposite side lengths as $a,b,c$. Its angles satisfy $A+B+C=\pi$. For right triangles, the six trig ratios are enough. For oblique triangles, two laws extend our tools.
+
+\begin{definition}[Law of Sines]
+For every nondegenerate triangle,
+\[
+\boxed{\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}.}
+\]
+\end{definition}
+\begin{example}
+A triangle has $A=40^\circ$, $B=65^\circ$, and $a=9$ cm. Since $C=75^\circ$, the Law of Sines gives $b=9\sin65^\circ/\sin40^\circ\approx12.69$ cm.
+\end{example}
+
+\subsection{The ambiguous SSA case}
+Given two sides and a nonincluded angle (SSA), the Law of Sines may produce zero, one, or two triangles. If $\sin B=s$, both $B=\arcsin s$ and $B=\pi-\arcsin s$ must be considered, and each candidate must fit with the known angle $A$ in a triangle.
+\begin{example}
+Suppose $A=30^\circ$, $a=5$ and $b=8$. Then $\sin B=8\sin30^\circ/5=0.8$. Both $B\approx53.13^\circ$ and $B\approx126.87^\circ$ are consistent with $A+B<180^\circ$, so two distinct triangles exist.
+\end{example}
+
+\begin{definition}[Law of Cosines]
+For a triangle with sides $a,b,c$ opposite angles $A,B,C$,
+\[
+\boxed{c^2=a^2+b^2-2ab\cos C.}
+\]
+\end{definition}
+When $C=90^\circ$ this becomes the Pythagorean theorem. The cosine term measures how the included angle modifies the length of the opposite side.
+\begin{example}
+Two sides of a triangle are $7$ m and $10$ m, with included angle $60^\circ$. The opposite side satisfies $c^2=49+100-140(1/2)=79$, so $c=\sqrt{79}$ m.
+\end{example}
+
+\subsection{Applied modeling and interpretation}
+Two sensors observe a distant object from different locations. The baseline and their sight angles make a triangle. The Law of Sines can recover an inaccessible distance if we know a side and two angles. Always include the diagram, angle units, and a reasonableness check.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Solve $\sin x=-\sqrt3/2$ for $0\le x<2\pi$.
+\item Solve $2\sin(3x)=1$ for $0\le x<2\pi$; find every solution.
+\item Solve $2\cos^2x-\cos x=0$ on $[0,2\pi)$.
+\item Solve $\tan x=-1$ for all real $x$.
+\item A triangle has $A=35^\circ$, $B=80^\circ$ and $a=12$. Find $C$ and $b$.
+\item For $A=30^\circ$, $a=5$, $b=8$, calculate both possible values of $C$ in the SSA case.
+\item Find the third side of a triangle when two sides have length $6$ and $9$ and their included angle is $120^\circ$.
+\item Explain why the Law of Cosines becomes the Pythagorean theorem for right triangles.
+\end{enumerate}
 \clearpage
