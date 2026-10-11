@@ -45,6 +45,11 @@ jobs:
         with:
           root_file: module06.tex
           working_directory: notes
+      - name: Compile Module 7 reading
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: module07.tex
+          working_directory: notes
       - name: Compile collected textbook
         uses: xu-cheng/latex-action@v3
         with:
@@ -65,6 +70,7 @@ jobs:
           cp notes/module04.pdf pdfs/PrecalcII_Week04.pdf
           cp notes/module05.pdf pdfs/PrecalcII_Week05.pdf
           cp notes/module06.pdf pdfs/PrecalcII_Week06.pdf
+          cp notes/module07.pdf pdfs/PrecalcII_Week07.pdf
           cp notes/master.pdf pdfs/PrecalculusII_Complete_Reader.pdf
           cp assessments/midterm_exam.pdf pdfs/PrecalcII_Midterm_Exam.pdf
           git config user.name "github-actions[bot]"
