@@ -1,12 +1,15 @@
 \section{Periodic Functions and Their Graphs}
-\noindent\textbf{Central question.} How does rotation become a repeating signal, and how can we recover the motion from a graph?
+\noindent Periodic functions describe quantities that repeat as their input increases. Trigonometric functions provide fundamental examples: their periodicity arises from rotation, and their graphs can be transformed to represent a wide range of oscillatory processes.
 
-\subsection{The circle makes a wave}
+\medskip
+\noindent\textbf{Learning objectives.} Identify periods, amplitudes, midlines, and phase shifts; construct transformed sine and cosine graphs; distinguish angular frequency from frequency; and determine sinusoidal models from geometric or measured information.
+
+\subsection{Circular motion and periodicity}
 For a point traveling around the unit circle with angle $\theta$, its vertical coordinate is $y=\sin\theta$ and its horizontal coordinate is $x=\cos\theta$. Each revolution restores the same coordinates. Hence
 \[
 \sin(\theta+2\pi)=\sin\theta,\qquad \cos(\theta+2\pi)=\cos\theta.
 \]
-The \emph{period} is the smallest positive input change that repeats the full function. Both sine and cosine have period $2\pi$. Sine starts at $0$ and initially rises; cosine starts at $1$.
+A function $f$ is \emph{periodic} if there exists $T>0$ such that $f(x+T)=f(x)$ for every $x$ in its domain. When a least positive such $T$ exists, it is the \emph{fundamental period}. The fundamental periods of sine and cosine are both $2\pi$. Moreover, $\sin0=0$ and $\cos0=1$.
 \begin{center}
 \begin{tikzpicture}[xscale=1.1,yscale=.75]
 \draw[->](-.3,0)--(7,0) node[right]{$\theta$};
@@ -19,6 +22,7 @@ The \emph{period} is the smallest positive input change that repeats the full fu
 \end{tikzpicture}
 \end{center}
 
+\subsection{Amplitude and the midline}
 \begin{center}
 \begin{tikzpicture}[x=.92cm,y=.54cm]
 \draw[->,gray] (-.3,0)--(7.1,0) node[right] {$x$};
@@ -32,14 +36,50 @@ The \emph{period} is the smallest positive input change that repeats the full fu
 \end{tikzpicture}
 \end{center}
 
-\subsection{Amplitude and vertical translation}
+\subsection{Vertical transformations}
 Consider $y=A\sin x+D$. Its midline is $y=D$, its amplitude is $|A|$, and its range is $[D-|A|,D+|A|]$. A negative $A$ reflects the wave across the midline.
 \begin{example}The function $y=3\sin x-2$ has amplitude $3$, midline $y=-2$, maximum $1$, and minimum $-5$.\end{example}
+
+
+For a sinusoid with maximum $M$ and minimum $m$, the amplitude and midline are
+\[
+|A|=\frac{M-m}{2},
+\qquad D=\frac{M+m}{2}.
+\]
+These relations determine the vertical parameters without knowing the phase or period.
+
+\begin{example}
+A periodically varying temperature has maximum $26^\circ$C and minimum
+$14^\circ$C. Its midline is $20^\circ$C and its amplitude is $6^\circ$C.
+These values do not determine the period or phase.
+\end{example}
+
+\begin{practice}
+A sinusoidal signal ranges from $-7$ to $5$. Determine its amplitude,
+midline, and range, and sketch one possible cycle.
+\end{practice}
 
 \subsection{Period and horizontal scaling}
 For $y=\sin(Bx)$ with $B\neq0$, one full cycle occurs when $Bx$ changes by $2\pi$; the period is $T=2\pi/|B|$.
 \begin{example}The graph of $y=\cos(4x)$ repeats every $\pi/2$ units of input.\end{example}
 When $x$ denotes time measured in seconds, the quantity $|B|$ is angular frequency in radians per second, and ordinary frequency is $f=1/T=|B|/(2\pi)$ cycles per second.
+
+
+A phase change of $2\pi$ radians corresponds to one cycle. If the
+argument of a sinusoidal function is $\omega t+\phi$, then its period is
+$T=2\pi/|\omega|$, and its frequency is
+\[
+f=\frac1T=\frac{|\omega|}{2\pi}.
+\]
+Frequency is measured in cycles per unit time, while angular frequency
+is measured in radians per unit time. These units describe the same
+repetition rate in different ways.
+
+\begin{example}
+A mechanism rotates at $90$ revolutions per minute. Its frequency is
+$1.5$ cycles per second, and its angular speed is
+$2\pi(1.5)=3\pi$ radians per second. Its period is $2/3$ second.
+\end{example}
 
 \subsection{Phase shift}
 A useful general form is
@@ -49,10 +89,51 @@ A useful general form is
 Here $C$ is the horizontal shift, $D$ the midline, $|A|$ the amplitude, and $2\pi/|B|$ the period. We should distinguish $B(x-C)$ from $Bx-C$: factoring first prevents an incorrect phase shift.
 \begin{example}For $y=2\sin(3x-\pi)+1=2\sin(3(x-\pi/3))+1$, the period is $2\pi/3$, the shift is $\pi/3$ to the right, the amplitude is $2$, and the midline is $1$.\end{example}
 
+
+The parameterization assumes $B\ne0$. In factored form, the phase
+shift is $C$. In the equivalent form $A\sin(Bx+\phi)+D$, the same shift
+is $C=-\phi/B$. The sign of $B$ may be taken positive in a standard
+sine model by modifying the sign of $A$.
+
+\begin{center}
+\begin{tikzpicture}[x=.94cm,y=.7cm]
+\draw[->,gray] (-.4,0)--(7.2,0) node[right]{$x$};
+\draw[->,gray] (0,-1.45)--(0,1.5) node[above]{$y$};
+\draw[courseblue,thick,domain=0:6.28,samples=140] plot(\x,{sin(\x r)});
+\draw[coursegreen,very thick,domain=0:6.28,samples=140] plot(\x,{sin((\x-1) r)});
+\draw[<->,coursegold,thick] (0,-1.22)--(1,-1.22);
+\node[below,coursegold] at (.5,-1.22) {\scriptsize shift $1$};
+\node[courseblue] at (2.0,1.35) {\scriptsize $\sin x$};
+\node[coursegreen] at (4.55,1.35) {\scriptsize $\sin(x-1)$};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Five landmark points}
 Rather than sketching a sinusoid by guesswork, divide one period into four equal intervals. For $A>0$, sine begins on the midline, rises to a maximum after one quarter-period, returns to the midline, reaches a minimum, then returns to the midline. A negative amplitude reverses the rises and falls.
 
 \begin{practice}Find five landmark points of $y=-2\cos(\pi(x-1))+3$, showing one entire period.\end{practice}
+
+
+For $y=A\sin(B(x-C))+D$ with $B>0$, write
+$T=2\pi/B$. One cycle is determined by the following five points:
+\[
+\begin{array}{c|ccccc}
+x&C&C+T/4&C+T/2&C+3T/4&C+T\\ \hline
+y&D&D+A&D&D-A&D
+\end{array}
+\]
+For cosine, the corresponding outputs are $D+A,D,D-A,D,D+A$.
+These points determine the positions of maxima, minima, and midline
+crossings; the smooth sinusoidal curve passes through them.
+
+\begin{example}
+For $y=-2\cos(\pi(x-1))+3$, the period is $T=2$.
+Beginning at $x=1$, the five landmark points are
+\[
+(1,1),\quad (3/2,3),\quad (2,5),\quad (5/2,3),\quad (3,1).
+\]
+The negative coefficient places the minimum at the start of the cycle.
+\end{example}
 
 \subsection{Models of repeating motion}
 A Ferris wheel has radius $9$ m, its center is $11$ m above ground, and it makes one revolution every $30$ s. If a passenger begins at the rightmost position and travels counterclockwise, their height is
@@ -61,12 +142,54 @@ h(t)=11+9\sin\left(\frac{2\pi}{30}t\right).
 \]
 Its amplitude is $9$ m, midline is $11$ m, and period is $30$ s. A sinusoidal model can describe a wheel, a spring, a tide, or a musical tone, provided its parameters actually correspond to the chosen physical quantities.
 
+
+\subsection{Constructing a model from measurements}
+Suppose a buoy reaches a maximum height of $5$ meters and a minimum
+height of $1$ meter. Successive maxima are separated by $8$ seconds.
+Taking $t=0$ at a maximum yields the model
+\[
+h(t)=3+2\cos\left(\frac{\pi t}{4}\right).
+\]
+The midline is $3$ meters, the amplitude is $2$ meters, and the
+angular frequency is $\pi/4$ radians per second. If the time origin
+were chosen at an upward midline crossing, a sine model would be more
+convenient. The physical motion is unchanged by this choice of
+representation.
+
+\begin{practice}
+A tide measurement varies between $0.8$ m and $3.6$ m and repeats
+every $12$ hours. Write a cosine model assuming that the maximum occurs
+at $t=2$ hours. State the meaning and units of every parameter.
+\end{practice}
+
 \subsection{Tangent and reciprocal graphs}
 The tangent function repeats after $\pi$, not $2\pi$, because both sine and cosine change sign after a half turn and their ratio remains the same:
 \[
 \tan(x+\pi)=\tan x.
 \]
 Tangent has vertical asymptotes at $x=\pi/2+k\pi$. The secant and cosecant graphs arise as reciprocals of cosine and sine; their breaks occur wherever the respective denominator is zero.
+
+
+Because $\tan x=\sin x/\cos x$, its zeros occur at $x=k\pi$ and
+its vertical asymptotes at $x=\pi/2+k\pi$. Similarly,
+$\cot x=\cos x/\sin x$ is undefined at integer multiples of $\pi$.
+The graphs of secant and cosecant lie outside the strip $-1<y<1$
+because their absolute values are at least $1$ where defined.
+
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=.65cm]
+\draw[->,gray] (-3.5,0)--(3.5,0) node[right]{$x$};
+\draw[->,gray] (0,-2.9)--(0,2.9) node[above]{$y$};
+\draw[dashed,coursegold] (-1.5708,-2.8)--(-1.5708,2.8);
+\draw[dashed,coursegold] (1.5708,-2.8)--(1.5708,2.8);
+\draw[courseblue,very thick,domain=-1.22:1.22,samples=90] plot(\x,{tan(\x r)});
+\draw[courseblue,very thick,domain=1.92:3.4,samples=70] plot(\x,{tan(\x r)});
+\draw[courseblue,very thick,domain=-3.4:-1.92,samples=70] plot(\x,{tan(\x r)});
+\node[below] at (-1.5708,0) {$-\pi/2$};
+\node[below] at (1.5708,0) {$\pi/2$};
+\node[courseblue] at (2.5,1.8) {\scriptsize $\tan x$};
+\end{tikzpicture}
+\end{center}
 
 \subsection{Exercises}
 \begin{enumerate}
@@ -78,5 +201,10 @@ Tangent has vertical asymptotes at $x=\pi/2+k\pi$. The secant and cosecant graph
 \item Identify the vertical asymptotes of $y=\tan(2x)$ on $[0,2\pi)$.
 \item Sketch one period of $y=2\sec x$ and indicate all discontinuities.
 \item Explain how you can determine amplitude and midline directly from observed maximum and minimum values.
+\item Determine a sinusoidal model with maximum $8$, minimum $-2$, period $10$, and maximum at $x=3$.
+\item Explain why $A\sin(B(x-C))+D$ is constant when $A=0$, and why the usual fundamental-period formula does not apply.
+\item A motor oscillates at $2.5$ cycles per second. Determine its angular frequency and period.
+\item Give the domain of $y=\tan(3x)$ and identify two consecutive vertical asymptotes.
+\item Determine the amplitude and midline from a sinusoid with maximum $12.4$ and minimum $7.6$.
 \end{enumerate}
 \clearpage
