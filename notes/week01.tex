@@ -1,0 +1,75 @@
+\section{Angles, Rotation, and the Unit Circle}
+\noindent\textbf{This week's central question:} How can we turn rotation into coordinates? The answer begins with the natural geometry of a circle.
+
+\subsection{Angles measure turning}
+An angle records a rotation from one ray to another. Counterclockwise rotations are positive, and clockwise rotations are negative. A rotation can exceed one full revolution. For example, $450^\circ$ and $90^\circ$ have the same terminal ray.
+
+\begin{definition}Two angles are \emph{coterminal} if they have the same initial and terminal rays. They differ by an integer multiple of $360^\circ$, or $2\pi$ radians.\end{definition}
+\begin{example}A positive coterminal angle for $-50^\circ$ is $-50^\circ+360^\circ=310^\circ$.\end{example}
+
+\subsection{Why radians are natural}
+For a circle of radius $r$ with intercepted arc length $s$, define the radian measure $\theta=s/r$. This is a ratio of lengths. A full circumference is $2\pi r$, so one revolution measures $2\pi$ radians:
+\[
+\boxed{\theta=\frac{s}{r}},\qquad 180^\circ=\pi\text{ radians}.
+\]
+\begin{example}Convert $150^\circ$ to radians: $150(\pi/180)=5\pi/6$. Convert $7\pi/4$ radians to degrees: $(7\pi/4)(180/\pi)=315^\circ$.\end{example}
+\begin{practice}Convert $225^\circ$ to radians and $-\pi/3$ radians to degrees, and sketch their terminal rays.\end{practice}
+
+\subsection{Arc length and angular speed}
+Rearrange the definition of radian measure to obtain $s=r\theta$. If rotation through $\theta$ takes time $t$, angular speed is $\omega=\theta/t$ and tangential speed is $v=r\omega$.
+\begin{example}A wheel of radius $0.4$ m turns through $3\pi/2$ radians. A point on its rim travels $s=0.4(3\pi/2)=0.6\pi$ m.\end{example}
+\begin{practice}A Ferris wheel of radius $12$ m makes one revolution every $40$ s. Find its angular speed and a passenger's tangential speed.\end{practice}
+
+\subsection{Rotation becomes coordinates}
+Take a circle of radius $1$ centered at the origin. The point at angle $\theta$, measured from the positive $x$-axis, has coordinates
+\[
+\boxed{(x,y)=(\cos\theta,\sin\theta)}.
+\]
+Cosine is the horizontal coordinate and sine is the vertical coordinate. Because the point lies on $x^2+y^2=1$, we get $\cos^2\theta+\sin^2\theta=1$.
+\begin{center}
+\begin{tikzpicture}[scale=2]
+\draw[->,gray](-1.2,0)--(1.25,0) node[right]{$x$};
+\draw[->,gray](0,-1.2)--(0,1.25) node[above]{$y$};
+\draw[courseblue,thick](0,0)circle(1);
+\draw[orange!80!black,thick](0,0)--(40:1);
+\draw[dashed](40:1)--({cos(40)},0);
+\draw[->](.3,0)arc(0:40:.3);
+\node at (.42,.15){$\theta$};
+\node[above right]at(40:1){$(\cos\theta,\sin\theta)$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Reference angles and periodicity}
+Special angles arise from right triangles:
+\[
+\begin{array}{c|cc}
+\theta&\cos\theta&\sin\theta\\\hline
+0&1&0\\
+\pi/6&\sqrt3/2&1/2\\
+\pi/4&\sqrt2/2&\sqrt2/2\\
+\pi/3&1/2&\sqrt3/2\\
+\pi/2&0&1
+\end{array}
+\]
+The reference angle supplies the absolute values in every quadrant; the quadrant gives the signs.
+\begin{example}At $5\pi/6$, the reference angle is $\pi/6$ and the point is in quadrant II, so $\cos(5\pi/6)=-\sqrt3/2$ and $\sin(5\pi/6)=1/2$.\end{example}
+After one full revolution the point returns to its previous position:
+\[
+\sin(\theta+2\pi)=\sin\theta,\qquad
+\cos(\theta+2\pi)=\cos\theta.
+\]
+This geometric periodicity will become the foundation of sinusoidal graphs.
+
+\subsection{Exercises}
+\begin{enumerate}
+\item Convert $-135^\circ$ and $300^\circ$ to radians.
+\item Convert $11\pi/6$ and $-5\pi/4$ to degrees.
+\item Find an angle in $[0,2\pi)$ coterminal with $19\pi/6$.
+\item A circle of radius $8$ cm subtends an angle of $5\pi/12$. Find the arc length.
+\item A turntable makes $33\frac13$ revolutions per minute. Find angular speed in radians per second.
+\item Explain why sine and cosine must lie between $-1$ and $1$.
+\item Find unit-circle coordinates at $2\pi/3$, $5\pi/4$, and $11\pi/6$.
+\item A Ferris wheel has radius $10$ m and center $(0,12)$. Write a rider's coordinates after turning through $\theta$ from the rightmost point.
+\end{enumerate}
+\noindent\textbf{Looking ahead.} Next week we extend sine and cosine to the remaining four trigonometric functions.
+\clearpage
