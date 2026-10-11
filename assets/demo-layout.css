@@ -1,0 +1,22 @@
+/* Shared responsive layout for interactive MATH 142 demos. */
+.demo-workspace{display:grid!important;grid-template-columns:clamp(245px,27%,315px) minmax(0,1fr)!important;align-items:start;gap:12px!important;margin:12px 0 18px}
+.demo-workspace>.panel{padding:14px!important;margin:0!important;min-width:0}
+.demo-controls{max-height:none!important;overflow:visible!important}
+.demo-controls>p:first-child{margin:0 0 12px;line-height:1.45}
+.demo-controls .grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:10px!important}
+.demo-controls label{display:block;margin:5px 0 2px}
+.demo-controls input[type=range]{display:block;width:100%;margin:5px 0 9px}
+.demo-controls button{margin:5px 2px 8px 0}
+.demo-controls .callout{padding:10px!important;margin:9px 0!important}
+.demo-controls .callout p{margin:3px 0}
+.demo-visualization{min-width:0;padding:12px!important;overflow:hidden}
+.demo-visualization canvas{display:block;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain;aspect-ratio:attr(width number)/attr(height number)}
+.demo-visualization>.muted{margin:8px 0 0;font-size:.83rem}
+.demo-review{margin-top:14px}
+.angle-unit-tools{border:1px solid #cbd8df;border-radius:10px;padding:9px;margin:10px 0;background:rgba(51,116,151,.07)}
+.angle-unit-tools strong{display:block;font-size:.82rem;margin-bottom:7px}
+.angle-unit-row{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.angle-unit-row label{margin:0;font-size:.78rem}
+.angle-unit-row input{display:block;min-width:0;width:100%;margin-top:3px;padding:6px;border:1px solid #9dabb5;border-radius:6px;background:var(--card,#fff);color:var(--ink,#222)}
+.angle-unit-tools small{font-size:.75rem;opacity:.8;display:block;margin-top:5px}
+@media(max-width:850px){.demo-workspace{grid-template-columns:minmax(0,1fr)!important}.demo-controls .grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))!important}.demo-visualization canvas{width:100%!important}}
