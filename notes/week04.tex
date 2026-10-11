@@ -19,6 +19,20 @@ $\arcsin(1/2)=\pi/6$, $\arccos(-1/2)=2\pi/3$, and $\arctan(-1)=-\pi/4$.
 \begin{example}
 $\arcsin(\sin(5\pi/6))=\pi/6$, not $5\pi/6$, because the inverse reports its principal value.
 \end{example}
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=1.25cm]
+\draw[->,gray] (-3.55,0)--(3.6,0) node[right] {$x$};
+\draw[->,gray] (0,-1.3)--(0,1.3) node[above] {$y$};
+\draw[courseblue,thick,domain=-3.14:3.14,samples=120] plot(\x,{sin(\x r)});
+\draw[coursegreen,very thick,domain=-1.57:1.57,samples=70] plot(\x,{sin(\x r)});
+\draw[dashed] (-1.57,-1.05)--(-1.57,1.05);
+\draw[dashed] (1.57,-1.05)--(1.57,1.05);
+\node[coursegreen,above] at (0,1) {\scriptsize inverse-sine branch};
+\node[below] at (-1.57,0) {\scriptsize $-\pi/2$};
+\node[below] at (1.57,0) {\scriptsize $\pi/2$};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Compositions and triangle geometry}
 The identity $\sin(\arcsin x)=x$ holds for $-1\leq x\leq1$, but $\arcsin(\sin\theta)=\theta$ only for $\theta$ in the principal range. Suppose $\theta=\arctan(3/4)$. Then a right triangle has legs $3,4$ and hypotenuse $5$, so
 \[
