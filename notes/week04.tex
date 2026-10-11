@@ -1,10 +1,13 @@
 \section{Inverse Trigonometry and Identities}
-\noindent\textbf{Central question:} How can we recover an angle from its trigonometric value, and how do we prove two expressions represent the same function?
+\noindent Inverse trigonometric functions recover principal angles from trigonometric values. Their definitions require restrictions of the original domains. Trigonometric identities, in turn, express relationships among functions of the same angle and provide methods for simplifying and evaluating expressions.
 
-\subsection{An inverse is not a reciprocal}
-The notation $\sin^{-1}x$ means the inverse function $\arcsin x$. It does not mean $1/\sin x=\csc x$. The inverse answers an angle question; the reciprocal answers a ratio question.
+\medskip
+\noindent\textbf{Learning objectives.} Determine the domains and ranges of the principal inverse trigonometric functions; evaluate and compose inverse and trigonometric functions; recover exact values from right triangles; prove identities using fundamental relations; and derive and apply angle-addition and double-angle formulas.
 
-Sine is periodic, so an inverse function requires choosing an interval on which sine is one-to-one. We use $[-\pi/2,\pi/2]$. In exactly the same way, cosine uses $[0,\pi]$ and tangent uses $(-\pi/2,\pi/2)$.
+\subsection{Inverse functions and principal branches}
+The notation $\sin^{-1}x$ commonly denotes $\arcsin x$, the inverse sine function. It must not be confused with $\csc x=1/\sin x$. The inverse returns an angle from a prescribed trigonometric value, whereas the reciprocal returns a multiplicative inverse of that value.
+
+A periodic function is not one-to-one on its full domain and therefore does not admit a global inverse function. To define the principal inverse sine, sine is restricted to $[-\pi/2,\pi/2]$, where it is strictly increasing and maps onto $[-1,1]$. Similarly, cosine is restricted to $[0,\pi]$ and tangent to $(-\pi/2,\pi/2)$.
 \[
 \begin{array}{c|c|c}
 f(x)&\text{Domain}&\text{Range}\\\hline
@@ -33,13 +36,88 @@ $\arcsin(\sin(5\pi/6))=\pi/6$, not $5\pi/6$, because the inverse reports its pri
 \end{tikzpicture}
 \end{center}
 
+
+\subsection{Reflection across the diagonal}
+The graphs of an invertible function and its inverse are reflections
+across the line $y=x$: if $(a,b)$ lies on the graph of $f$, then
+$(b,a)$ lies on the graph of $f^{-1}$. For inverse sine, only the
+restricted sine branch is reflected, rather than the entire periodic
+sine graph.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05]
+\draw[->,gray] (-2,0)--(2.1,0) node[right]{$x$};
+\draw[->,gray] (0,-2)--(0,2.1) node[above]{$y$};
+\draw[dashed,coursegold] (-1.85,-1.85)--(1.85,1.85)
+node[above right] {\scriptsize $y=x$};
+\draw[courseblue,very thick,domain=-1.57:1.57,samples=110]
+plot(\x,{sin(\x r)});
+\draw[coursegreen,very thick,domain=-1:1,samples=110]
+plot(\x,{rad(asin(\x))});
+\fill[courseblue] ({3.14159265/6},.5) circle (.045);
+\fill[coursegreen] (.5,{3.14159265/6}) circle (.045);
+\node[courseblue] at (-1.35,-.75) {\scriptsize restricted sine};
+\node[coursegreen] at (1.35,1.75) {\scriptsize arcsine};
+\end{tikzpicture}
+\end{center}
+
+The reflected domains and ranges exchange roles. In particular,
+$\arcsin:[-1,1]\to[-\pi/2,\pi/2]$ whereas the restricted sine
+maps $[-\pi/2,\pi/2]$ onto $[-1,1]$.
+
+\begin{practice}
+List three points on $y=\cos x$ for $0\leq x\leq\pi$, and
+interchange their coordinates to obtain points on $y=\arccos x$.
+\end{practice}
+
 \subsection{Compositions and triangle geometry}
 The identity $\sin(\arcsin x)=x$ holds for $-1\leq x\leq1$, but $\arcsin(\sin\theta)=\theta$ only for $\theta$ in the principal range. Suppose $\theta=\arctan(3/4)$. Then a right triangle has legs $3,4$ and hypotenuse $5$, so
 \[
 \sin(\arctan(3/4))=\frac35.
 \]
 
-\subsection{An identity is true throughout its domain}
+
+For the inverse compositions, the domain restrictions determine which
+cancellations are valid:
+\[
+\arcsin(\sin x)=x\quad\text{for }-\pi/2\leq x\leq\pi/2,
+\qquad
+\sin(\arcsin u)=u\quad\text{for }-1\leq u\leq1.
+\]
+The first identity does not hold for arbitrary real $x$, since the
+arcsine output is restricted to its principal range. Analogous
+statements hold for cosine and tangent on their chosen branches.
+
+\begin{center}
+\begin{tikzpicture}[scale=.95]
+\draw[thick] (0,0)--(4,0)--(4,3)--cycle;
+\draw (3.66,0) rectangle (4,.34);
+\node[below] at (2,0) {$4$};
+\node[right] at (4,1.5) {$3$};
+\node[above left] at (2,1.5) {$5$};
+\node at (.75,.3) {$\theta$};
+\node[align=left] at (7,1.6) {$\theta=\arctan(3/4)$};
+\node[align=left] at (7,.65) {$\sin\theta=3/5$};
+\end{tikzpicture}
+\end{center}
+
+\begin{example}
+To evaluate $\cos(\arcsin(-5/13))$, let
+$\theta=\arcsin(-5/13)$. Since
+$\theta\in[-\pi/2,\pi/2]$, its cosine is nonnegative. Thus
+\[
+\cos\theta=\sqrt{1-\sin^2\theta}
+=\sqrt{1-\frac{25}{169}}=\frac{12}{13}.
+\]
+The principal range determines the sign of the square root.
+\end{example}
+
+\begin{practice}
+Evaluate $\sin(\arccos(-3/5))$ exactly. Explain the sign
+of the result using the principal range of arccosine.
+\end{practice}
+
+\subsection{Identities and their domains}
 From the unit-circle equation we obtain
 \[
 \boxed{\sin^2x+\cos^2x=1}.
@@ -53,6 +131,29 @@ For $\sin x\ne0$,
 \]
 This is an algebraic proof on the shared domain, not a numerical check at a few inputs.
 \end{example}
+
+
+\subsection{Symmetry identities}
+The unit circle is symmetric about both coordinate axes. Reflection
+across the horizontal axis changes the sign of the vertical coordinate
+without changing the horizontal coordinate. Consequently,
+\[
+\cos(-x)=\cos x,\qquad \sin(-x)=-\sin x.
+\]
+The cosine function is \emph{even}, while sine is \emph{odd}.
+Taking quotients gives $\tan(-x)=-\tan x$ wherever tangent is defined.
+
+A half-turn changes both coordinate signs:
+\[
+\cos(x+\pi)=-\cos x,\qquad
+\sin(x+\pi)=-\sin x.
+\]
+These relations explain the $\pi$-periodicity of tangent.
+
+\begin{practice}
+Use the unit-circle symmetries to evaluate
+$\sin(-7\pi/6)$ and $\cos(-7\pi/6)$ without a calculator.
+\end{practice}
 
 \subsection{Angle addition and double angles}
 Two successive plane rotations produce the sum identities
@@ -70,8 +171,95 @@ Set $\beta=-\gamma$ for difference identities and $\beta=\alpha$ for double-angl
 \begin{example}
 $\sin(75^\circ)=\sin(45^\circ+30^\circ)=(\sqrt6+\sqrt2)/4$.
 \end{example}
+
+\subsection{A geometric derivation of the addition formulas}
+Rotation through an angle $\alpha$ sends a point $(x,y)$ to
+\[
+\begin{pmatrix}
+\cos\alpha&-\sin\alpha\\
+\sin\alpha&\cos\alpha
+\end{pmatrix}
+\begin{pmatrix}x\\y\end{pmatrix}.
+\]
+In particular, apply this rotation to the unit-circle point
+$(\cos\beta,\sin\beta)$. The result must be the point
+$(\cos(\alpha+\beta),\sin(\alpha+\beta))$, since successive
+rotations add their angles. Matrix multiplication gives
+\[
+\begin{aligned}
+\cos(\alpha+\beta)
+ &=\cos\alpha\cos\beta-\sin\alpha\sin\beta,\\
+\sin(\alpha+\beta)
+ &=\sin\alpha\cos\beta+\cos\alpha\sin\beta.
+\end{aligned}
+\]
+Thus the sum formulas express the geometry of composing rotations,
+rather than independent algebraic rules.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.4]
+\draw[->,gray] (-.3,0)--(1.7,0) node[right]{$x$};
+\draw[->,gray] (0,-.3)--(0,1.6) node[above]{$y$};
+\draw[courseblue,thick] (0,0) circle (1.05);
+\draw[very thick,courseblue,-{Latex}] (0,0)--(28:1.05);
+\draw[very thick,coursegreen,-{Latex}] (0,0)--(75:1.05);
+\draw[coursegold,->] (.38,0) arc(0:28:.38);
+\draw[coursegold,->] (28:.64) arc(28:75:.64);
+\node at (.52,.12) {\scriptsize $\alpha$};
+\node at (.44,.62) {\scriptsize $\beta$};
+\node[right] at (28:1.05) {\scriptsize after $\alpha$};
+\node[above] at (75:1.05) {\scriptsize after $\alpha+\beta$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Double-angle and half-angle consequences}
+Setting $\alpha=\beta=x$ gives
+\[
+\sin 2x=2\sin x\cos x,\qquad
+\cos 2x=\cos^2x-\sin^2x
+=1-2\sin^2x=2\cos^2x-1.
+\]
+Rearranging the cosine identity produces the power-reduction
+relations
+\[
+\sin^2x=\frac{1-\cos2x}{2},
+\qquad
+\cos^2x=\frac{1+\cos2x}{2}.
+\]
+These expressions are particularly useful when simplifying
+squared trigonometric functions.
+
+\begin{example}
+The exact value of $\cos15^\circ$ follows by using
+$15^\circ=45^\circ-30^\circ$:
+\[
+\cos15^\circ
+=\cos45^\circ\cos30^\circ+
+ \sin45^\circ\sin30^\circ
+=\frac{\sqrt6+\sqrt2}{4}.
+\]
+\end{example}
+
+\begin{practice}
+Use the addition identities to find $\sin105^\circ$ exactly.
+Then verify the sign from the quadrant containing $105^\circ$.
+\end{practice}
+
 \subsection{Applications: measured angles}
 An observation of a tower from $40$ m away gives $\tan\theta=3/4$. The elevation angle is $\arctan(3/4)\approx36.9^\circ$, while the height is exactly $40(3/4)=30$ m. Inverse functions recover angles; ratios can often recover distances directly.
+
+\subsection{Recovering angles in measurement problems}
+The inverse function identifies an angle from a ratio, provided the
+physical geometry determines an appropriate branch. If a right
+triangle has adjacent side $40$ and opposite side $30$, its acute
+angle satisfies
+\[
+\theta=\arctan(30/40)=\arctan(3/4)\approx36.87^\circ.
+\]
+The same geometry gives the opposite side directly from
+$h=40\tan\theta$, when the angle is already known.
+In a measurement context, the acute-angle restriction is supplied
+by the geometry of the triangle.
 
 \subsection{Exercises}
 \begin{enumerate}
@@ -83,5 +271,13 @@ An observation of a tower from $40$ m away gives $\tan\theta=3/4$. The elevation
 \item Prove $(\sin x+\cos x)^2=1+\sin(2x)$.
 \item Calculate $\cos(75^\circ)$ exactly by angle addition.
 \item Express $\cos(2x)$ using $\sin x$ alone.
+\item State the domain and range of $\arccos x$, and explain why the restriction $[0,\pi]$ is appropriate.
+\item Evaluate $\arccos(\cos(5\pi/3))$ exactly.
+\item Find $\tan(\arccos(4/5))$ exactly using a right triangle.
+\item Prove $\sin(-x)=-\sin x$ geometrically and use it to compute $\sin(-\pi/3)$.
+\item Verify the cosine difference identity by replacing $\beta$ with $-\beta$ in the cosine sum identity.
+\item Prove $\cos^2x=(1+\cos2x)/2$ on all of $\mathbb R$.
+\item Find $\sin15^\circ$ exactly and state its sign.
+\item Explain why $\arctan(\tan(3\pi/4))$ is not $3\pi/4$.
 \end{enumerate}
 \clearpage
