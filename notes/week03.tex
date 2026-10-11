@@ -19,6 +19,19 @@ The \emph{period} is the smallest positive input change that repeats the full fu
 \end{tikzpicture}
 \end{center}
 
+\begin{center}
+\begin{tikzpicture}[x=.92cm,y=.54cm]
+\draw[->,gray] (-.3,0)--(7.1,0) node[right] {$x$};
+\draw[->,gray] (0,-1.2)--(0,4.5) node[above] {$y$};
+\draw[dashed,coursegold] (0,1.5)--(6.5,1.5) node[right] {\scriptsize midline $D$};
+\draw[very thick,courseblue,domain=0:6.28,samples=120] plot(\x,{1.5+1.25*sin(\x r)});
+\draw[<->,thick,coursegreen] (.65,1.5)--(.65,2.75);
+\node[left,coursegreen] at (.65,2.15) {$|A|$};
+\draw[<->,courseblue] (0,-.55)--(6.28,-.55);
+\node[below] at (3.14,-.55) {period $2\pi$};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Amplitude and vertical translation}
 Consider $y=A\sin x+D$. Its midline is $y=D$, its amplitude is $|A|$, and its range is $[D-|A|,D+|A|]$. A negative $A$ reflects the wave across the midline.
 \begin{example}The function $y=3\sin x-2$ has amplitude $3$, midline $y=-2$, maximum $1$, and minimum $-5$.\end{example}
