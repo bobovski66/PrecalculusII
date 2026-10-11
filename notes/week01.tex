@@ -1,18 +1,14 @@
 \section{Angles, Rotation, and the Unit Circle}
-\noindent\textbf{This week's central question:} How can we turn rotation into coordinates? The answer begins with the natural geometry of a circle.
+\noindent Angles provide a description of rotation. On the unit circle, this description determines a point whose coordinates define the sine and cosine functions.
 
 
 \medskip
-The first half of precalculus introduced functions as ways of turning inputs into
-outputs. In this course, an angle is the input, and the outputs will be coordinates,
-distances, and measurements of motion. The geometry is worth understanding before
-trying to memorize a table of values. A circle gives us a concrete place to see
-what every formula is describing.
+A rotation can be specified by its angle, independently of the size of the circle on which it acts. The relation between angle and position leads to trigonometric coordinates and to models of periodic motion.
 
-\noindent\textbf{Learning goals.} By the end of the chapter, you should be able to
+\noindent\textbf{Learning objectives.} The principal objectives are to
 describe signed rotation, convert between degrees and radians, calculate arc length
-and angular speed, locate unit-circle points exactly, and explain how a turning
-point produces two repeating coordinate functions.
+and angular speed, determine exact unit-circle coordinates, and relate uniform
+circular motion to periodic coordinate functions.
 
 \subsection{Angles measure turning}
 An angle records a rotation from one ray to another. Counterclockwise rotations are positive, and clockwise rotations are negative. A rotation can exceed one full revolution. For example, $450^\circ$ and $90^\circ$ have the same terminal ray.
@@ -22,10 +18,10 @@ An angle records a rotation from one ray to another. Counterclockwise rotations 
 
 
 \medskip
-To make the meaning of a signed angle visible, imagine an arrow anchored at the
-origin. Its initial position points right. A positive angle turns the arrow
-counterclockwise; a negative angle turns it clockwise. The angle records the
-\emph{turning}, not simply the final direction. Thus $30^\circ$,
+In standard position, the initial ray coincides with the positive horizontal axis.
+Positive angles correspond to counterclockwise rotation and negative angles to
+clockwise rotation. The signed angle specifies the accumulated rotation, whereas
+the terminal ray specifies only the final direction. Thus $30^\circ$,
 $390^\circ$, and $-330^\circ$ point along the same terminal ray, although
 their rotations are different.
 
@@ -46,15 +42,13 @@ their rotations are different.
 \noindent\textbf{Worked example: multiple turns.}
 Find an angle between $0^\circ$ and $360^\circ$ coterminal with
 $-770^\circ$. Adding $360^\circ$ twice gives $-50^\circ$; adding it
-once more gives $310^\circ$. This is the terminal direction even though
-the original rotation made more than two clockwise turns.
+once more gives $310^\circ$. The resulting angle lies in $[0^\circ,360^\circ)$ and has the same terminal ray.
 
 \begin{practice}Sketch $-120^\circ$, $240^\circ$, and $600^\circ$.
-Which terminal rays coincide? How can you tell without drawing all of
-the turns?\end{practice}
+Which terminal rays coincide? Justify the result using coterminal angles.\end{practice}
 
-\subsection{Why radians are natural}
-For a circle of radius $r$ with intercepted arc length $s$, define the radian measure $\theta=s/r$. This is a ratio of lengths. A full circumference is $2\pi r$, so one revolution measures $2\pi$ radians:
+\subsection{Radian measure}
+For a circle of radius $r$ and an arc of length $s$ subtended by a central angle, the magnitude of the angle in radians is $s/r$. For an oriented arc, the signed arc length determines the signed angle. A full circumference is $2\pi r$, so one revolution measures $2\pi$ radians:
 \[
 \boxed{\theta=\frac{s}{r}},\qquad 180^\circ=\pi\text{ radians}.
 \]
@@ -70,17 +64,13 @@ For a circle of radius $r$ with intercepted arc length $s$, define the radian me
 \draw[->,coursegold] (.5,0) arc[start angle=0,end angle=60,radius=.5];
 \node at (.75,.34) {$\theta$};
 \node[coursegreen] at (30:2.15) {$s=r\theta$};
-\node[below] at (0,-2.1) {Angle measured by the arc it intercepts};
+\node[below] at (0,-2.1) {Arc length and central angle};
 \end{tikzpicture}
 \end{center}
 
 
 \medskip
-The radian definition has an important consequence: the radius cancels when
-we compare the corresponding arc length with the radius. A $60^\circ$ turn
-subtends a longer arc on a large circle than on a small one, but the
-ratio $s/r$ is the same. That is why the angle itself is independent of
-the circle's size.
+For a fixed central angle, the intercepted arc length is proportional to the radius. Consequently, the ratio $s/r$ does not depend on the size of the circle.
 
 \begin{center}
 \begin{tabular}{c|c|c}
@@ -95,9 +85,7 @@ $360^\circ$ & $2\pi$ & $1$
 \end{tabular}
 \end{center}
 
-The table is not a second set of unrelated facts to memorize. Every entry
-comes from the single equality $180^\circ=\pi$ radians. For instance,
-$60^\circ$ is one third of $180^\circ$, so it is $\pi/3$ radians.
+The conversion $180^\circ=\pi$ radians determines every entry in the table. In particular, $60^\circ=\pi/3$ radians.
 
 \begin{example}
 Convert a negative angle: $-210^\circ\cdot\pi/180^\circ=-7\pi/6$.
@@ -106,7 +94,7 @@ to $-7\pi/6$ gives $5\pi/6$.
 \end{example}
 
 \subsection{Arc length and angular speed}
-Rearrange the definition of radian measure to obtain $s=r\theta$. If rotation through $\theta$ takes time $t$, angular speed is $\omega=\theta/t$ and tangential speed is $v=r\omega$.
+For signed radian measure $\theta$, the directed arc length is $s=r\theta$; the corresponding distance traveled is $r|\theta|$. Over a time interval of length $t$, the average angular velocity is $\omega=\theta/t$ and the average tangential speed is $v=r|\omega|$. For uniform rotation, these quantities are constant.
 \begin{example}A wheel of radius $0.4$ m turns through $3\pi/2$ radians. A point on its rim travels $s=0.4(3\pi/2)=0.6\pi$ m.\end{example}
 \begin{practice}A Ferris wheel of radius $12$ m makes one revolution every $40$ s. Find its angular speed and a passenger's tangential speed.\end{practice}
 
@@ -115,24 +103,19 @@ Rearrange the definition of radian measure to obtain $s=r\theta$. If rotation th
 \noindent\textbf{Worked example: a carousel.}
 A carousel makes one revolution every $24$ seconds.
 A child sits $3$ meters from the axis, while another sits $5$ meters
-from the axis. Both complete the same angular displacement in the
-same amount of time, so their angular speed is
+from the axis. Both riders have the same angular speed,
 \[
 \omega=\frac{2\pi}{24}=\frac{\pi}{12}\ \text{rad/s}.
 \]
-But their speeds along their respective circles differ:
+Their tangential speeds differ:
 \[
 v_1=3\frac{\pi}{12}=\frac{\pi}{4}\ \text{m/s},
 \qquad
 v_2=5\frac{\pi}{12}=\frac{5\pi}{12}\ \text{m/s}.
 \]
-The outer rider travels farther in the same time. This is the distinction
-between \emph{angular speed} and \emph{tangential speed}.
+Tangential speed depends on the distance from the axis, whereas angular speed does not.
 
-\noindent\textbf{A caution about units.} The formula $s=r\theta$
-requires $\theta$ in radians. Substituting $90$ for a $90^\circ$ angle
-would calculate ninety radii of arc instead of a quarter-circumference.
-First convert $90^\circ$ to $\pi/2$.
+The arc-length formula requires radian measure. For example, a quarter-turn is $\pi/2$ radians, so its arc length is $\pi r/2$.
 
 \begin{practice}
 A wheel of radius $0.6$ m turns through $135^\circ$ in $3$ seconds.
@@ -140,7 +123,7 @@ Find the arc length, average angular speed, and average tangential speed.
 Explain the units of all three answers.
 \end{practice}
 
-\subsection{Rotation becomes coordinates}
+\subsection{Coordinates on the unit circle}
 Take a circle of radius $1$ centered at the origin. The point at angle $\theta$, measured from the positive $x$-axis, has coordinates
 \[
 \boxed{(x,y)=(\cos\theta,\sin\theta)}.
@@ -161,11 +144,9 @@ Cosine is the horizontal coordinate and sine is the vertical coordinate. Because
 
 
 \medskip
-We can now make the coordinate interpretation precise. Begin with the
-point $(1,0)$ and rotate it through $\theta$. The new point is
-$(\cos\theta,\sin\theta)$. The horizontal coordinate can be negative,
-and so can the vertical coordinate: the point is not confined to a
-triangle in the first quadrant.
+Rotating the point $(1,0)$ through $\theta$ produces
+$(\cos\theta,\sin\theta)$. Both coordinates are signed quantities;
+their signs depend on the quadrant containing the terminal ray.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.2]
@@ -191,9 +172,7 @@ The two coordinates have equal absolute value, but both are negative:
 (\cos(5\pi/4),\sin(5\pi/4))
 =\left(-\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right).
 \]
-This example illustrates why taking the positive side lengths of a
-reference triangle is only the first step. The signs come from the
-location in the plane.
+The reference triangle determines the coordinate magnitudes; the quadrant determines their signs.
 
 \begin{practice}
 Without a calculator, describe the point on the unit circle at
@@ -224,8 +203,7 @@ This geometric periodicity will become the foundation of sinusoidal graphs.
 
 
 \subsection{Where exact coordinates come from}
-Instead of treating the exact-value table as a memorization task,
-we can derive its entries from two familiar triangles.
+The standard exact values follow from the geometry of two special right triangles.
 
 An isosceles right triangle with legs $1$ has hypotenuse $\sqrt2$.
 Dividing both legs by $\sqrt2$ yields the point
@@ -240,10 +218,10 @@ $(1/2,\sqrt3/2)$ for $60^\circ$.
 \begin{scope}
 \draw[very thick,courseblue] (0,0)--(2,0)--(2,2)--cycle;
 \draw (1.7,0) rectangle (2,.3);
-\node[below] at (1,0) {$1$};
-\node[right] at (2,1) {$1$};
-\node[above left] at (1,1) {$\sqrt2$};
-\node at (.5,.22) {\scriptsize $45^\circ$};
+\node[below] at (1,0) {$2$};
+\node[right] at (2,1) {$2$};
+\node[above left] at (1,1) {$2\sqrt2$};
+\node at (.42,.18) {\scriptsize $45^\circ$};
 \end{scope}
 \begin{scope}[shift={(5,0)}]
 \draw[very thick,coursegreen] (0,0)--({sqrt(3)},0)--({sqrt(3)},1)--cycle;
@@ -251,24 +229,20 @@ $(1/2,\sqrt3/2)$ for $60^\circ$.
 \node[below] at ({sqrt(3)/2},0) {$\sqrt3$};
 \node[right] at ({sqrt(3)},.5) {$1$};
 \node[above left] at ({sqrt(3)/2},.5) {$2$};
-\node at (.8,.2) {\scriptsize $30^\circ$};
+\node at (.42,.16) {\scriptsize $30^\circ$};
 \end{scope}
 \end{tikzpicture}
 \end{center}
 
-The picture is a reminder that exact values are ratios of lengths:
-the unit circle merely normalizes the hypotenuse to $1$.
+On the unit circle, the hypotenuse is normalized to length $1$, and the remaining side lengths give the absolute coordinate values.
 
 \subsection{From the circle to a wave}
-There is one more idea that connects this chapter to the rest of the
-course. Suppose the angle increases steadily in time:
+For uniform rotation with angular velocity $\omega$ and initial angle zero, let
 \[
 \theta(t)=\omega t,\qquad
 x(t)=\cos(\omega t),\quad y(t)=\sin(\omega t).
 \]
-The moving point goes around a circle, but the horizontal and vertical
-coordinates each rise and fall repeatedly. Plotting either coordinate
-against time produces a wave.
+The point traces a circle in the coordinate plane; each coordinate, regarded as a function of time, oscillates periodically.
 
 \begin{center}
 \begin{tikzpicture}[x=.77cm,y=.9cm]
@@ -287,11 +261,9 @@ against time produces a wave.
 \node[courseblue,right] at (6.3,1.05) {\scriptsize $\cos t$};
 \end{tikzpicture}
 \end{center}
-This is a picture of a \emph{coordinate varying over time}, not the
-circular path itself. The distinction will matter when we study graphs
-of periodic functions in Module 3.
+These graphs represent coordinate values as functions of time, rather than the circular trajectory in the $xy$-plane.
 
-\subsection{A complete mathematical model}
+\subsection{Example: a Ferris-wheel model}
 A Ferris wheel has radius $8$ meters, its center is $10$ meters above
 ground, and a passenger starts at the rightmost point. Suppose it
 rotates counterclockwise once every $40$ seconds. Its angular speed is
@@ -305,14 +277,9 @@ y(t)=10+8\sin\left(\frac{\pi t}{20}\right).
 \]
 At $t=0$ the passenger is at $(8,10)$. At $t=10$ seconds the
 wheel has turned through $\pi/2$, so the passenger is at $(0,18)$.
-At $t=20$ seconds the passenger is at $(-8,10)$. The model answers
-position questions without tracking the entire path by hand.
+At $t=20$ seconds the passenger is at $(-8,10)$. The coordinate equations determine the passenger's position at any time.
 
-\noindent\textbf{Interpreting the constants.} The radius appears as
-the amplitude of each coordinate function. The center height
-appears as a vertical translation. The revolution time appears in
-the angular speed. Each physical fact has an identifiable place
-in the equations.
+The radius determines the amplitude of both coordinate functions. The center height shifts the vertical coordinate, and the period determines the angular velocity.
 
 \begin{practice}
 A different wheel has radius $6$ meters, center height $7$ meters,
@@ -338,5 +305,5 @@ $7.5$ seconds.
 \item Describe the coordinates at $3\pi/2$ and explain why a terminal point on an axis does not belong to any open quadrant.
 \item For the Ferris-wheel model in the chapter, explain which physical quantity would change if the coefficient $8$ in both coordinate equations became $12$.
 \end{enumerate}
-\noindent\textbf{Looking ahead.} Next week we extend sine and cosine to the remaining four trigonometric functions.
+\noindent The unit-circle coordinates also determine tangent, cotangent, secant, and cosecant, which are developed in the following chapter.
 \clearpage
