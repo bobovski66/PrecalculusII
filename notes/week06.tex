@@ -11,6 +11,19 @@ Vectors with the same components represent the same displacement even when drawn
 A walker moves $3$ km east and $4$ km north. The resulting vector is $\langle3,4\rangle$ km and its magnitude is $5$ km. The route traveled is $7$ km, while the displacement is only $5$ km.
 \end{example}
 
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\draw[step=1cm,gray!20] (-.5,-.5) grid (6,6);
+\draw[->,gray] (-.6,0)--(6.35,0) node[right] {$x$};
+\draw[->,gray] (0,-.6)--(0,6.35) node[above] {$y$};
+\draw[very thick,courseblue,-{Latex}] (0,0)--(3,2) node[below] {$\mathbf u$};
+\draw[very thick,coursegreen,-{Latex}] (0,0)--(2,3) node[left] {$\mathbf v$};
+\draw[dashed,courseblue] (2,3)--(5,5);
+\draw[dashed,coursegreen] (3,2)--(5,5);
+\draw[very thick,coursegold,-{Latex}] (0,0)--(5,5) node[above right] {$\mathbf u+\mathbf v$};
+\end{tikzpicture}
+\end{center}
+
 \subsection{Vector arithmetic}
 Addition combines displacements:
 \[
