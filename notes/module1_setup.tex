@@ -1,0 +1,10 @@
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage{tabularx,booktabs,needspace,caption,tcolorbox}
+\newcolumntype{Z}{>{\raggedright\arraybackslash}X}
+\definecolor{moneblue}{HTML}{28678B}
+\definecolor{monegreen}{HTML}{26865D}
+\definecolor{monegold}{HTML}{B97424}
+\newtcolorbox{moneexample}[1]{colback=moneblue!5,colframe=moneblue!65,title=#1,colbacktitle=moneblue!12,coltitle=black,fonttitle=\bfseries,boxrule=.5pt,arc=2pt,left=10pt,right=10pt,top=8pt,bottom=8pt,before skip=14pt,after skip=14pt}
+\newtcolorbox{moneaside}[1]{colback=monegold!7,colframe=monegold!65,title=#1,colbacktitle=monegold!14,coltitle=black,fonttitle=\bfseries,boxrule=.5pt,arc=2pt,left=10pt,right=10pt,top=8pt,bottom=8pt,before skip=14pt,after skip=14pt}
+\newtcolorbox{monecheck}[1]{colback=monegreen!5,colframe=monegreen!65,title=#1,colbacktitle=monegreen!12,coltitle=black,fonttitle=\bfseries,boxrule=.5pt,arc=2pt,left=10pt,right=10pt,top=8pt,bottom=8pt,before skip=14pt,after skip=14pt}

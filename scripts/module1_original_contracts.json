@@ -1,0 +1,124 @@
+{
+  "base": "90db525435778ad591d46364b337898824465c90",
+  "labKey": "m142lab1",
+  "quizKey": "math142quiz1",
+  "practiceKey": "m142_unitcircle_practice_score",
+  "lab": [
+    [
+      "1. Observe a turn",
+      "Open the unit-circle demo. Set the angle to 30°, 90°, 180°, and 270°. Record the coordinates at each angle and describe how each pair corresponds to the point’s position."
+    ],
+    [
+      "2. Radians from arc length",
+      "A circle has radius 8 cm and a marked arc 10 cm long. Calculate its angle in radians, then convert that angle to degrees (nearest tenth). Show the steps and units."
+    ],
+    [
+      "3. Multiple turns",
+      "Set the explorer to 45°, then 405° and −315°. What do you notice about their coordinates? Explain using full revolutions."
+    ],
+    [
+      "4. Does radius change sine?",
+      "Compare 60° with radii 1 and 3 in the explorer. What changes, and what remains fixed? Explain why sine and cosine can be defined using the unit circle."
+    ],
+    [
+      "5. From circle to wave",
+      "Open Circle to Wave. Identify the vertical coordinate at angles 0°, 90°, 180°, 270°, and 360°. How do these values determine the sine graph?"
+    ],
+    [
+      "6. Modeling a wheel",
+      "A Ferris wheel has radius 15 m, and a passenger starts at the rightmost point of the wheel. After a counterclockwise rotation of 2π/3 radians, what is the passenger’s vertical displacement relative to the center? Give an exact answer and an approximate value."
+    ],
+    [
+      "7. Reflect",
+      "Explain to a student who missed class why 180° equals π radians. Describe the geometric relationship between angle, radius, and arc length."
+    ]
+  ],
+  "quiz": [
+    [
+      "Convert 150° to radians.",
+      "5pi/6",
+      "Use 180° = π radians."
+    ],
+    [
+      "Convert −135° to radians.",
+      "-3pi/4",
+      "Keep track of the negative sign."
+    ],
+    [
+      "Convert 7π/6 radians to degrees.",
+      "210",
+      "Multiply the fraction by 180."
+    ],
+    [
+      "Find a positive coterminal angle with −50° between 0° and 360°.",
+      "310",
+      "Add one full revolution."
+    ],
+    [
+      "A radius-8 cm circle subtends an angle of π/4 radians. Find the arc length in cm.",
+      "2pi",
+      "Use s = rθ with θ in radians."
+    ],
+    [
+      "At θ = π/3, what is cos θ?",
+      "1/2",
+      "Think of a 30–60–90 triangle."
+    ],
+    [
+      "At θ = 5π/6, what is sin θ?",
+      "1/2",
+      "The reference angle is π/6; check the quadrant sign."
+    ],
+    [
+      "At θ = 5π/4, what is cos θ?",
+      "-sqrt(2)/2",
+      "This is a 45° reference angle in quadrant III."
+    ],
+    [
+      "A wheel makes one rotation every 4 seconds. Find its angular speed in radians per second.",
+      "pi/2",
+      "One full rotation is 2π radians."
+    ],
+    [
+      "How many radians are in 2.5 counterclockwise revolutions?",
+      "5pi",
+      "Multiply the revolutions by 2π."
+    ]
+  ],
+  "applications": [
+    "Determine angular speed in radians per second.",
+    "Find the rider’s exact height after 8 seconds and after 12 seconds.",
+    "Explain why the height must remain between 2 m and 26 m.",
+    "At what time during the first revolution is the rider first at maximum height?",
+    "Convert the angular speed to radians per second.",
+    "How many radians does the platform turn through in 15 seconds?",
+    "How far does the sensor travel along its circular path in that time?",
+    "Explain why the sensor’s net displacement after 15 seconds may differ from its total distance traveled.",
+    "Use the Circle to Wave demo to identify the heights at quarter turns.",
+    "Describe the graph produced during two full revolutions.",
+    "Explain how increasing rotation speed changes the time between consecutive peaks but does not change the disk radius."
+  ],
+  "tryIts": [
+    "Sketch $-120^\\circ$, $240^\\circ$, and $600^\\circ$.\nWhich terminal rays coincide? Justify the result using coterminal angles.",
+    "Convert $225^\\circ$ to radians and $-\\pi/3$ radians to degrees, and sketch their terminal rays.",
+    "A Ferris wheel of radius $12$ m makes one revolution every $40$ s. Find its angular speed and a passenger's tangential speed.",
+    "\nA wheel of radius $0.6$ m turns through $135^\\circ$ in $3$ seconds.\nFind the arc length, average angular speed, and average tangential speed.\nExplain the units of all three answers.\n",
+    "\nWithout a calculator, describe the point on the unit circle at\n$150^\\circ$ and at $330^\\circ$. Which coordinates have the same\nabsolute value? Which signs differ?\n",
+    "\nA different wheel has radius $6$ meters, center height $7$ meters,\nand period $30$ seconds. Starting from the rightmost point,\nwrite its coordinate model and find the passenger's height after\n$7.5$ seconds.\n"
+  ],
+  "exercises": [
+    "Convert $-135^\\circ$ and $300^\\circ$ to radians.\n",
+    "Convert $11\\pi/6$ and $-5\\pi/4$ to degrees.\n",
+    "Find an angle in $[0,2\\pi)$ coterminal with $19\\pi/6$.\n",
+    "A circle of radius $8$ cm subtends an angle of $5\\pi/12$. Find the arc length.\n",
+    "A turntable makes $33\\frac13$ revolutions per minute. Find angular speed in radians per second.\n",
+    "Explain why sine and cosine must lie between $-1$ and $1$.\n",
+    "Find unit-circle coordinates at $2\\pi/3$, $5\\pi/4$, and $11\\pi/6$.\n",
+    "A Ferris wheel has radius $10$ m and center $(0,12)$. Write a rider's coordinates after turning through $\\theta$ from the rightmost point.\n\n",
+    "A point begins at $(1,0)$ and turns through $-7\\pi/6$ radians. Determine a coterminal angle in $[0,2\\pi)$ and give the exact point.\n",
+    "A wheel completes $9$ revolutions in $2$ minutes. Determine its angular speed in both radians per second and degrees per second.\n",
+    "A rider on a circle of radius $4$ m moves through $75^\\circ$. Find the arc length exactly in terms of $\\pi$ and approximately to two decimals.\n",
+    "Describe the coordinates at $3\\pi/2$ and explain why a terminal point on an axis does not belong to any open quadrant.\n",
+    "For the Ferris-wheel model in the chapter, explain which physical quantity would change if the coefficient $8$ in both coordinate equations became $12$.\n"
+  ]
+}
