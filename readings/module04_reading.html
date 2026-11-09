@@ -1,0 +1,215 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inverse Trigonometry and Identities | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 4 · Dr. Lee</p><h1>Inverse Trigonometry and Identities</h1><nav class="module-nav" aria-label="Module 4 resources"><a href="../readings/module04_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week04.pdf">Reading PDF</a><a href="../demos/inverse_trig.html">Explorer</a><a href="../labs/week04_lab.html">Guided lab</a><a href="../applications/week04_applications.html">Applications</a><a href="../quizzes/week04_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#an-inverse-returns-an-angle">An inverse returns an angle</a><a href="#restrict-a-repeating-function-before-reversing-it">Restrict a repeating function before reversing it</a><a href="#reflect-the-restricted-graph-to-see-its-inverse">Reflect the restricted graph to see its inverse</a><a href="#check-the-order-in-a-composition">Check the order in a composition</a><a href="#use-a-triangle-to-evaluate-mixed-compositions">Use a triangle to evaluate mixed compositions</a><a href="#derive-identities-from-a-familiar-equation">Derive identities from a familiar equation</a><a href="#read-symmetry-identities-from-the-circle">Read symmetry identities from the circle</a><a href="#combine-two-rotations-to-derive-addition-formulas">Combine two rotations to derive addition formulas</a><a href="#double-angles-squared-functions-and-half-angles">Double angles, squared functions, and half angles</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>A ladder reaches 12 feet up a wall with its foot 5 feet from the wall. The ratio <span class="math inline">\(12/5\)</span> tells us the tangent of the ladder’s ground angle. How do we recover the angle itself?</p>
+<p>An inverse trig function answers that question by choosing an angle with the requested ratio. Because trig functions repeat values, we must understand which angle it chooses. We will then use the geometry of coordinates and rotations to explain identities and calculate new exact values.</p>
+<h2 id="an-inverse-returns-an-angle">An inverse returns an angle</h2>
+<p>For the ladder, <span class="math inline">\(\tan\theta=12/5\)</span>, so <span class="math display">\[
+\theta=\arctan(12/5)\approx67.4^\circ.
+\]</span> The acute angle supplied by the physical triangle fits the calculator’s answer.</p>
+<p>The notation <span class="math inline">\(\tan^{-1}\)</span> on a calculator means inverse tangent, also called arctangent. The inverse sine and cosine functions are written <span class="math inline">\(\arcsin\)</span> and <span class="math inline">\(\arccos\)</span>.</p>
+<p>An inverse function reverses the input-output relationship. For example, <span class="math inline">\(\sin30^\circ=1/2\)</span>. Reversing that relationship gives <span class="math inline">\(\arcsin(1/2)=30^\circ\)</span>. A reciprocal performs a different operation: <span class="math inline">\(1/\sin30^\circ=2\)</span>.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Expression</th>
+<th>What it asks</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\arcsin(1/2)\)</span></td>
+<td>Which chosen angle has sine <span class="math inline">\(1/2\)</span>?</td>
+<td><span class="math inline">\(\pi/6\)</span> radians</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(1/(1/2)\)</span></td>
+<td>What is the reciprocal of <span class="math inline">\(1/2\)</span>?</td>
+<td><span class="math inline">\(2\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\csc(\pi/6)\)</span></td>
+<td>What is the reciprocal of this angle’s sine?</td>
+<td><span class="math inline">\(2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Always check degree or radian mode when a calculator reports an angle. The same geometric angle can be displayed as <span class="math inline">\(30^\circ\)</span> or approximately <span class="math inline">\(0.524\)</span> radians.</p>
+<h2 id="restrict-a-repeating-function-before-reversing-it">Restrict a repeating function before reversing it</h2>
+<p>Sine takes the value <span class="math inline">\(1/2\)</span> at both <span class="math inline">\(\pi/6\)</span> and <span class="math inline">\(5\pi/6\)</span>, and at infinitely many angles obtained by full turns. A function must return one output for each input, so inverse sine needs a convention that chooses one.</p>
+<p>We restrict sine to <span class="math inline">\([-\pi/2,\pi/2]\)</span>. On that interval it rises steadily from <span class="math inline">\(-1\)</span> to 1 and takes each value exactly once. Reversing this restricted function defines arcsine.</p>
+<figure>
+<img src="../assets/learning/m04-principal-branch.svg" alt="The green sine branch contains exactly one point at each height between minus one and one. The full sine curve repeats those heights." />
+<figcaption aria-hidden="true">The green sine branch contains exactly one point at each height between minus one and one. The full sine curve repeats those heights.</figcaption>
+</figure>
+<p>The <strong>principal ranges</strong> specify the choices made by all three inverse functions:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Inverse function</th>
+<th>Allowed inputs</th>
+<th>Angle outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\arcsin x\)</span></td>
+<td><span class="math inline">\([-1,1]\)</span></td>
+<td><span class="math inline">\([-\pi/2,\pi/2]\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\arccos x\)</span></td>
+<td><span class="math inline">\([-1,1]\)</span></td>
+<td><span class="math inline">\([0,\pi]\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\arctan x\)</span></td>
+<td>All real numbers</td>
+<td><span class="math inline">\((-\pi/2,\pi/2)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The tangent endpoints are excluded because tangent itself is undefined there. Its restricted branch still reaches every real output, so arctangent accepts every real input.</p>
+<div class="example">
+<p><strong>Worked example: choose the angle in the range.</strong> We have <span class="math display">\[
+\arcsin(-\sqrt2/2)=-\pi/4,\qquad
+\arccos(-1/2)=2\pi/3,\qquad
+\arctan(-1)=-\pi/4.
+\]</span> Each output lies in its function’s principal range and produces the requested trig value. For example, <span class="math inline">\(5\pi/4\)</span> also has tangent 1, but <span class="math inline">\(\arctan(1)=\pi/4\)</span>.</p>
+</div>
+<p>The <a href="../demos/inverse_trig.html">Inverse Trigonometry Explorer</a> compares an original angle with the principal angle. Watch which information is retained when you keep only one trig value.</p>
+<h2 id="reflect-the-restricted-graph-to-see-its-inverse">Reflect the restricted graph to see its inverse</h2>
+<p>If <span class="math inline">\((a,b)\)</span> lies on a function graph, the reversed relationship contains <span class="math inline">\((b,a)\)</span>. Swapping coordinates reflects the graph across <span class="math inline">\(y=x\)</span>.</p>
+<p>For sine, use the restricted branch. The point <span class="math inline">\((\pi/6,1/2)\)</span> becomes <span class="math inline">\((1/2,\pi/6)\)</span> on arcsine. The old range becomes the new domain, and the old domain becomes the new range.</p>
+<figure>
+<img src="../assets/learning/m04-inverse-reflection.svg" alt="Swapping coordinates reflects the restricted sine curve across the diagonal to produce arcsine." />
+<figcaption aria-hidden="true">Swapping coordinates reflects the restricted sine curve across the diagonal to produce arcsine.</figcaption>
+</figure>
+<p>Use the <a href="../demos/inverse_trig_graphs.html">Inverse Graphs Explorer</a> to compare all three inverse graphs. Arcsine and arccosine have bounded input intervals. Arctangent accepts all real inputs, while its output approaches the excluded angle endpoints.</p>
+<p><strong>Try it.</strong> Choose the cosine points at <span class="math inline">\(0,\pi/2,\pi\)</span>. Swap their coordinates to obtain three points on arccosine.</p>
+<h2 id="check-the-order-in-a-composition">Check the order in a composition</h2>
+<p>The expression <span class="math inline">\(\sin(\arcsin u)\)</span> starts with an allowed ratio <span class="math inline">\(u\)</span>, turns it into the chosen angle, then takes that angle’s sine. It returns <span class="math inline">\(u\)</span> for every <span class="math inline">\(u\in[-1,1]\)</span>.</p>
+<p>The expression <span class="math inline">\(\arcsin(\sin\theta)\)</span> starts with an angle. It first keeps only the sine value, then selects an angle in the principal range. It returns the original angle only when that angle already belongs to <span class="math inline">\([-\pi/2,\pi/2]\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: two angles share one sine.</strong> <span class="math display">\[
+\arcsin(\sin150^\circ)=\arcsin(1/2)=30^\circ.
+\]</span> The original angle is outside the arcsine range. In contrast, <span class="math inline">\(\arccos(\cos150^\circ)=150^\circ\)</span>, since <span class="math inline">\(150^\circ\)</span> is in arccosine’s range.</p>
+</div>
+<figure>
+<img src="../assets/learning/m04-shared-sine.svg" alt="The 30-degree and 150-degree rays have the same height. Arcsine chooses the ray in its prescribed half-circle." />
+<figcaption aria-hidden="true">The 30-degree and 150-degree rays have the same height. Arcsine chooses the ray in its prescribed half-circle.</figcaption>
+</figure>
+<p>This distinction will matter when we solve equations in Module 5. An inverse trig function supplies a principal angle; an equation may require every angle producing the same value.</p>
+<h2 id="use-a-triangle-to-evaluate-mixed-compositions">Use a triangle to evaluate mixed compositions</h2>
+<p>Consider <span class="math inline">\(\sin(\arctan(3/4))\)</span>. Calling the inside angle <span class="math inline">\(\theta\)</span> makes the steps easier to see: <span class="math display">\[
+\theta=\arctan(3/4)\quad\Longrightarrow\quad\tan\theta=3/4.
+\]</span> Since the ratio is positive and arctangent returns angles between <span class="math inline">\(-\pi/2\)</span> and <span class="math inline">\(\pi/2\)</span>, this angle is acute. Draw a right triangle with opposite side 3 and adjacent side 4. Its hypotenuse is 5, giving <span class="math inline">\(\sin\theta=3/5\)</span>.</p>
+<figure>
+<img src="../assets/learning/m04-composition-triangle.svg" alt="A ratio determines a reference triangle; the inverse function’s range determines the coordinate signs." />
+<figcaption aria-hidden="true">A ratio determines a reference triangle; the inverse function’s range determines the coordinate signs.</figcaption>
+</figure>
+<div class="example">
+<p><strong>Worked example: use the range to choose a sign.</strong> To find <span class="math inline">\(\cos(\arcsin(-5/13))\)</span>, set <span class="math inline">\(\theta=\arcsin(-5/13)\)</span>. Its sine is negative, and its principal angle lies between <span class="math inline">\(-\pi/2\)</span> and 0. Cosine is positive there: <span class="math display">\[
+\cos\theta=\sqrt{1-\sin^2\theta}
+=\sqrt{1-\frac{25}{169}}=\frac{12}{13}.
+\]</span> The square-root magnitude alone would leave a sign choice. The principal range resolves it.</p>
+</div>
+<p><strong>Try it.</strong> Find <span class="math inline">\(\sin(\arccos(-3/5))\)</span> exactly. Identify the quadrant of the chosen angle before deciding the sign.</p>
+<h2 id="derive-identities-from-a-familiar-equation">Derive identities from a familiar equation</h2>
+<p>An identity states that two expressions agree at every input where both are defined. A trig equation such as <span class="math inline">\(\sin x=1/2\)</span> instead asks which inputs make the statement true.</p>
+<p>The unit-circle equation gives our basic identity: <span class="math display">\[
+\sin^2x+\cos^2x=1.
+\]</span> Divide every term by <span class="math inline">\(\cos^2x\)</span>, requiring <span class="math inline">\(\cos x\ne0\)</span>: <span class="math display">\[
+\frac{\sin^2x}{\cos^2x}+1=\frac1{\cos^2x}
+\quad\Longrightarrow\quad
+1+\tan^2x=\sec^2x.
+\]</span> Dividing by <span class="math inline">\(\sin^2x\)</span> similarly gives <span class="math inline">\(1+\cot^2x=\csc^2x\)</span>, where <span class="math inline">\(\sin x\ne0\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: simplify while keeping the domain.</strong> For <span class="math inline">\(\sin x\ne0\)</span>, <span class="math display">\[
+\frac{1-\cos^2x}{\sin x}
+=\frac{\sin^2x}{\sin x}=\sin x.
+\]</span> The final expression exists at more inputs than the original quotient. Our identity retains the original restriction <span class="math inline">\(x\ne k\pi\)</span>.</p>
+</div>
+<p>To prove an identity, start with one expression and use established algebraic or trigonometric relationships until you obtain the other. Record any denominator restrictions. Numerical agreement at a few angles helps check your work, but a proof must cover the whole stated domain.</p>
+<h2 id="read-symmetry-identities-from-the-circle">Read symmetry identities from the circle</h2>
+<p>Reflecting a point across the horizontal axis preserves its horizontal coordinate and reverses its vertical coordinate. Therefore <span class="math display">\[
+\cos(-x)=\cos x,\qquad \sin(-x)=-\sin x.
+\]</span> Cosine is even and sine is odd. Their quotient gives <span class="math inline">\(\tan(-x)=-\tan x\)</span> wherever tangent is defined.</p>
+<p>A half-turn negates both coordinates: <span class="math display">\[
+\cos(x+\pi)=-\cos x,\qquad
+\sin(x+\pi)=-\sin x.
+\]</span> For example, <span class="math inline">\(\sin(-7\pi/6)=-\sin(7\pi/6)=1/2\)</span>, while <span class="math inline">\(\cos(-7\pi/6)=\cos(7\pi/6)=-\sqrt3/2\)</span>.</p>
+<h2 id="combine-two-rotations-to-derive-addition-formulas">Combine two rotations to derive addition formulas</h2>
+<p>An initial turn of <span class="math inline">\(\beta\)</span> gives the point <span class="math inline">\((\cos\beta,\sin\beta)\)</span>. Now rotate that entire configuration by another angle <span class="math inline">\(\alpha\)</span>.</p>
+<p>The original horizontal unit direction turns to <span class="math inline">\((\cos\alpha,\sin\alpha)\)</span>. The original vertical unit direction, a quarter-turn farther around, turns to <span class="math inline">\((-\sin\alpha,\cos\alpha)\)</span>.</p>
+<p>The point’s horizontal contribution has length <span class="math inline">\(\cos\beta\)</span> along the first direction. Its vertical contribution has length <span class="math inline">\(\sin\beta\)</span> along the second. Add their coordinate contributions: <span class="math display">\[
+\begin{aligned}
+x&amp;=\cos\beta\cos\alpha-\sin\beta\sin\alpha,\\
+y&amp;=\cos\beta\sin\alpha+\sin\beta\cos\alpha.
+\end{aligned}
+\]</span> The final point also has angle <span class="math inline">\(\alpha+\beta\)</span>. Its coordinates are cosine and sine of that total angle.</p>
+<figure>
+<img src="../assets/learning/m04-rotation-addition.svg" alt="The two rotated coordinate contributions add to the point at the sum of the angles." />
+<figcaption aria-hidden="true">The two rotated coordinate contributions add to the point at the sum of the angles.</figcaption>
+</figure>
+<p>Consequently, <span class="math display">\[
+\begin{aligned}
+\cos(\alpha+\beta)&amp;=\cos\alpha\cos\beta-\sin\alpha\sin\beta,\\
+\sin(\alpha+\beta)&amp;=\sin\alpha\cos\beta+\cos\alpha\sin\beta.
+\end{aligned}
+\]</span> Replacing <span class="math inline">\(\beta\)</span> by <span class="math inline">\(-\beta\)</span> and using symmetry gives the difference formulas: <span class="math display">\[
+\begin{aligned}
+\cos(\alpha-\beta)&amp;=\cos\alpha\cos\beta+\sin\alpha\sin\beta,\\
+\sin(\alpha-\beta)&amp;=\sin\alpha\cos\beta-\cos\alpha\sin\beta.
+\end{aligned}
+\]</span></p>
+<div class="example">
+<p><strong>Worked example: an exact value at a new angle.</strong> Write <span class="math inline">\(75^\circ=45^\circ+30^\circ\)</span>. Then <span class="math display">\[
+\sin75^\circ
+=\frac{\sqrt2}{2}\frac{\sqrt3}{2}
++\frac{\sqrt2}{2}\frac12
+=\frac{\sqrt6+\sqrt2}{4}.
+\]</span> Similarly, <span class="math inline">\(\cos75^\circ=(\sqrt6-\sqrt2)/4\)</span>. Both are positive, as expected in Quadrant I.</p>
+</div>
+<p>The formulas explain why <span class="math inline">\(\sin(a+b)\)</span> generally differs from <span class="math inline">\(\sin a+\sin b\)</span>. Each original coordinate contributes to both final coordinates after rotation.</p>
+<h2 id="double-angles-squared-functions-and-half-angles">Double angles, squared functions, and half angles</h2>
+<p>Set both angles equal to <span class="math inline">\(x\)</span>: <span class="math display">\[
+\sin2x=2\sin x\cos x,\qquad
+\cos2x=\cos^2x-\sin^2x.
+\]</span> Using the Pythagorean identity gives two more cosine forms: <span class="math display">\[
+\cos2x=1-2\sin^2x=2\cos^2x-1.
+\]</span> Choose the form containing the quantities you already know.</p>
+<p>Rearranging produces the power-reduction identities <span class="math display">\[
+\sin^2x=\frac{1-\cos2x}{2},\qquad
+\cos^2x=\frac{1+\cos2x}{2}.
+\]</span> Replacing <span class="math inline">\(x\)</span> by <span class="math inline">\(\theta/2\)</span> gives the squared half-angle values. Taking square roots requires the sign from the half-angle’s quadrant. For instance, <span class="math inline">\(15^\circ\)</span> is acute, so <span class="math display">\[
+\cos15^\circ=\sqrt{\frac{1+\cos30^\circ}{2}}
+=\frac{\sqrt{2+\sqrt3}}{2}.
+\]</span> This equals <span class="math inline">\((\sqrt6+\sqrt2)/4\)</span>, the form obtained from the cosine difference identity.</p>
+<p><strong>Try it.</strong> Use angle addition to find <span class="math inline">\(\sin105^\circ\)</span>. Then find <span class="math inline">\(\cos2x\)</span> using <span class="math inline">\(\sin x\)</span> alone.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>Evaluate <span class="math inline">\(\arcsin(-\sqrt2/2)\)</span> and <span class="math inline">\(\arctan(\sqrt3)\)</span> exactly.</li>
+<li>Explain the output of <span class="math inline">\(\arcsin(\sin(3\pi/4))\)</span>.</li>
+<li>Find <span class="math inline">\(\cos(\arcsin(5/13))\)</span> using a triangle.</li>
+<li>Find <span class="math inline">\(\sin(\arctan(-2))\)</span>, including its sign.</li>
+<li>Prove <span class="math inline">\((\sec^2x-1)/\tan x=\tan x\)</span> on its domain.</li>
+<li>Prove <span class="math inline">\((\sin x+\cos x)^2=1+\sin2x\)</span>.</li>
+<li>Calculate <span class="math inline">\(\cos75^\circ\)</span> exactly.</li>
+<li>Express <span class="math inline">\(\cos2x\)</span> using sine alone.</li>
+<li>State and explain the domain and range of arccosine.</li>
+<li>Evaluate <span class="math inline">\(\arccos(\cos(5\pi/3))\)</span>.</li>
+<li>Find <span class="math inline">\(\tan(\arccos(4/5))\)</span> exactly.</li>
+<li>Use circle symmetry to find <span class="math inline">\(\sin(-\pi/3)\)</span>.</li>
+<li>Derive the cosine difference identity from the sum identity.</li>
+<li>Prove <span class="math inline">\(\cos^2x=(1+\cos2x)/2\)</span>.</li>
+<li>Find <span class="math inline">\(\sin15^\circ\)</span> exactly and state its sign.</li>
+<li>Explain the output of <span class="math inline">\(\arctan(\tan(3\pi/4))\)</span>.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>The reflected cosine points are <span class="math inline">\((1,0),(0,\pi/2),(-1,\pi)\)</span>. For the mixed composition, arccosine selects a Quadrant II angle, so <span class="math inline">\(\sin(\arccos(-3/5))=4/5\)</span>.</p>
+<p>The addition calculation gives <span class="math inline">\(\sin105^\circ=(\sqrt6+\sqrt2)/4\)</span>, positive in Quadrant II. The requested double-angle form is <span class="math inline">\(\cos2x=1-2\sin^2x\)</span>.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

@@ -1,0 +1,190 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Six Trigonometric Functions | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 2 · Dr. Lee</p><h1>The Six Trigonometric Functions</h1><nav class="module-nav" aria-label="Module 2 resources"><a href="../readings/module02_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week02.pdf">Reading PDF</a><a href="../demos/six_trig_functions.html">Explorer</a><a href="../labs/week02_lab.html">Guided lab</a><a href="../applications/week02_applications.html">Applications</a><a href="../quizzes/week02_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#build-six-functions-from-two-coordinates">Build six functions from two coordinates</a><a href="#tangent-measures-the-slope-of-a-direction">Tangent measures the slope of a direction</a><a href="#recover-the-familiar-right-triangle-ratios">Recover the familiar right-triangle ratios</a><a href="#exact-values-come-from-two-special-triangles">Exact values come from two special triangles</a><a href="#use-signs-rather-than-a-separate-rule-for-each-function">Use signs rather than a separate rule for each function</a><a href="#separate-zero-from-undefined">Separate zero from undefined</a><a href="#read-graphs-of-coordinates-and-reciprocals">Read graphs of coordinates and reciprocals</a><a href="#choose-a-ratio-for-a-measurement">Choose a ratio for a measurement</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>A point on a rotating wheel has a horizontal position and a vertical position. Last module we named those coordinates cosine and sine. This module asks what else the same point can tell us: the slope of its direction, the ratios of triangle sides, and the places where a division stops making sense.</p>
+<p>The six trigonometric functions come from these connected measurements. Begin with a point or a triangle, then form the ratio the question needs.</p>
+<h2 id="build-six-functions-from-two-coordinates">Build six functions from two coordinates</h2>
+<p>Let <span class="math inline">\(P=(x,y)\)</span> be the point at angle <span class="math inline">\(\theta\)</span> on the unit circle. Its distance from the origin is 1, so <span class="math display">\[
+x=\cos\theta,\qquad y=\sin\theta.
+\]</span> The other four functions use these coordinates: <span class="math display">\[
+\begin{aligned}
+\tan\theta&amp;=\frac{y}{x},&amp;
+\cot\theta&amp;=\frac{x}{y},\\
+\sec\theta&amp;=\frac1x,&amp;
+\csc\theta&amp;=\frac1y.
+\end{aligned}
+\]</span> Each quotient requires a nonzero denominator. These definitions work in every quadrant and on any coordinate axis where the needed denominator is nonzero.</p>
+<figure>
+<img src="../assets/learning/m02-coordinate-ratios.svg" alt="The horizontal and vertical coordinates determine all the ratios at a 60-degree angle." />
+<figcaption aria-hidden="true">The horizontal and vertical coordinates determine all the ratios at a 60-degree angle.</figcaption>
+</figure>
+<div class="example">
+<p><strong>Worked example: six values at one angle.</strong> At <span class="math inline">\(\theta=\pi/3=60^\circ\)</span>, the point is <span class="math inline">\((1/2,\sqrt3/2)\)</span>. Therefore <span class="math display">\[
+\begin{aligned}
+\sin\theta&amp;=\frac{\sqrt3}{2},&amp;
+\cos\theta&amp;=\frac12,&amp;
+\tan\theta&amp;=\frac{\sqrt3/2}{1/2}=\sqrt3,\\
+\csc\theta&amp;=\frac{2}{\sqrt3},&amp;
+\sec\theta&amp;=2,&amp;
+\cot\theta&amp;=\frac{1}{\sqrt3}.
+\end{aligned}
+\]</span> The exact forms <span class="math inline">\(2/\sqrt3=2\sqrt3/3\)</span> and <span class="math inline">\(1/\sqrt3=\sqrt3/3\)</span> are equivalent. Rationalizing a denominator changes the form, while preserving the value.</p>
+</div>
+<p>Secant and cosecant are the reciprocals of cosine and sine. Cotangent equals <span class="math inline">\(1/\tan\theta\)</span> whenever both expressions are defined. For its full domain, use <span class="math inline">\(\cot\theta=\cos\theta/\sin\theta\)</span>: at <span class="math inline">\(90^\circ\)</span>, cotangent is zero even though tangent is undefined.</p>
+<p>Use the <a href="../demos/six_trig_functions.html">Six-Function Explorer</a> to compare the values with the point’s coordinates. Predict the signs before reading the outputs.</p>
+<h2 id="tangent-measures-the-slope-of-a-direction">Tangent measures the slope of a direction</h2>
+<p>For a line through the origin and <span class="math inline">\(P=(\cos\theta,\sin\theta)\)</span>, slope is rise divided by run: <span class="math display">\[
+m=\frac{\sin\theta}{\cos\theta}=\tan\theta.
+\]</span> The same line meets the vertical line <span class="math inline">\(x=1\)</span> at <span class="math inline">\((1,\tan\theta)\)</span>, provided cosine is nonzero. This is a useful picture of tangent as a signed height.</p>
+<figure>
+<img src="../assets/learning/m02-tangent-slope.svg" alt="The line through the rotating point meets x equal to one at the height tan theta. When the original point lies on the left, extend its line through the origin." />
+<figcaption aria-hidden="true">The line through the rotating point meets x equal to one at the height tan theta. When the original point lies on the left, extend its line through the origin.</figcaption>
+</figure>
+<p>In Quadrants II and III, the terminal ray points left, so we extend its line backward to reach <span class="math inline">\(x=1\)</span>. Keeping the whole line visible explains the tangent construction in those quadrants.</p>
+<p>At <span class="math inline">\(30^\circ\)</span>, the slope is <span class="math inline">\((1/2)/(\sqrt3/2)=1/\sqrt3\)</span>. At <span class="math inline">\(60^\circ\)</span>, it is <span class="math inline">\(\sqrt3\)</span>. A direction closer to vertical has a larger positive slope in this first-quadrant comparison.</p>
+<p>As <span class="math inline">\(\theta\)</span> approaches <span class="math inline">\(90^\circ\)</span> from below, sine approaches 1 while cosine approaches zero through positive values. Dividing by that small positive number makes tangent large. At exactly <span class="math inline">\(90^\circ\)</span>, the line is vertical and the quotient is undefined.</p>
+<h2 id="recover-the-familiar-right-triangle-ratios">Recover the familiar right-triangle ratios</h2>
+<p>Consider a right triangle with an acute angle <span class="math inline">\(\theta\)</span>, opposite side <span class="math inline">\(o\)</span>, adjacent leg <span class="math inline">\(a\)</span>, and hypotenuse <span class="math inline">\(h\)</span>. Scale every side by <span class="math inline">\(1/h\)</span>. The hypotenuse becomes 1, and the other two sides become <span class="math inline">\(a/h\)</span> and <span class="math inline">\(o/h\)</span>, the coordinates of a unit-circle point.</p>
+<figure>
+<img src="../assets/learning/m02-similar-triangles.svg" alt="Similar triangles keep the same ratios even when every side length changes." />
+<figcaption aria-hidden="true">Similar triangles keep the same ratios even when every side length changes.</figcaption>
+</figure>
+<p>It follows that <span class="math display">\[
+\sin\theta=\frac{o}{h},\qquad
+\cos\theta=\frac{a}{h},\qquad
+\tan\theta=\frac{o}{a}.
+\]</span> Their reciprocal ratios are <span class="math inline">\(\csc\theta=h/o\)</span>, <span class="math inline">\(\sec\theta=h/a\)</span>, and <span class="math inline">\(\cot\theta=a/o\)</span>. Opposite and adjacent depend on which acute angle you choose. The hypotenuse always faces the right angle.</p>
+<div class="example">
+<p><strong>Worked example: a support cable.</strong> A cable is 13 m long and reaches a point 12 m above level ground. Its horizontal run is <span class="math inline">\(\sqrt{13^2-12^2}=5\)</span> m. For the angle with the ground, <span class="math display">\[
+\sin\theta=\frac{12}{13},\quad
+\cos\theta=\frac5{13},\quad
+\tan\theta=\frac{12}{5}.
+\]</span> The reciprocal ratios are <span class="math inline">\(13/12,13/5,5/12\)</span>, respectively. Each compares two lengths from the same triangle.</p>
+</div>
+<p><strong>Try it.</strong> A right triangle has legs 5 and 12. Choose the angle opposite the side of length 5. Find the hypotenuse and all six ratios.</p>
+<h2 id="exact-values-come-from-two-special-triangles">Exact values come from two special triangles</h2>
+<p>An equilateral triangle of side 2 splits into two right triangles with sides <span class="math inline">\(1,\sqrt3,2\)</span>. This gives the <span class="math inline">\(30^\circ\)</span> and <span class="math inline">\(60^\circ\)</span> values. A right triangle with equal legs 1 has hypotenuse <span class="math inline">\(\sqrt2\)</span>, giving the <span class="math inline">\(45^\circ\)</span> values.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Angle</th>
+<th><span class="math inline">\(\sin\theta\)</span></th>
+<th><span class="math inline">\(\cos\theta\)</span></th>
+<th><span class="math inline">\(\tan\theta\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(30^\circ=\pi/6\)</span></td>
+<td><span class="math inline">\(1/2\)</span></td>
+<td><span class="math inline">\(\sqrt3/2\)</span></td>
+<td><span class="math inline">\(\sqrt3/3\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(45^\circ=\pi/4\)</span></td>
+<td><span class="math inline">\(\sqrt2/2\)</span></td>
+<td><span class="math inline">\(\sqrt2/2\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(60^\circ=\pi/3\)</span></td>
+<td><span class="math inline">\(\sqrt3/2\)</span></td>
+<td><span class="math inline">\(1/2\)</span></td>
+<td><span class="math inline">\(\sqrt3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>For an angle in another quadrant, use its reference angle to find the coordinate magnitudes, then assign signs from the point’s location.</p>
+<div class="example">
+<p><strong>Worked example: a third-quadrant angle.</strong> For <span class="math inline">\(5\pi/4=225^\circ\)</span>, the reference angle is <span class="math inline">\(\pi/4\)</span>. The point lies left of the origin and below it: <span class="math display">\[
+(\cos\theta,\sin\theta)=
+\left(-\frac{\sqrt2}{2},-\frac{\sqrt2}{2}\right).
+\]</span> Thus <span class="math inline">\(\tan\theta=\cot\theta=1\)</span>, while <span class="math inline">\(\sec\theta=\csc\theta=-\sqrt2\)</span>. The two negatives cancel in the quotients.</p>
+</div>
+<h2 id="use-signs-rather-than-a-separate-rule-for-each-function">Use signs rather than a separate rule for each function</h2>
+<p>Cosine follows the horizontal coordinate; sine follows the vertical coordinate. Their reciprocals keep those signs. Tangent and cotangent are positive when the coordinate signs agree and negative when they differ.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Quadrant</th>
+<th>Coordinate signs <span class="math inline">\((x,y)\)</span></th>
+<th>Positive functions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I</td>
+<td><span class="math inline">\((+,+)\)</span></td>
+<td>All six</td>
+</tr>
+<tr class="even">
+<td>II</td>
+<td><span class="math inline">\((-,+)\)</span></td>
+<td>Sine and cosecant</td>
+</tr>
+<tr class="odd">
+<td>III</td>
+<td><span class="math inline">\((-,-)\)</span></td>
+<td>Tangent and cotangent</td>
+</tr>
+<tr class="even">
+<td>IV</td>
+<td><span class="math inline">\((+,-)\)</span></td>
+<td>Cosine and secant</td>
+</tr>
+</tbody>
+</table>
+<p>For <span class="math inline">\(150^\circ\)</span>, the reference angle is <span class="math inline">\(30^\circ\)</span>, so the point is <span class="math inline">\((-\sqrt3/2,1/2)\)</span>. For example, <span class="math inline">\(\tan150^\circ=-1/\sqrt3\)</span> and <span class="math inline">\(\csc150^\circ=2\)</span>.</p>
+<p><strong>Try it.</strong> Suppose <span class="math inline">\(\cos\theta=3/5\)</span>, with <span class="math inline">\(\theta\)</span> in Quadrant IV. Use <span class="math inline">\(x^2+y^2=1\)</span> to find sine, then find the other four functions.</p>
+<h2 id="separate-zero-from-undefined">Separate zero from undefined</h2>
+<p>A quotient is zero when its numerator is zero and its denominator is nonzero. It is undefined when its denominator is zero. These situations occur at different places on the circle.</p>
+<p>At <span class="math inline">\(90^\circ\)</span>, the point is <span class="math inline">\((0,1)\)</span>. Therefore sine is 1 and cosine is 0; tangent and secant are undefined because they divide by cosine. Cotangent is <span class="math inline">\(0/1=0\)</span>, and cosecant is 1.</p>
+<p>At <span class="math inline">\(180^\circ\)</span>, the point is <span class="math inline">\((-1,0)\)</span>. Now sine is 0 and cosine is <span class="math inline">\(-1\)</span>; cotangent and cosecant are undefined, tangent is 0, and secant is <span class="math inline">\(-1\)</span>.</p>
+<p>In radians, cosine vanishes at <span class="math inline">\(\pi/2+k\pi\)</span>, so tangent and secant exclude those inputs. Sine vanishes at <span class="math inline">\(k\pi\)</span>, so cotangent and cosecant exclude those inputs. Here <span class="math inline">\(k\)</span> is any integer.</p>
+<p><strong>Try it.</strong> Find all six values at <span class="math inline">\(3\pi/2\)</span>. For each undefined value, name its denominator.</p>
+<h2 id="read-graphs-of-coordinates-and-reciprocals">Read graphs of coordinates and reciprocals</h2>
+<p>The horizontal axis of a trig graph represents angle; its vertical axis represents a function value. This graph records a measurement from the rotating point, rather than its circular path.</p>
+<p>Sine and cosine stay in <span class="math inline">\([-1,1]\)</span> and repeat after <span class="math inline">\(2\pi\)</span>. Secant and cosecant have the same full-turn periods as their reciprocal partners. Their values lie in <span class="math inline">\((-\infty,-1]\cup[1,\infty)\)</span>, since reciprocating a nonzero number of magnitude at most 1 produces a magnitude at least 1.</p>
+<figure>
+<img src="../assets/learning/m02-reciprocal-graphs.svg" alt="Cosine and its reciprocal secant share signs. Zeros of cosine become excluded inputs and vertical asymptotes of secant." />
+<figcaption aria-hidden="true">Cosine and its reciprocal secant share signs. Zeros of cosine become excluded inputs and vertical asymptotes of secant.</figcaption>
+</figure>
+<p>Near <span class="math inline">\(\pi/2\)</span>, cosine approaches zero from above on the left and below on the right. Secant therefore grows positively on one side and negatively on the other. Its graph has a vertical asymptote there. The two branches remain separated.</p>
+<p>Tangent and cotangent repeat after <span class="math inline">\(\pi\)</span>. A half-turn negates both coordinates, preserving their quotient: <span class="math display">\[
+\tan(\theta+\pi)=
+\frac{-\sin\theta}{-\cos\theta}=\tan\theta
+\]</span> where the denominator is nonzero. Tangent has zeros at <span class="math inline">\(k\pi\)</span>; cotangent has zeros at <span class="math inline">\(\pi/2+k\pi\)</span>.</p>
+<p>Use the <a href="../demos/trig_graphs.html">Six Trigonometric Graphs Explorer</a> and the <a href="../demos/reciprocal_trig_graphs.html">Reciprocal Graphs Explorer</a> to compare periods, zeros, and excluded inputs. Follow the denominator when a graph breaks.</p>
+<h2 id="choose-a-ratio-for-a-measurement">Choose a ratio for a measurement</h2>
+<p>Draw the physical situation and identify which side is known. A horizontal distance and an elevation angle suggest tangent; a line-of-sight distance and angle suggest sine for a height.</p>
+<figure>
+<img src="../assets/learning/m02-height-measurement.svg" alt="The height above the instrument comes from the right triangle; add instrument height to obtain total height above ground." />
+<figcaption aria-hidden="true">The height above the instrument comes from the right triangle; add instrument height to obtain total height above ground.</figcaption>
+</figure>
+<div class="example">
+<p><strong>Worked example: a tree measured from eye level.</strong> An observer stands 20 m horizontally from a tree and measures a <span class="math inline">\(40^\circ\)</span> elevation angle. The observer’s eyes are 1.6 m above the level ground. First find the rise above eye level: <span class="math display">\[
+\frac{h_{\text{rise}}}{20}=\tan40^\circ,
+\qquad h_{\text{rise}}\approx16.8\text{ m}.
+\]</span> Adding the eye height gives a tree height of about <span class="math inline">\(18.4\)</span> m. Use degree mode for this calculation and round at the end.</p>
+</div>
+<p>When the angle is unknown but a ratio is known, a calculator’s inverse trig function can recover an acute angle. For a ramp rising 1.5 m over 6 m horizontally, <span class="math inline">\(\theta=\arctan(1.5/6)\approx14.0^\circ\)</span>. Module 4 will examine why inverse functions choose particular angles.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>At <span class="math inline">\(2\pi/3\)</span>, find all six functions exactly.</li>
+<li>At <span class="math inline">\(7\pi/4\)</span>, find tangent, cotangent, secant, and cosecant.</li>
+<li>Explain geometrically why <span class="math inline">\(\tan(\pi/2)\)</span> is undefined.</li>
+<li>For which angles in <span class="math inline">\([0,2\pi)\)</span> is cosecant undefined?</li>
+<li>For legs 5 and 12, find all ratios for the angle opposite the side of length 5.</li>
+<li>A ladder reaches 8 m high with its foot 3 m from a wall. Find the angle with the ground.</li>
+<li>A drone has elevation angle <span class="math inline">\(28^\circ\)</span> and horizontal distance 75 m from an observer at ground level. Estimate its altitude.</li>
+<li>Divide <span class="math inline">\(\sin^2\theta+\cos^2\theta=1\)</span> by <span class="math inline">\(\cos^2\theta\)</span> and simplify. State the restriction.</li>
+<li>Find all six exact values at <span class="math inline">\(11\pi/6\)</span>.</li>
+<li>Describe the zeros and asymptotes of tangent on <span class="math inline">\([-2\pi,2\pi]\)</span>.</li>
+<li>Sketch one period of secant, labeling its asymptotes and its closest values to zero.</li>
+<li>Explain why neither secant nor cosecant can equal <span class="math inline">\(1/2\)</span>.</li>
+<li>If <span class="math inline">\(\cos\theta=-12/13\)</span> in Quadrant II, find all the other values.</li>
+<li>Explain why tangent repeats after a half-turn.</li>
+<li>For the point <span class="math inline">\((0,-1)\)</span>, identify its angle in <span class="math inline">\([0,2\pi)\)</span> and every zero or undefined function.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>For the 5–12 triangle, the hypotenuse is 13 and the ratios are <span class="math inline">\(\sin=5/13,\cos=12/13,\tan=5/12,\csc=13/5,\sec=13/12,\cot=12/5\)</span>.</p>
+<p>In the Quadrant IV problem, sine is <span class="math inline">\(-4/5\)</span>, tangent <span class="math inline">\(-4/3\)</span>, cosecant <span class="math inline">\(-5/4\)</span>, secant <span class="math inline">\(5/3\)</span>, and cotangent <span class="math inline">\(-3/4\)</span>.</p>
+<p>At <span class="math inline">\(3\pi/2\)</span>, sine is <span class="math inline">\(-1\)</span>, cosine 0, cosecant <span class="math inline">\(-1\)</span>, and cotangent 0. Tangent and secant are undefined because cosine is zero.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

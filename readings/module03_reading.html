@@ -1,0 +1,122 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Periodic Functions and Their Graphs | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 3 · Dr. Lee</p><h1>Periodic Functions and Their Graphs</h1><nav class="module-nav" aria-label="Module 3 resources"><a href="../readings/module03_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week03.pdf">Reading PDF</a><a href="../demos/sinusoid_explorer.html">Explorer</a><a href="../labs/week03_lab.html">Guided lab</a><a href="../applications/week03_applications.html">Applications</a><a href="../quizzes/week03_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#identify-a-cycle-and-its-period">Identify a cycle and its period</a><a href="#read-amplitude-and-midline-from-the-extremes">Read amplitude and midline from the extremes</a><a href="#a-multiplier-inside-the-function-changes-the-period">A multiplier inside the function changes the period</a><a href="#factor-the-inside-expression-to-read-a-shift">Factor the inside expression to read a shift</a><a href="#plot-five-landmarks-before-drawing-the-wave">Plot five landmarks before drawing the wave</a><a href="#build-a-model-from-a-wheel">Build a model from a wheel</a><a href="#build-a-model-from-measured-data">Build a model from measured data</a><a href="#extend-the-graph-ideas-to-tangent-and-reciprocals">Extend the graph ideas to tangent and reciprocals</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>A rotating point returns to the same position after one turn. Its height also returns to the same value, producing a repeating wave when height is plotted against time. A wheel, a vibrating string, and a buoy can have very different sizes and speeds while sharing this mathematical pattern.</p>
+<p>This chapter connects a wave’s visible features to the numbers in its equation. We will read those numbers from a graph, change them one at a time, and build models from measurements.</p>
+<h2 id="identify-a-cycle-and-its-period">Identify a cycle and its period</h2>
+<p>A function is periodic when a positive shift of its input reproduces all its values: <span class="math inline">\(f(x+T)=f(x)\)</span>, with the domain also preserved by that shift. The least positive such <span class="math inline">\(T\)</span>, when one exists, is the fundamental period.</p>
+<p>For sine and cosine, a full turn restores both coordinates: <span class="math display">\[
+\sin(x+2\pi)=\sin x,\qquad
+\cos(x+2\pi)=\cos x.
+\]</span> Their fundamental period is <span class="math inline">\(2\pi\)</span> radians. If the input is time, a period has time units instead. The equation’s inside angle determines how time becomes rotation.</p>
+<figure>
+<img src="../assets/learning/m03-circle-wave.svg" alt="The same circular motion produces a sine wave from height and a cosine wave from horizontal position." />
+<figcaption aria-hidden="true">The same circular motion produces a sine wave from height and a cosine wave from horizontal position.</figcaption>
+</figure>
+<p>Cosine begins at 1 when its angle is zero. Sine begins at zero and initially rises. They describe coordinates a quarter-turn apart, so either can model the same repeating quantity after an appropriate shift.</p>
+<h2 id="read-amplitude-and-midline-from-the-extremes">Read amplitude and midline from the extremes</h2>
+<p>Consider <span class="math inline">\(y=A\sin x+D\)</span>. Multiplication by <span class="math inline">\(A\)</span> changes the vertical scale, and adding <span class="math inline">\(D\)</span> changes the center of the wave.</p>
+<p>The <strong>midline</strong> is <span class="math inline">\(y=D\)</span>. The <strong>amplitude</strong> is the nonnegative distance <span class="math inline">\(|A|\)</span> from the midline to either extreme. Thus <span class="math display">\[
+\text{minimum}=D-|A|,\qquad
+\text{maximum}=D+|A|.
+\]</span></p>
+<figure>
+<img src="../assets/learning/m03-amplitude-midline.svg" alt="A transformed wave oscillates around its midline. Amplitude measures half the vertical distance between its extremes." />
+<figcaption aria-hidden="true">A transformed wave oscillates around its midline. Amplitude measures half the vertical distance between its extremes.</figcaption>
+</figure>
+<p>For <span class="math inline">\(y=3\sin x-2\)</span>, the amplitude is 3 and the midline is <span class="math inline">\(-2\)</span>. The minimum is <span class="math inline">\(-5\)</span>, maximum is 1, and range is <span class="math inline">\([-5,1]\)</span>.</p>
+<p>If a graph or measurement gives maximum <span class="math inline">\(M\)</span> and minimum <span class="math inline">\(m\)</span>, recover the two quantities by <span class="math display">\[
+|A|=\frac{M-m}{2},\qquad D=\frac{M+m}{2}.
+\]</span> The midpoint of the extremes gives the midline; half their separation gives the amplitude.</p>
+<div class="example">
+<p><strong>Worked example: a daily temperature model.</strong> Suppose a roughly sinusoidal temperature varies between <span class="math inline">\(14^\circ\text{C}\)</span> and <span class="math inline">\(26^\circ\text{C}\)</span>. The midline is <span class="math inline">\(20^\circ\text{C}\)</span>, and the amplitude is <span class="math inline">\(6^\circ\text{C}\)</span>. These two measurements establish the vertical scale but leave the period and starting phase to be determined.</p>
+</div>
+<p>A negative coefficient reflects a wave across its midline. The graphs <span class="math inline">\(4\sin x\)</span> and <span class="math inline">\(-4\sin x\)</span> have the same range and amplitude, but one initially rises while the other initially falls.</p>
+<p><strong>Try it.</strong> A signal ranges from <span class="math inline">\(-7\)</span> to 5. Find its amplitude and midline, then write one sine model with those extremes.</p>
+<h2 id="a-multiplier-inside-the-function-changes-the-period">A multiplier inside the function changes the period</h2>
+<p>For <span class="math inline">\(y=\sin(Bx)\)</span>, one cycle occurs when the inside angle <span class="math inline">\(Bx\)</span> changes by <span class="math inline">\(2\pi\)</span>. Therefore <span class="math display">\[
+T=\frac{2\pi}{|B|},\qquad B\ne0.
+\]</span> For <span class="math inline">\(\sin(2x)\)</span>, an input increase of <span class="math inline">\(\pi\)</span> makes the inside angle increase by <span class="math inline">\(2\pi\)</span>. Two cycles fit where <span class="math inline">\(\sin x\)</span> completes one.</p>
+<figure>
+<img src="../assets/learning/m03-period-comparison.svg" alt="On the same horizontal axis, larger frequency coefficients fit more cycles into a fixed interval." />
+<figcaption aria-hidden="true">On the same horizontal axis, larger frequency coefficients fit more cycles into a fixed interval.</figcaption>
+</figure>
+<p>The period of <span class="math inline">\(\cos(4x)\)</span> is <span class="math inline">\(\pi/2\)</span>. If <span class="math inline">\(x\)</span> is measured in seconds and <span class="math inline">\(B\)</span> is an angular frequency, the period is in seconds. For a model <span class="math inline">\(\sin(\omega t)\)</span>, <span class="math display">\[
+\omega=\frac{2\pi}{T}\text{ radians per unit time},\qquad
+f=\frac1T=\frac{|\omega|}{2\pi}\text{ cycles per unit time}.
+\]</span> Frequency <span class="math inline">\(f\)</span> counts cycles. Angular frequency <span class="math inline">\(|\omega|\)</span> counts radians during the same amount of time.</p>
+<div class="example">
+<p><strong>Worked example: revolutions per minute.</strong> A mechanism rotates 90 times each minute. That is <span class="math inline">\(90/60=1.5\)</span> cycles per second. Its period is <span class="math inline">\(1/1.5=2/3\)</span> s, and its angular speed is <span class="math inline">\(2\pi(1.5)=3\pi\)</span> rad/s.</p>
+</div>
+<p>The sign of <span class="math inline">\(B\)</span> reverses the direction of the inside angle. The period uses <span class="math inline">\(|B|\)</span>. For ordinary sine models, a negative <span class="math inline">\(B\)</span> can be absorbed into the sign of <span class="math inline">\(A\)</span>.</p>
+<h2 id="factor-the-inside-expression-to-read-a-shift">Factor the inside expression to read a shift</h2>
+<p>A convenient form is <span class="math display">\[
+y=A\sin(B(x-C))+D.
+\]</span> The graph has amplitude <span class="math inline">\(|A|\)</span>, midline <span class="math inline">\(D\)</span>, period <span class="math inline">\(2\pi/|B|\)</span>, and a horizontal shift <span class="math inline">\(C\)</span>. The expression <span class="math inline">\(x-C\)</span> becomes zero at <span class="math inline">\(x=C\)</span>, so the familiar start of the sine cycle moves there.</p>
+<p>The form of the parentheses matters. In <span class="math inline">\(\sin(2(x-1))\)</span>, the shift is 1. In <span class="math inline">\(\sin(2x-1)\)</span>, factor first: <span class="math display">\[
+\sin(2x-1)=\sin\bigl(2(x-\tfrac12)\bigr).
+\]</span> Its shift is <span class="math inline">\(1/2\)</span>.</p>
+<figure>
+<img src="../assets/learning/m03-phase-shifts.svg" alt="Factoring the entire inside expression identifies where the sine cycle begins. Equal periods can have different horizontal shifts." />
+<figcaption aria-hidden="true">Factoring the entire inside expression identifies where the sine cycle begins. Equal periods can have different horizontal shifts.</figcaption>
+</figure>
+<div class="example">
+<p><strong>Worked example: read a transformed equation.</strong> <span class="math display">\[
+y=2\sin(3x-\pi)+1
+=2\sin\left(3\left(x-\frac{\pi}{3}\right)\right)+1.
+\]</span> Its amplitude is 2, midline 1, period <span class="math inline">\(2\pi/3\)</span>, and shift <span class="math inline">\(\pi/3\)</span> to the right. Its range is <span class="math inline">\([-1,3]\)</span>.</p>
+</div>
+<p>The same ideas work for cosine. Remember its different starting value: a positive cosine coefficient begins a cycle at a maximum, while a positive sine coefficient begins at an upward midline crossing.</p>
+<p><strong>Try it.</strong> Rewrite <span class="math inline">\(3\cos(5x-\pi)+2\)</span> in shifted form and identify its amplitude, period, shift, midline, and range.</p>
+<h2 id="plot-five-landmarks-before-drawing-the-wave">Plot five landmarks before drawing the wave</h2>
+<p>Divide one period into four equal intervals. For <span class="math inline">\(A\sin(B(x-C))+D\)</span> with <span class="math inline">\(B&gt;0\)</span>, one cycle has the points <span class="math display">\[
+\begin{array}{c|ccccc}
+x&amp;C&amp;C+T/4&amp;C+T/2&amp;C+3T/4&amp;C+T\\
+\hline
+y&amp;D&amp;D+A&amp;D&amp;D-A&amp;D
+\end{array}
+\]</span> For cosine, the outputs are <span class="math inline">\(D+A,D,D-A,D,D+A\)</span>. Signed <span class="math inline">\(A\)</span> is useful here: a negative <span class="math inline">\(A\)</span> automatically reverses the high and low values.</p>
+<div class="example">
+<p><strong>Worked example: a reflected cosine.</strong> For <span class="math inline">\(y=-2\cos(\pi(x-1))+3\)</span>, the period is 2. Beginning at <span class="math inline">\(x=1\)</span>, the landmarks are <span class="math display">\[
+(1,1),\quad(3/2,3),\quad(2,5),\quad(5/2,3),\quad(3,1).
+\]</span> The cycle begins at a minimum because the cosine coefficient is negative. Draw a smooth wave through those points.</p>
+</div>
+<p>The <a href="../demos/sinusoid_explorer.html">Sinusoid Explorer</a> marks these landmarks and lists their coordinates. Keep the viewing axes fixed while comparing shifts. Use its cycle view when you want to inspect a single period closely.</p>
+<h2 id="build-a-model-from-a-wheel">Build a model from a wheel</h2>
+<p>A wheel has radius 9 m, center 11 m above ground, and period 30 s. A passenger starts at the rightmost point and moves counterclockwise.</p>
+<p>The center height gives the midline, the radius gives the amplitude, and one turn in 30 seconds gives <span class="math inline">\(\omega=2\pi/30\)</span>. The passenger begins at the midline and initially rises, which fits a positive sine: <span class="math display">\[
+h(t)=11+9\sin\left(\frac{\pi t}{15}\right).
+\]</span> At <span class="math inline">\(t=0\)</span>, the height is 11 m. After a quarter-period, <span class="math inline">\(t=7.5\)</span> s, the height is <span class="math inline">\(11+9=20\)</span> m. After three quarters, it is <span class="math inline">\(11-9=2\)</span> m.</p>
+<figure>
+<img src="../assets/learning/m03-wheel-model.svg" alt="One revolution of the wheel produces one height cycle. The starting position determines whether a sine or cosine form is convenient." />
+<figcaption aria-hidden="true">One revolution of the wheel produces one height cycle. The starting position determines whether a sine or cosine form is convenient.</figcaption>
+</figure>
+<p>If the passenger starts at the lowest point instead, a convenient model is <span class="math inline">\(h(t)=11-9\cos(\pi t/15)\)</span>. It begins at 2 m and reaches 20 m after half a period. The geometry determines the starting phase.</p>
+<h2 id="build-a-model-from-measured-data">Build a model from measured data</h2>
+<p>Suppose a buoy has maximum height 5 m, minimum 1 m, and successive maxima 8 seconds apart. Taking <span class="math inline">\(t=0\)</span> at a maximum gives <span class="math display">\[
+h(t)=3+2\cos\left(\frac{\pi t}{4}\right).
+\]</span> The amplitude is 2 m, midline 3 m, and period 8 s. If a maximum occurs at <span class="math inline">\(t=2\)</span> instead, replace <span class="math inline">\(t\)</span> with <span class="math inline">\(t-2\)</span>.</p>
+<p>To construct a model, identify the extremes, the repeat time, and a recognizable starting event. Choose sine or cosine to make that event easy to express. Then check the model at the starting time and at its expected extremes.</p>
+<p><strong>Try it.</strong> A tide ranges from 0.8 m to 3.6 m and repeats every 12 hours. Write a cosine model whose maximum occurs at <span class="math inline">\(t=2\)</span> hours.</p>
+<h2 id="extend-the-graph-ideas-to-tangent-and-reciprocals">Extend the graph ideas to tangent and reciprocals</h2>
+<p>Tangent has base period <span class="math inline">\(\pi\)</span>, so <span class="math inline">\(y=A\tan(B(x-C))+D\)</span>, with <span class="math inline">\(A,B\ne0\)</span>, has period <span class="math inline">\(\pi/|B|\)</span>. Its asymptotes occur when <span class="math inline">\(B(x-C)=\pi/2+k\pi\)</span>. Tangent is unbounded, so it has no amplitude.</p>
+<p>For secant and cosecant, begin with their cosine or sine denominator. The denominator’s zeros locate the breaks. For example, <span class="math inline">\(\sec x\)</span> has asymptotes at <span class="math inline">\(\pi/2+k\pi\)</span>; its branches touch 1 and <span class="math inline">\(-1\)</span> at the extrema of cosine.</p>
+<p>Finally, when <span class="math inline">\(A=0\)</span>, the sine or cosine model is constant. Every positive input shift preserves it, so it has no least positive period. A formula for the usual fundamental period applies to a nonconstant wave.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>Find amplitude, midline, period, and range for <span class="math inline">\(y=-4\sin(2x)+1\)</span>.</li>
+<li>Rewrite <span class="math inline">\(3\cos(5x-\pi)+2\)</span> in shifted form.</li>
+<li>Give five landmarks for <span class="math inline">\(y=2\sin(x-\pi/2)\)</span>.</li>
+<li>Explain why <span class="math inline">\(\sin(2x)\)</span> completes two cycles on <span class="math inline">\([0,2\pi]\)</span>.</li>
+<li>Model a radius-6 wheel with center height 8 m and period 24 s, starting at the rightmost point.</li>
+<li>Find the asymptotes of <span class="math inline">\(\tan(2x)\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</li>
+<li>Sketch one period of <span class="math inline">\(2\sec x\)</span>, marking the excluded inputs.</li>
+<li>Explain how extremes determine amplitude and midline.</li>
+<li>Give a sinusoidal model with maximum 8, minimum <span class="math inline">\(-2\)</span>, period 10, and a maximum at <span class="math inline">\(x=3\)</span>.</li>
+<li>Explain the period issue when <span class="math inline">\(A=0\)</span>.</li>
+<li>An oscillation has frequency 2.5 cycles/s. Find period and angular frequency.</li>
+<li>Give the domain of <span class="math inline">\(\tan(3x)\)</span> and two consecutive asymptotes.</li>
+<li>Find amplitude and midline from maximum 12.4 and minimum 7.6.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>The first Try it has amplitude 6 and midline <span class="math inline">\(-1\)</span>; one model is <span class="math inline">\(6\sin x-1\)</span>.</p>
+<p>The shifted cosine has amplitude 3, period <span class="math inline">\(2\pi/5\)</span>, shift <span class="math inline">\(\pi/5\)</span> right, midline 2, and range <span class="math inline">\([-1,5]\)</span>.</p>
+<p>For the tide, <span class="math inline">\(h(t)=2.2+1.4\cos\bigl((\pi/6)(t-2)\bigr)\)</span>. The units are hours for <span class="math inline">\(t\)</span> and meters for height; the model gives <span class="math inline">\(h(2)=3.6\)</span>.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

@@ -7,6 +7,7 @@ import json,math,os,re,subprocess,sys,tempfile
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/"scripts"))
 from lab_content import LABS
+from application_content import APPS
 
 class Page(HTMLParser):
     def __init__(self):
@@ -52,6 +53,15 @@ def main():
             assert q["hint"] and q["solution"]
             for part,(_,target,tol) in q["checks"].items():
                 assert 0<=part<len(q["parts"]) and math.isfinite(target) and tol>0
+    for n,data in APPS.items():
+        s=(ROOT/f"applications/week{n:02}_applications.html").read_text();p=Page();p.feed(s)
+        assert p.parts==sum(len(q["parts"]) for q in data["problems"])==9
+        assert all(label in p.ids for label in p.labels)
+        assert len(data["problems"])==3
+    for n in range(1,11):
+        assert (ROOT/f"readings/module{n:02}_reading.html").is_file()
+    math_checks=subprocess.run([os.environ.get("CODEX_PRIMARY_RUNTIME_NODE","node"),str(ROOT/"scripts/test_foundations_math.js")],capture_output=True,text=True)
+    if math_checks.returncode:failures.append(math_checks.stderr)
     # Independent mathematical checks for the worked equation, triangle, and motion examples.
     for freq in (2,3):
         roots=[(u+2*k*math.pi)/freq for k in range(freq) for u in (math.pi/6,5*math.pi/6)]
@@ -64,6 +74,6 @@ def main():
     assert abs(3*complex(0,.8)**6-(-3*.8**6))<1e-12
     if failures:
         raise SystemExit("\n".join(failures))
-    print(f"Passed: {count} HTML pages, 10 guided labs, 140 response fields, local links, JS syntax, and independent math checks.")
+    print(f"Passed: {count} HTML pages, 10 guided labs, 3 guided application pages, local links, JS syntax, and independent math checks.")
 
 if __name__=="__main__":main()

@@ -4,20 +4,23 @@ A ten-module course connecting trigonometry, vectors, polar and complex coordina
 
 ## Course materials
 
-Every module includes a reading, interactive explorers, a guided lab, applications, and a practice quiz. Module 1 and Modules 5–10 have illustrated web readings as well as PDFs. Modules 2–4 use the previously expanded PDF chapters. The course home links all resources and the complete reader.
+Every module includes a reading, interactive explorers, a guided lab, applications, and a practice quiz. All ten modules have illustrated web readings as well as PDFs. The course home links all resources and the complete reader.
 
 All ten labs use the shared workspace in `assets/guided-lab.js` and `assets/learning.css`. Each of seven problems has two response fields, a hint, and an explanation available after an attempt. Numerical checks supplement written reasoning. Prepare Submission shows the current answers in the same tab, with Print / Save PDF, Download HTML, and Return to Lab controls. Submission files are uploaded to Canvas by the student.
 
-Existing lab storage keys are preserved. Earlier whole-question responses appear in a separate saved-response area and are included in submissions alongside the new part-by-part work. Quiz questions retain their original indices; two transfer questions were appended to each of Modules 5–10.
+Existing lab storage keys are preserved. Earlier whole-question responses appear in a separate saved-response area and are included in submissions alongside the new part-by-part work. Quiz questions retain their original indices; two transfer questions were appended to each of Modules 2–10. The Module 2–4 application pages also provide guided response fields and submission controls.
 
 ## Editable sources
 
-- `content/module05.md` through `content/module10.md`: shared web and print chapter content.
+- `content/module02.md` through `content/module10.md`: shared web and print chapter content.
 - `scripts/lab_content.py`: all guided lab prompts, hints, checks, and solutions.
-- `scripts/build_learning_figures.py`: 24 mathematically scaled SVG/PDF figure pairs.
+- `scripts/build_learning_figures.py`: 24 mathematically scaled SVG/PDF figure pairs for Modules 5–10.
+- `scripts/build_trig_foundations_figures.py`: 15 additional SVG/PDF pairs for Modules 2–4.
+- `scripts/build_foundation_demos.py`: coordinate-ratio, wave-transformation, and principal-angle explorers.
+- `scripts/application_content.py`: guided applications for Modules 2–4.
 - `scripts/extend_course_practice.py`: additional questions for the later quizzes.
 - `scripts/module1_content.py`: the Module 1 reading source.
-- `notes/week02.tex` through `notes/week04.tex`: expanded earlier chapters.
+- `notes/week02.tex` through `notes/week10.tex`: generated print chapters from the shared Markdown readings.
 - `notes/master.tex`: collected course reader.
 
 ## Rebuild and verify
@@ -26,7 +29,9 @@ From the repository root:
 
 ```sh
 python scripts/build_learning_figures.py
+python scripts/build_trig_foundations_figures.py
 python scripts/build_course_learning.py
+python scripts/build_foundation_demos.py
 python scripts/extend_course_practice.py
 python scripts/verify_course_learning.py
 ```

@@ -5,6 +5,7 @@ import json
 import re
 import subprocess
 from lab_content import LABS
+from application_content import APPS
 
 ROOT=Path(__file__).resolve().parents[1]
 TITLES={
@@ -18,7 +19,7 @@ DEMOS={1:"unit_circle",2:"six_trig_functions",3:"sinusoid_explorer",4:"inverse_t
 9:"sequence_explorer",10:"motion_synthesis"}
 
 def reading_path(n):
-    return f"../readings/module{n:02}_reading.html" if n==1 or n>=5 else f"../pdfs/PrecalcII_Week{n:02}.pdf"
+    return f"../readings/module{n:02}_reading.html"
 
 def head(title, script=""):
     return ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
@@ -50,7 +51,7 @@ def pandoc(source, to):
         "--to",to,"--wrap=none"]+(["--mathjax"] if to=="html5" else []),input=source,text=True,capture_output=True,check=True).stdout
 
 def readings():
-    for n in range(5,11):
+    for n in range(2,11):
         source=(ROOT/f"content/module{n:02}.md").read_text()
         body=pandoc(source,"html5")
         headings=re.findall(r'<h2 id="([^"]+)">(.+?)</h2>',body)
@@ -61,6 +62,7 @@ def readings():
         texsource=re.sub(r'\]\(\.\./demos/([^)]*)\)',r'](https://bobovski66.github.io/PrecalculusII/demos/\1)',texsource)
         tex=pandoc(texsource,"latex")
         tex=tex.replace(r"\includegraphics{",r"\includegraphics[width=\linewidth,height=.42\textheight,keepaspectratio]{")
+        tex=tex.replace(r"height=.42\textheight,keepaspectratio]{../assets/learning/m02-height-measurement.pdf}",r"height=.31\textheight,keepaspectratio]{../assets/learning/m02-height-measurement.pdf}")
         tex=tex.replace(r"\begin{figure}",r"\begin{figure}[htbp]")
         tex=re.sub(r'\\(hypertarget|label)\{([^}]+)\}',lambda m: "\\"+m[1]+"{m"+str(n)+"-"+m[2]+"}",tex)
         tex=tex.replace(r"\hypertarget{m"+str(n)+"-review-exercises}",r"\Needspace{20\baselineskip}"+"\n"+r"\hypertarget{m"+str(n)+"-review-exercises}")
@@ -69,12 +71,13 @@ def readings():
             r"\section{"+TITLES[n]+"}\n"+tex+"\n\\clearpage\n")
 
 def labs():
-    for n,data in LABS.items():
-        title="Lab: "+data["title"]
+    activities=[(n,data,"lab") for n,data in LABS.items()]+[(n,data,"applications") for n,data in APPS.items()]
+    for n,data,kind in activities:
+        title=("Applications: " if kind=="applications" else "Lab: ")+data["title"]
         page=head(title,'<script defer src="../assets/guided-lab.js"></script>')+masthead(n,title)
         page+='<div class="layout"><aside class="rail"><h2>Your work</h2><div class="actions">'
         page+='<button id="prepare-submission">Prepare Submission</button><button class="secondary" id="next-problem">Next problem</button><button class="secondary" id="clear-work">Clear answers</button></div>'
-        page+='<progress id="progress" value="0" max="100" aria-label="Lab progress"></progress><p id="progress-label" class="small" aria-live="polite"></p><nav aria-label="Lab problems">'
+        page+='<progress id="progress" value="0" max="100" aria-label="Activity progress"></progress><p id="progress-label" class="small" aria-live="polite"></p><nav aria-label="Activity problems">'
         page+=''.join(f'<a href="#problem-{i+1}">{i+1}. {p["title"]}</a>' for i,p in enumerate(data["problems"]))+'</nav></aside>'
         page+='<main id="main"><div id="lab-workspace"><section class="panel"><p class="intro">'+data["intro"]+'</p>'
         page+='<p>Work through the parts in order. Type calculations and reasoning in each answer space; fractions and ordinary math notation are welcome. Hints can help you begin. After you try a problem, open its solution to compare.</p>'
@@ -92,11 +95,12 @@ def labs():
                 page+='</div>'
             page+='<details class="solution locked"><summary>Compare your solution after an attempt</summary><div class="solution-body">'+p["solution"]+'</div><p class="attempt-message small" role="status"></p></details></section>'
         page+='</div></main></div>'
-        payload=dict(module=n,title=title,key=data["key"],prefix=data["prefix"],problems=[dict(title=p["title"]) for p in data["problems"]])
+        payload=dict(module=n,title=title,kind=kind,key=data["key"],prefix=data["prefix"],problems=[dict(title=p["title"]) for p in data["problems"]])
         page+='<script type="application/json" id="lab-data">'+json.dumps(payload).replace("</","<\\/")+'</script>'+footer()
-        (ROOT/f"labs/week{n:02}_lab.html").write_text(page)
+        target=f"applications/week{n:02}_applications.html" if kind=="applications" else f"labs/week{n:02}_lab.html"
+        (ROOT/target).write_text(page)
 
 if __name__=="__main__":
     readings()
     labs()
-    print("Generated six illustrated readings and ten guided labs.")
+    print("Generated nine illustrated readings, ten guided labs, and three guided application pages.")

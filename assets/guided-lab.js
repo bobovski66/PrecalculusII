@@ -2,6 +2,7 @@
 (() => {
   "use strict";
   const data = JSON.parse(document.getElementById("lab-data").textContent);
+  const activityName=data.kind==="applications"?"Applications":"Lab";
   const form = document.getElementById("lab-workspace");
   const status = document.getElementById("save-status");
   let work = {};
@@ -76,7 +77,7 @@
     input.setAttribute("aria-invalid",String(!correct));save();
   }));
   document.getElementById("clear-work").addEventListener("click", () => {
-    if (!confirm("Clear this module's saved lab answers on this device?")) return;
+    if (!confirm("Clear this module's saved "+activityName.toLowerCase()+" answers on this device?")) return;
     work={};fields().forEach(e=>e.value="");
     form.querySelectorAll(".legacy").forEach(e=>e.remove());
     form.querySelectorAll(".feedback,.attempt-message").forEach(e=>e.textContent="");
@@ -93,8 +94,8 @@
   function submission() {
     save();
     let html='<div class="submission-actions"><button id="submission-print">Print / Save PDF</button>'+
-      '<a id="submission-download" class="download-button">Download HTML</a><button class="secondary" id="return-lab">Return to Lab</button></div>'+
-      '<h2>Lab submission</h2><p><strong>Student:</strong> '+escapeHTML(work.student || "(name not entered)")+
+      '<a id="submission-download" class="download-button">Download HTML</a><button class="secondary" id="return-lab">Return to '+activityName+'</button></div>'+
+      '<h2>'+activityName+' submission</h2><p><strong>Student:</strong> '+escapeHTML(work.student || "(name not entered)")+
       '<br><strong>Date:</strong> '+escapeHTML(work.date || "")+'</p>';
     form.querySelectorAll(".problem").forEach(p=>{
       html+='<section class="submission-question"><h2>'+p.querySelector("h2").innerHTML+'</h2>';
@@ -132,7 +133,7 @@
       const blob=new Blob(["<!doctype html>\n"+clone.outerHTML],{type:"text/html"});
       const url=URL.createObjectURL(blob), a=document.getElementById("submission-download");
       const name=(work.student||"Student").trim().replace(/[^a-zA-Z0-9_-]+/g,"_").slice(0,60);
-      a.href=url;a.download="MATH142_Module"+String(data.module).padStart(2,"0")+"_Lab_"+name+".html";
+      a.href=url;a.download="MATH142_Module"+String(data.module).padStart(2,"0")+"_"+activityName+"_"+name+".html";
       return url;
     }
     const exportURL=prepareDownload();

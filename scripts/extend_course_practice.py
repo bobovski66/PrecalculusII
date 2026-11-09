@@ -4,6 +4,36 @@ import json
 
 ROOT=Path(__file__).resolve().parents[1]
 EXTRA={
+2:[
+["At 90°, which statement correctly compares tangent and cotangent?",
+ ["Both are zero","Both are undefined","Tangent is undefined; cotangent is zero","Tangent is zero; cotangent is undefined"],2,
+ "Use sin90° = 1 and cos90° = 0 in the coordinate quotient definitions.",
+ "Tangent divides by cosine and is undefined. Cotangent is cos/sin = 0/1 = 0."],
+["A 25 m cable reaches 24 m vertically above level ground. For its ground angle, what is cosine?",
+ ["24/25","7/25","7/24","25/7"],1,
+ "Find the horizontal leg with the Pythagorean theorem, then use adjacent/hypotenuse.",
+ "The horizontal leg is √(625 − 576) = 7 m, so cosine is 7/25."]
+],
+3:[
+["A wave has maximum 8, minimum 2, period 12, and a maximum at t = 2. Which model fits?",
+ ["5 + 3cos((π/6)(t−2))","3 + 5cos((π/6)(t−2))","5 + 3sin((π/6)(t−2))","5 + 3cos(12(t−2))"],0,
+ "Find the midpoint, half the range, and angular frequency. A positive cosine begins at a maximum.",
+ "The midline is 5, amplitude 3, and angular frequency 2π/12 = π/6. Shifting cosine to t = 2 places the maximum correctly."],
+["What is the horizontal shift of sin(2x − 6)?",
+ ["6 right","6 left","3 right","3 left"],2,
+ "Factor 2 out of the entire inside expression.",
+ "2x − 6 = 2(x − 3), so the shift is 3 units right."]
+],
+4:[
+["What is sin(arccos(−5/13))?",
+ ["−12/13","12/13","5/13","−5/13"],1,
+ "Arccosine chooses a Quadrant II angle. Use the Pythagorean identity and choose sine's sign.",
+ "Sine is positive in the chosen range, so its value is √(1 − 25/169) = 12/13."],
+["The expression (1 − cos²x)/sin x simplifies to sin x. Which restriction remains?",
+ ["None","cos x must be nonzero","sin x must be nonzero","x must be positive"],2,
+ "Keep the original denominator restriction even after simplifying.",
+ "The original expression divides by sin x, so x = kπ remains excluded."]
+],
 5:[
 ["A signal is sin(πt/4). During 0 ≤ t < 8 seconds, when is the signal 1?",
  ["t = 1 only","t = 2 only","t = 2 and 6","t = 4 only"],1,
@@ -72,11 +102,12 @@ def build():
         p=ROOT/f"quizzes/week{n:02}_quiz.html";s=p.read_text()
         start=s.index("const Q=")+len("const Q=")
         questions,end=json.JSONDecoder().raw_decode(s[start:])
-        questions=questions[:10]+extra
+        additions=[dict(q=q,opts=opts,a=a,h=h,why=why) for q,opts,a,h,why in extra] if n==2 else extra
+        questions=questions[:10]+additions
         if n==10:
             questions[5][0]="If zₙ₊₁ = izₙ, where z₀ ≠ 0, after how many steps does it first return?"
         s=s[:start]+json.dumps(questions,ensure_ascii=False,separators=(",",":"))+s[start+end:]
         p.write_text(s)
-    print("Added two transfer questions to each of Modules 5–10.")
+    print("Added two transfer questions to each of Modules 2–10.")
 
 if __name__=="__main__": build()
