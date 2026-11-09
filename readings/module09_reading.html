@@ -1,0 +1,116 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sequences and Series | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 9 · Dr. Lee</p><h1>Sequences and Series</h1><nav class="module-nav" aria-label="Module 9 resources"><a href="../readings/module09_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week09.pdf">Reading PDF</a><a href="../demos/sequence_explorer.html">Explorer</a><a href="../labs/week09_lab.html">Guided lab</a><a href="../applications/week09_applications.html">Applications</a><a href="../quizzes/week09_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#separate-a-term-from-a-running-total">Separate a term from a running total</a><a href="#repeated-addition-produces-an-arithmetic-sequence">Repeated addition produces an arithmetic sequence</a><a href="#repeated-multiplication-produces-a-geometric-sequence">Repeated multiplication produces a geometric sequence</a><a href="#add-a-finite-geometric-pattern">Add a finite geometric pattern</a><a href="#read-sigma-notation-as-an-instruction-to-add">Read sigma notation as an instruction to add</a><a href="#can-infinitely-many-additions-have-a-finite-total">Can infinitely many additions have a finite total?</a><a href="#a-feedback-rule-can-hide-a-geometric-pattern">A feedback rule can hide a geometric pattern</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>Suppose a theater adds two seats to each successive row. We can ask how many seats are in row 15, or how many seats are in the first 15 rows altogether. Those questions use the same pattern but ask for different quantities.</p>
+<p>A sequence records individual values. A series adds them. We will build formulas from repeated addition and multiplication, keeping the meaning of each index and total in view.</p>
+<h2 id="separate-a-term-from-a-running-total">Separate a term from a running total</h2>
+<p>A sequence assigns a number <span class="math inline">\(a_n\)</span> to each integer index in a specified list. Usually we begin at <span class="math inline">\(n=1\)</span>, though a time model may begin at <span class="math inline">\(n=0\)</span>. The first terms of <span class="math inline">\(a_n=3+2(n-1)\)</span> are <span class="math inline">\(3,5,7,9,\ldots\)</span>.</p>
+<p>The tenth term is <span class="math inline">\(a_{10}\)</span>. The sum of the first ten terms is <span class="math inline">\(S_{10}\)</span>: <span class="math display">\[
+S_n=a_1+a_2+\cdots+a_n.
+\]</span> The subscript tells you how far along the list to go. It does not mean multiplication.</p>
+<figure>
+<img src="../assets/learning/m09-terms-sums.svg" alt="Individual terms of a sequence and the sums accumulated through those terms answer different questions." />
+<figcaption aria-hidden="true">Individual terms of a sequence and the sums accumulated through those terms answer different questions.</figcaption>
+</figure>
+<p>For <span class="math inline">\(3,5,7,9,\ldots\)</span>, the first four partial sums are <span class="math inline">\(3,8,15,24\)</span>. The fourth term is 9, while the fourth partial sum is 24.</p>
+<p><strong>Try it.</strong> List the first five terms of <span class="math inline">\(a_n=7-3(n-1)\)</span>, then calculate their sum. Some terms are negative; include their signs.</p>
+<h2 id="repeated-addition-produces-an-arithmetic-sequence">Repeated addition produces an arithmetic sequence</h2>
+<p>An <strong>arithmetic sequence</strong> adds the same common difference <span class="math inline">\(d\)</span> at each step: <span class="math display">\[
+a_{n+1}=a_n+d.
+\]</span> Starting from <span class="math inline">\(a_1\)</span>, reaching term <span class="math inline">\(n\)</span> requires <span class="math inline">\(n-1\)</span> additions. Therefore <span class="math display">\[
+a_n=a_1+(n-1)d.
+\]</span> The recursive rule tells you how to take a step; the explicit formula lets you jump directly to any term.</p>
+<div class="example">
+<p><strong>Worked example: theater rows.</strong> The first row has 12 seats, and each next row has 2 more. Row 15 has <span class="math display">\[
+a_{15}=12+(15-1)(2)=40
+\]</span> seats. There are 14 increases between the first and fifteenth rows.</p>
+</div>
+<p>To add the rows, write the sequence forward and backward: <span class="math display">\[
+\begin{aligned}
+S_n&amp;=a_1+a_2+\cdots+a_n,\\
+S_n&amp;=a_n+a_{n-1}+\cdots+a_1.
+\end{aligned}
+\]</span> Each column adds to <span class="math inline">\(a_1+a_n\)</span>, and there are <span class="math inline">\(n\)</span> columns. Thus <span class="math display">\[
+S_n=\frac n2(a_1+a_n)
+=\frac n2\bigl(2a_1+(n-1)d\bigr).
+\]</span> For the first 15 rows, the average of the endpoint counts is <span class="math inline">\((12+40)/2=26\)</span>. Multiplying by 15 gives 390 seats. The formula also works for an odd number of terms: the middle term equals that same average.</p>
+<h2 id="repeated-multiplication-produces-a-geometric-sequence">Repeated multiplication produces a geometric sequence</h2>
+<p>A <strong>geometric sequence</strong> multiplies by the same ratio <span class="math inline">\(q\)</span> at each step: <span class="math display">\[
+a_{n+1}=qa_n,\qquad a_n=a_1q^{n-1}.
+\]</span> For <span class="math inline">\(a_1=80,q=1/2\)</span>, the terms are <span class="math inline">\(80,40,20,10,5,\ldots\)</span>. With <span class="math inline">\(0&lt;q&lt;1\)</span>, positive terms decrease toward zero. With <span class="math inline">\(q&gt;1\)</span>, positive terms grow. Negative ratios alternate signs.</p>
+<p>A percentage change specifies a multiplication factor. An 8% increase multiplies by <span class="math inline">\(1.08\)</span>; a 12% decrease multiplies by <span class="math inline">\(0.88\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: define the initial index.</strong> A population begins at 500 and grows 8% per generation. If <span class="math inline">\(P_0=500\)</span> records the initial population, then <span class="math display">\[
+P_n=500(1.08)^n.
+\]</span> If the initial observation is labeled <span class="math inline">\(a_1=500\)</span>, the formula is <span class="math inline">\(a_n=500(1.08)^{n-1}\)</span>. The physical model is the same; the labels differ by one.</p>
+</div>
+<h2 id="add-a-finite-geometric-pattern">Add a finite geometric pattern</h2>
+<p>Write a partial sum and its multiple by <span class="math inline">\(q\)</span>: <span class="math display">\[
+\begin{aligned}
+S_n&amp;=a_1+a_1q+\cdots+a_1q^{n-1},\\
+qS_n&amp;=\phantom{a_1+{}}a_1q+\cdots+a_1q^{n-1}+a_1q^n.
+\end{aligned}
+\]</span> Subtracting cancels every middle term: <span class="math display">\[
+(1-q)S_n=a_1-a_1q^n,\qquad
+S_n=a_1\frac{1-q^n}{1-q}\quad(q\ne1).
+\]</span> For <span class="math inline">\(q=1\)</span>, all terms equal <span class="math inline">\(a_1\)</span>, so the total is <span class="math inline">\(na_1\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: a finite total.</strong> For <span class="math inline">\(5,3,1.8,\ldots\)</span>, the ratio is <span class="math inline">\(0.6\)</span>. The sum through term 5 is <span class="math display">\[
+S_5=5\frac{1-0.6^5}{1-0.6}=11.528.
+\]</span> This adds five terms. The fifth term alone is <span class="math inline">\(a_5=5(0.6)^4=0.648\)</span>.</p>
+</div>
+<p>The finite-sum formula works for growing, decreasing, or alternating geometric patterns, provided <span class="math inline">\(q\ne1\)</span>. It does not require convergence.</p>
+<h2 id="read-sigma-notation-as-an-instruction-to-add">Read sigma notation as an instruction to add</h2>
+<p>The notation <span class="math display">\[
+\sum_{k=1}^{4}(2k+1)
+\]</span> says: substitute <span class="math inline">\(k=1,2,3,4\)</span>, then add the four results. It becomes <span class="math inline">\(3+5+7+9=24\)</span>.</p>
+<p>The letter <span class="math inline">\(k\)</span> is an index used inside the instruction. The bottom and top bounds determine which values to use. For <span class="math inline">\(\sum_{k=0}^{5}2(3/2)^k\)</span>, there are six terms, since both endpoints count.</p>
+<p>Before applying a formula, write the first few terms and the last term. This checks the first value, ratio, and number of terms.</p>
+<h2 id="can-infinitely-many-additions-have-a-finite-total">Can infinitely many additions have a finite total?</h2>
+<p>For the geometric pattern with <span class="math inline">\(|q|&lt;1\)</span>, the power <span class="math inline">\(q^n\)</span> approaches zero. The finite-sum formula then approaches <span class="math display">\[
+\sum_{n=0}^{\infty}aq^n=\frac{a}{1-q}.
+\]</span> An infinite sum means the limit of its partial sums. We calculate finite totals and ask what value they approach.</p>
+<figure>
+<img src="../assets/learning/m09-geometric-limit.svg" alt="Geometric terms approach zero while their running totals approach a finite value. Ratios with magnitude at least one behave differently for nonzero first terms." />
+<figcaption aria-hidden="true">Geometric terms approach zero while their running totals approach a finite value. Ratios with magnitude at least one behave differently for nonzero first terms.</figcaption>
+</figure>
+<p>For <span class="math inline">\(5+3+1.8+\cdots\)</span>, the limiting total is <span class="math inline">\(5/(1-0.6)=12.5\)</span>. After <span class="math inline">\(n\)</span> terms, the remaining amount is <span class="math display">\[
+\frac{5(0.6)^n}{1-0.6}.
+\]</span> This also measures how close a partial sum is to the limit.</p>
+<div class="example">
+<p><strong>Worked example: idealized bouncing.</strong> Drop a ball from 5 m, with each rebound reaching 60% of the previous height. The first drop contributes 5 m. Each later rebound height contributes twice, once upward and once downward: <span class="math display">\[
+5+2(5)(0.6+0.6^2+\cdots)
+=5+10\frac{0.6}{1-0.6}=20\text{ m}.
+\]</span> The model describes infinitely many idealized rebounds with a finite total travel distance.</p>
+</div>
+<p>For a geometric series with nonzero first term, <span class="math inline">\(|q|\ge1\)</span> prevents convergence. With <span class="math inline">\(q=2\)</span>, terms grow; with <span class="math inline">\(q=-1\)</span>, partial sums oscillate. Also, terms approaching zero alone do not guarantee convergence for every kind of series; the conclusion above follows from the geometric formula.</p>
+<p><strong>Try it.</strong> Find the sum of <span class="math inline">\(4-2+1-\tfrac12+\cdots\)</span>. Identify its ratio and explain why the alternating signs are allowed.</p>
+<h2 id="a-feedback-rule-can-hide-a-geometric-pattern">A feedback rule can hide a geometric pattern</h2>
+<p>Consider <span class="math display">\[
+a_{n+1}=\frac{a_n+6}{2},\qquad a_1=0.
+\]</span> Each step averages the current value with 6. The first terms are <span class="math inline">\(0,3,4.5,5.25,5.625,\ldots\)</span>. The changes are not constant, and neither are the ratios of consecutive terms.</p>
+<p>Find the equilibrium by asking which value would remain fixed: <span class="math display">\[
+L=\frac{L+6}{2}\quad\Longrightarrow\quad L=6.
+\]</span> Now examine the difference <span class="math inline">\(e_n=a_n-6\)</span>. Subtracting 6 from the recurrence gives <span class="math display">\[
+e_{n+1}=\frac{e_n}{2}.
+\]</span> The <strong>difference from equilibrium</strong> is geometric, even though the original sequence is not. Since <span class="math inline">\(e_1=-6\)</span>, <span class="math display">\[
+a_n=6-6\left(\frac12\right)^{n-1}.
+\]</span></p>
+<figure>
+<img src="../assets/learning/m09-feedback.svg" alt="A feedback sequence approaches its equilibrium while the remaining gap halves at every step." />
+<figcaption aria-hidden="true">A feedback sequence approaches its equilibrium while the remaining gap halves at every step.</figcaption>
+</figure>
+<p>Use the <a href="../demos/sequence_explorer.html">Sequence Explorer</a> to compare terms and partial sums of arithmetic and geometric sequences. For the feedback example, compute the terms by hand and use the formula for the remaining gap to explain the approach.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>List five terms of <span class="math inline">\(a_n=7-3(n-1)\)</span>, and find <span class="math inline">\(a_{20}\)</span>.</li>
+<li>For <span class="math inline">\(a_1=4,d=5\)</span>, calculate <span class="math inline">\(S_{30}\)</span>.</li>
+<li>For <span class="math inline">\(a_1=81,q=1/3\)</span>, find <span class="math inline">\(a_6\)</span>.</li>
+<li>Compute <span class="math inline">\(\sum_{k=0}^{5}2(3/2)^k\)</span> exactly.</li>
+<li>Explain the difference between <span class="math inline">\(\sum_{k=1}^{n}k\)</span> and its final term <span class="math inline">\(n\)</span>.</li>
+<li>Find the sum of <span class="math inline">\(5+5/2+5/4+\cdots\)</span>.</li>
+<li>A machine initially worth $12,000 loses 12% of its value each year. Write its value after <span class="math inline">\(n\)</span> years.</li>
+<li>For <span class="math inline">\(a_{n+1}=(a_n+10)/2,\ a_1=2\)</span>, find the equilibrium and an explicit formula.</li>
+<li>A theater has 20 rows, with 14 seats in the first and 3 more in each next row. Find the total.</li>
+<li>Explain why <span class="math inline">\(1-1+1-1+\cdots\)</span> has no limiting partial sum.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>The first Try it gives <span class="math inline">\(7,4,1,-2,-5\)</span>, with sum 5. The alternating geometric series has ratio <span class="math inline">\(-1/2\)</span> and sum <span class="math inline">\(4/(1+1/2)=8/3\)</span>. Its partial sums approach the limit from alternating sides.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

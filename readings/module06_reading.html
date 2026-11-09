@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vectors and Geometric Applications | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 6 · Dr. Lee</p><h1>Vectors and Geometric Applications</h1><nav class="module-nav" aria-label="Module 6 resources"><a href="../readings/module06_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week06.pdf">Reading PDF</a><a href="../demos/vector_explorer.html">Explorer</a><a href="../labs/week06_lab.html">Guided lab</a><a href="../applications/week06_applications.html">Applications</a><a href="../quizzes/week06_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#describe-a-displacement-with-components">Describe a displacement with components</a><a href="#add-arrows-by-following-one-with-another">Add arrows by following one with another</a><a href="#convert-between-length-and-angle-and-components">Convert between length-and-angle and components</a><a href="#the-dot-product-measures-alignment">The dot product measures alignment</a><a href="#a-projection-is-the-part-pointing-along-a-chosen-direction">A projection is the part pointing along a chosen direction</a><a href="#work-uses-the-force-along-the-displacement">Work uses the force along the displacement</a><a href="#the-triangle-law-returns-in-vector-language">The triangle law returns in vector language</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>A person walks 6 km east, then 8 km north. The route is 14 km long, but the endpoint is only 10 km from the start. To describe where the person ends up, we need both a distance and a direction. A vector records those two pieces of information together.</p>
+<p>This chapter develops vectors from familiar coordinates and triangle geometry. We will add movements, resolve forces into components, and measure how much one vector points along another.</p>
+<h2 id="describe-a-displacement-with-components">Describe a displacement with components</h2>
+<p>The displacement <span class="math inline">\(\mathbf u=\langle6,8\rangle\)</span> means 6 units horizontally and 8 units vertically. Angle brackets distinguish a vector from a location <span class="math inline">\((6,8)\)</span>. The same components can describe an arrow starting anywhere in the plane.</p>
+<figure>
+<img src="../assets/learning/m06-displacement.svg" alt="The walking route is 14 km; the displacement joins the start directly to the endpoint." />
+<figcaption aria-hidden="true">The walking route is 14 km; the displacement joins the start directly to the endpoint.</figcaption>
+</figure>
+<p>For a vector <span class="math inline">\(\mathbf u=\langle u_x,u_y\rangle\)</span>, its <strong>magnitude</strong> is the length of its arrow: <span class="math display">\[
+\|\mathbf u\|=\sqrt{u_x^2+u_y^2}.
+\]</span> For the walk, <span class="math inline">\(\sqrt{6^2+8^2}=10\)</span> km. This is displacement magnitude. The distance walked depends on the route.</p>
+<p>To find the vector from <span class="math inline">\(P=(p_x,p_y)\)</span> to <span class="math inline">\(Q=(q_x,q_y)\)</span>, subtract start from finish: <span class="math display">\[
+\overrightarrow{PQ}=\langle q_x-p_x,q_y-p_y\rangle.
+\]</span> Starting at <span class="math inline">\(P\)</span>, adding those two changes lands exactly at <span class="math inline">\(Q\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: from one location to another.</strong> For <span class="math inline">\(P=(-2,3)\)</span>, <span class="math inline">\(Q=(5,-1)\)</span>, <span class="math display">\[
+\overrightarrow{PQ}=\langle5-(-2),-1-3\rangle=\langle7,-4\rangle,
+\qquad \|\overrightarrow{PQ}\|=\sqrt{65}.
+\]</span> The endpoint lies 7 units right and 4 units down from the start. Reversing the journey gives <span class="math inline">\(\overrightarrow{QP}=\langle-7,4\rangle\)</span>.</p>
+</div>
+<h2 id="add-arrows-by-following-one-with-another">Add arrows by following one with another</h2>
+<p>If a movement <span class="math inline">\(\mathbf u\)</span> is followed by <span class="math inline">\(\mathbf v\)</span>, the total horizontal change is <span class="math inline">\(u_x+v_x\)</span>, and the total vertical change is <span class="math inline">\(u_y+v_y\)</span>: <span class="math display">\[
+\mathbf u+\mathbf v=\langle u_x+v_x,u_y+v_y\rangle.
+\]</span> Draw the second arrow with its tail at the first arrow’s head. The sum joins the original start to the final endpoint. Translating an arrow for this construction preserves its components.</p>
+<figure>
+<img src="../assets/learning/m06-addition.svg" alt="Head-to-tail addition and the parallelogram give the same sum. The difference joins the endpoints when both arrows start together." />
+<figcaption aria-hidden="true">Head-to-tail addition and the parallelogram give the same sum. The difference joins the endpoints when both arrows start together.</figcaption>
+</figure>
+<p>For <span class="math inline">\(\mathbf u=\langle3,4\rangle\)</span> and <span class="math inline">\(\mathbf v=\langle-2,1\rangle\)</span>, the sum is <span class="math inline">\(\langle1,5\rangle\)</span>. The second movement goes left by 2 and up by 1. Adding it reduces the eastward component and increases the northward component.</p>
+<p>Multiplying by a number scales every component: <span class="math display">\[
+c\mathbf u=\langle cu_x,cu_y\rangle.
+\]</span> For <span class="math inline">\(c&gt;0\)</span>, the arrow keeps its direction; for <span class="math inline">\(c&lt;0\)</span>, it reverses direction. Its length becomes <span class="math inline">\(|c|\|\mathbf u\|\)</span>. The zero vector <span class="math inline">\(\langle0,0\rangle\)</span> has magnitude zero and has no direction.</p>
+<p>Subtraction means adding the opposite: <span class="math inline">\(\mathbf u-\mathbf v=\mathbf u+(-\mathbf v)\)</span>. If both vectors start at the origin, <span class="math inline">\(\mathbf u-\mathbf v\)</span> points from the endpoint of <span class="math inline">\(\mathbf v\)</span> to the endpoint of <span class="math inline">\(\mathbf u\)</span>.</p>
+<p><strong>Try it.</strong> With <span class="math inline">\(\mathbf u=\langle2,5\rangle\)</span>, <span class="math inline">\(\mathbf v=\langle-1,3\rangle\)</span>, calculate <span class="math inline">\(\mathbf u+\mathbf v\)</span> and <span class="math inline">\(3\mathbf u-2\mathbf v\)</span>. Check the direction of each component.</p>
+<h2 id="convert-between-length-and-angle-and-components">Convert between length-and-angle and components</h2>
+<p>A vector of magnitude <span class="math inline">\(r\ge0\)</span> at angle <span class="math inline">\(\theta\)</span>, measured counterclockwise from the positive horizontal axis, has components <span class="math display">\[
+\mathbf u=\langle r\cos\theta,r\sin\theta\rangle.
+\]</span> This is the unit-circle point scaled by <span class="math inline">\(r\)</span>. The magnitude returns to <span class="math inline">\(r\)</span>, because <span class="math inline">\(\cos^2\theta+\sin^2\theta=1\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: a force pointing up and left.</strong> A 20 N force acts at <span class="math inline">\(150^\circ\)</span>: <span class="math display">\[
+\mathbf F=\langle20\cos150^\circ,20\sin150^\circ\rangle
+=\langle-10\sqrt3,10\rangle\text{ N}.
+\]</span> The negative horizontal component describes the leftward part of the force; the positive vertical component describes its upward part.</p>
+</div>
+<p>For a vector with known components, find the magnitude first. To recover direction, inspect the quadrant before using inverse tangent. For <span class="math inline">\(\langle-3,4\rangle\)</span>, the reference angle is <span class="math inline">\(\arctan(4/3)\approx53.13^\circ\)</span>. The vector lies in Quadrant II, so its direction is <span class="math inline">\(180^\circ-53.13^\circ=126.87^\circ\)</span>. The single quotient <span class="math inline">\(4/(-3)\)</span> does not by itself specify that quadrant.</p>
+<p>A <strong>unit vector</strong> has magnitude 1. For a nonzero vector, <span class="math display">\[
+\widehat{\mathbf u}=\frac{\mathbf u}{\|\mathbf u\|}.
+\]</span> Thus <span class="math inline">\(\langle-3,4\rangle/5=\langle-3/5,4/5\rangle\)</span> keeps the direction and sets the length to 1.</p>
+<h2 id="the-dot-product-measures-alignment">The dot product measures alignment</h2>
+<p>The dot product combines two vectors into a number: <span class="math display">\[
+\mathbf u\cdot\mathbf v=u_xv_x+u_yv_y.
+\]</span> For nonzero vectors, this number also has a geometric form: <span class="math display">\[
+\mathbf u\cdot\mathbf v=\|\mathbf u\|\|\mathbf v\|\cos\phi,
+\]</span> where <span class="math inline">\(0\le\phi\le\pi\)</span> is the angle between their arrows.</p>
+<figure>
+<img src="../assets/learning/m06-alignment.svg" alt="For vectors of fixed lengths, the dot product is positive at an acute angle, zero at a right angle, and negative at an obtuse angle." />
+<figcaption aria-hidden="true">For vectors of fixed lengths, the dot product is positive at an acute angle, zero at a right angle, and negative at an obtuse angle.</figcaption>
+</figure>
+<p>The sign has meaning. Positive indicates an acute angle, zero indicates a right angle, and negative indicates an obtuse angle. A zero vector has dot product zero with every vector, but there is no angle to assign to it.</p>
+<div class="example">
+<p><strong>Worked example: perpendicular vectors.</strong> Let <span class="math inline">\(\mathbf u=\langle3,4\rangle\)</span>, <span class="math inline">\(\mathbf v=\langle4,-3\rangle\)</span>. Their dot product is <span class="math inline">\(12-12=0\)</span>. Both are nonzero, so the angle between them is <span class="math inline">\(90^\circ\)</span>.</p>
+</div>
+<p>To calculate another angle, solve the geometric formula: <span class="math display">\[
+\phi=\arccos\left(\frac{\mathbf u\cdot\mathbf v}
+{\|\mathbf u\|\|\mathbf v\|}\right).
+\]</span> For <span class="math inline">\(\langle2,1\rangle\)</span> and <span class="math inline">\(\langle1,2\rangle\)</span>, the dot product is 4 and each magnitude is <span class="math inline">\(\sqrt5\)</span>. Thus <span class="math inline">\(\phi=\arccos(4/5)\approx36.87^\circ\)</span>.</p>
+<h2 id="a-projection-is-the-part-pointing-along-a-chosen-direction">A projection is the part pointing along a chosen direction</h2>
+<p>Imagine a light casting an arrow’s shadow onto a line through the origin. The <strong>projection</strong> records the part of <span class="math inline">\(\mathbf u\)</span> along the direction of a nonzero vector <span class="math inline">\(\mathbf v\)</span>: <span class="math display">\[
+\operatorname{proj}_{\mathbf v}\mathbf u
+=\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\mathbf v.
+\]</span></p>
+<figure>
+<img src="../assets/learning/m06-projection.svg" alt="Projection separates a vector into a part parallel to the chosen direction and a perpendicular remainder." />
+<figcaption aria-hidden="true">Projection separates a vector into a part parallel to the chosen direction and a perpendicular remainder.</figcaption>
+</figure>
+<p>Why this coefficient? First divide <span class="math inline">\(\mathbf v\)</span> by its length to get a unit direction <span class="math inline">\(\widehat{\mathbf v}\)</span>. The signed length of the shadow is <span class="math inline">\(\mathbf u\cdot\widehat{\mathbf v}=\|\mathbf u\|\cos\phi\)</span>. Multiply that length by <span class="math inline">\(\widehat{\mathbf v}\)</span>, obtaining the displayed vector formula.</p>
+<div class="example">
+<p><strong>Worked example: horizontal and slanted projections.</strong> Projecting <span class="math inline">\(\langle4,3\rangle\)</span> onto <span class="math inline">\(\langle1,0\rangle\)</span> gives <span class="math inline">\(\langle4,0\rangle\)</span>. Onto <span class="math inline">\(\mathbf v=\langle1,1\rangle\)</span>, the coefficient is <span class="math inline">\((4+3)/(1+1)=7/2\)</span>, giving <span class="math inline">\(\langle7/2,7/2\rangle\)</span>. The remainder is <span class="math inline">\(\langle1/2,-1/2\rangle\)</span>; its dot product with <span class="math inline">\(\langle1,1\rangle\)</span> is zero.</p>
+</div>
+<h2 id="work-uses-the-force-along-the-displacement">Work uses the force along the displacement</h2>
+<p>For a constant force <span class="math inline">\(\mathbf F\)</span> acting through displacement <span class="math inline">\(\mathbf d\)</span>, the work is <span class="math display">\[
+W=\mathbf F\cdot\mathbf d
+=\|\mathbf F\|\|\mathbf d\|\cos\phi.
+\]</span> Newtons times meters give joules. A perpendicular force contributes zero work to that displacement. A force pointing against the displacement contributes negative work.</p>
+<p>A force <span class="math inline">\(\langle12,5\rangle\)</span> N acting through <span class="math inline">\(\langle3,0\rangle\)</span> m does <span class="math inline">\(12(3)+5(0)=36\)</span> J of work. Only the horizontal component contributes. If the force instead acted at <span class="math inline">\(60^\circ\)</span> to the displacement, only half its magnitude would act along the movement.</p>
+<p><strong>Try it.</strong> A 50 N force acts at <span class="math inline">\(60^\circ\)</span> to a 4 m displacement. Calculate its work and compare with the work from a parallel force of the same magnitude.</p>
+<h2 id="the-triangle-law-returns-in-vector-language">The triangle law returns in vector language</h2>
+<p>Place two vectors <span class="math inline">\(\mathbf u,\mathbf v\)</span> at a common starting point. Their difference joins their endpoints. Expanding its squared magnitude gives <span class="math display">\[
+\begin{aligned}
+\|\mathbf u-\mathbf v\|^2
+&amp;=(\mathbf u-\mathbf v)\cdot(\mathbf u-\mathbf v)\\
+&amp;=\|\mathbf u\|^2+\|\mathbf v\|^2-2\mathbf u\cdot\mathbf v\\
+&amp;=\|\mathbf u\|^2+\|\mathbf v\|^2
+-2\|\mathbf u\|\|\mathbf v\|\cos\phi.
+\end{aligned}
+\]</span> This is the Law of Cosines. The sides are the two original vectors and their connecting difference. It explains why component calculations and triangle calculations agree.</p>
+<p>Use the <a href="../demos/vector_explorer.html">Vector Explorer</a> to compare the picture with the component arithmetic. When you change one component, describe the movement of the endpoint before reading the new magnitude or dot product.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>Find the vector from <span class="math inline">\((-2,3)\)</span> to <span class="math inline">\((5,-1)\)</span>, and its magnitude.</li>
+<li>For <span class="math inline">\(\mathbf u=\langle2,5\rangle\)</span>, <span class="math inline">\(\mathbf v=\langle-1,3\rangle\)</span>, compute <span class="math inline">\(\mathbf u+\mathbf v\)</span> and <span class="math inline">\(3\mathbf u-2\mathbf v\)</span>.</li>
+<li>Find exact components of a displacement of magnitude 12 at <span class="math inline">\(150^\circ\)</span>.</li>
+<li>Find a unit vector in the direction <span class="math inline">\(\langle-3,4\rangle\)</span>.</li>
+<li>Compute <span class="math inline">\(\langle2,-1\rangle\cdot\langle5,3\rangle\)</span> and interpret its sign.</li>
+<li>Determine whether <span class="math inline">\(\langle6,2\rangle\)</span> and <span class="math inline">\(\langle-1,3\rangle\)</span> are perpendicular.</li>
+<li>Find the projection of <span class="math inline">\(\langle4,3\rangle\)</span> onto <span class="math inline">\(\langle1,0\rangle\)</span>.</li>
+<li>Find the work of a 50 N force acting at <span class="math inline">\(60^\circ\)</span> to a 4 m displacement.</li>
+<li>Find the angle between <span class="math inline">\(\langle1,0\rangle\)</span> and <span class="math inline">\(\langle1,\sqrt3\rangle\)</span>.</li>
+<li>Give two routes with the same displacement but different total distances.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>The first Try it gives <span class="math inline">\(\langle1,8\rangle\)</span> and <span class="math inline">\(\langle8,9\rangle\)</span>. The work example gives <span class="math inline">\(50(4)\cos60^\circ=100\)</span> J, compared with 200 J for a parallel force. The factor <span class="math inline">\(\cos60^\circ=1/2\)</span> measures the contributing part of the force.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

@@ -1,0 +1,112 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Polar Coordinates and Complex Numbers | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 7 · Dr. Lee</p><h1>Polar Coordinates and Complex Numbers</h1><nav class="module-nav" aria-label="Module 7 resources"><a href="../readings/module07_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week07.pdf">Reading PDF</a><a href="../demos/polar_complex.html">Explorer</a><a href="../labs/week07_lab.html">Guided lab</a><a href="../applications/week07_applications.html">Applications</a><a href="../quizzes/week07_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#locate-a-point-by-distance-and-direction">Locate a point by distance and direction</a><a href="#several-polar-addresses-can-name-one-point">Several polar addresses can name one point</a><a href="#put-complex-numbers-on-the-plane">Put complex numbers on the plane</a><a href="#addition-combines-components-multiplication-combines-transformations">Addition combines components; multiplication combines transformations</a><a href="#powers-repeat-the-same-rotation-and-scaling">Powers repeat the same rotation and scaling</a><a href="#a-polar-equation-draws-points-by-changing-the-radius">A polar equation draws points by changing the radius</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>An address such as <span class="math inline">\((3,4)\)</span> describes a point by moving horizontally and vertically. A distance of 5 at a direction of about <span class="math inline">\(53^\circ\)</span> describes the same point by aiming and traveling. Polar coordinates use that second description.</p>
+<p>Complex numbers will add another interpretation. They represent points in the plane, and their multiplication performs rotations and scaling. The trigonometry from earlier chapters explains why.</p>
+<h2 id="locate-a-point-by-distance-and-direction">Locate a point by distance and direction</h2>
+<p>A polar pair <span class="math inline">\((r,\theta)\)</span> gives a radius and an angle from the positive horizontal axis. For <span class="math inline">\(r&gt;0\)</span>, start along the ray at angle <span class="math inline">\(\theta\)</span> and travel <span class="math inline">\(r\)</span> units from the origin. The familiar circle coordinates give <span class="math display">\[
+x=r\cos\theta,\qquad y=r\sin\theta.
+\]</span> These are the same component formulas used for vectors. Here they locate a point.</p>
+<div class="example">
+<p><strong>Worked example: a point in Quadrant II.</strong> For <span class="math inline">\((r,\theta)=(4,5\pi/6)\)</span>, <span class="math display">\[
+x=4(-\sqrt3/2)=-2\sqrt3,\qquad y=4(1/2)=2.
+\]</span> The negative <span class="math inline">\(x\)</span> and positive <span class="math inline">\(y\)</span> agree with the angle’s quadrant. The point is 4 units from the origin.</p>
+</div>
+<p>To go in the other direction with <span class="math inline">\(r\ge0\)</span>, use <span class="math inline">\(r=\sqrt{x^2+y^2}\)</span>. Find the angle from both coordinate signs. For <span class="math inline">\((-3,-3)\)</span>, the distance is <span class="math inline">\(3\sqrt2\)</span>, and the direction is <span class="math inline">\(5\pi/4\)</span> on <span class="math inline">\([0,2\pi)\)</span>. Computing <span class="math inline">\(\arctan(y/x)=\pi/4\)</span> alone would place the point in the wrong quadrant.</p>
+<p><strong>Try it.</strong> Convert <span class="math inline">\((6,-\pi/3)\)</span> to Cartesian coordinates. Give the same direction using an angle between 0 and <span class="math inline">\(2\pi\)</span>.</p>
+<h2 id="several-polar-addresses-can-name-one-point">Several polar addresses can name one point</h2>
+<p>Adding a full turn changes an angle’s description while leaving its direction fixed: <span class="math display">\[
+(r,\theta)\quad\text{and}\quad(r,\theta+2\pi k)
+\]</span> represent the same point for every integer <span class="math inline">\(k\)</span>.</p>
+<p>A negative radius means travel in the direction opposite the chosen ray. Consequently, <span class="math display">\[
+(r,\theta)\quad\text{and}\quad(-r,\theta+\pi)
+\]</span> also represent the same point.</p>
+<figure>
+<img src="../assets/learning/m07-polar-addresses.svg" alt="A positive radius on one ray and a negative radius on the opposite ray reach the same location." />
+<figcaption aria-hidden="true">A positive radius on one ray and a negative radius on the opposite ray reach the same location.</figcaption>
+</figure>
+<p>For example, <span class="math inline">\((2,\pi/3)\)</span>, <span class="math inline">\((2,7\pi/3)\)</span>, and <span class="math inline">\((-2,4\pi/3)\)</span> all locate <span class="math inline">\((1,\sqrt3)\)</span>. Check the last address directly: both cosine and sine at <span class="math inline">\(4\pi/3\)</span> are negative, and multiplying by <span class="math inline">\(-2\)</span> makes the coordinates positive.</p>
+<p>At <span class="math inline">\(r=0\)</span>, all choices of angle locate the origin. This redundancy is part of the coordinate system. A unique polar address requires conventions about radius and angle.</p>
+<h2 id="put-complex-numbers-on-the-plane">Put complex numbers on the plane</h2>
+<p>A complex number <span class="math inline">\(z=a+bi\)</span>, where <span class="math inline">\(i^2=-1\)</span>, corresponds to the point <span class="math inline">\((a,b)\)</span>. The horizontal axis records its real part <span class="math inline">\(a\)</span>, and the vertical axis its imaginary part <span class="math inline">\(b\)</span>.</p>
+<p>Its <strong>modulus</strong> is its distance from zero: <span class="math display">\[
+|z|=\sqrt{a^2+b^2}.
+\]</span> For <span class="math inline">\(z\ne0\)</span>, an <strong>argument</strong> is an angle locating its direction. Polar form writes <span class="math display">\[
+z=r(\cos\theta+i\sin\theta),\qquad r=|z|.
+\]</span> Arguments differ by whole turns. The number zero has modulus zero and no defined argument.</p>
+<div class="example">
+<p><strong>Worked example: rectangular to polar form.</strong> For <span class="math inline">\(z=-\sqrt3+i\)</span>, the modulus is <span class="math inline">\(\sqrt{3+1}=2\)</span>. The point lies in Quadrant II with reference angle <span class="math inline">\(\pi/6\)</span>, so one argument is <span class="math inline">\(5\pi/6\)</span>: <span class="math display">\[
+z=2\left(\cos\frac{5\pi}{6}+i\sin\frac{5\pi}{6}\right).
+\]</span> Multiplying out the two components returns the original number.</p>
+</div>
+<h2 id="addition-combines-components-multiplication-combines-transformations">Addition combines components; multiplication combines transformations</h2>
+<p>Complex addition follows vector addition: <span class="math display">\[
+(a+bi)+(c+di)=(a+c)+(b+d)i.
+\]</span> For multiplication, expand and use <span class="math inline">\(i^2=-1\)</span>: <span class="math display">\[
+(a+bi)(c+di)=(ac-bd)+(ad+bc)i.
+\]</span> For example, <span class="math inline">\((1+i)(1-i)=1-i^2=2\)</span>, while <span class="math inline">\((1+i)+(1-i)=2\)</span> as well. These particular results agree, but the two operations follow different rules.</p>
+<p>To see the geometric rule for multiplication, write <span class="math display">\[
+z=r(\cos\alpha+i\sin\alpha),\qquad
+w=s(\cos\beta+i\sin\beta).
+\]</span> Expanding gives real part <span class="math inline">\(rs(\cos\alpha\cos\beta-\sin\alpha\sin\beta)\)</span> and imaginary part <span class="math inline">\(rs(\sin\alpha\cos\beta+\cos\alpha\sin\beta)\)</span>. The angle-addition identities turn these into <span class="math display">\[
+zw=rs\bigl(\cos(\alpha+\beta)+i\sin(\alpha+\beta)\bigr).
+\]</span> <strong>Multiply the moduli and add the arguments.</strong></p>
+<figure>
+<img src="../assets/learning/m07-multiplication.svg" alt="Multiplication by a complex factor rotates the original vector and scales its length." />
+<figcaption aria-hidden="true">Multiplication by a complex factor rotates the original vector and scales its length.</figcaption>
+</figure>
+<div class="example">
+<p><strong>Worked example: rotate and stretch.</strong> Suppose <span class="math inline">\(z\)</span> has modulus 2 and argument <span class="math inline">\(30^\circ\)</span>, while <span class="math inline">\(w\)</span> has modulus 3 and argument <span class="math inline">\(60^\circ\)</span>. Then <span class="math inline">\(zw\)</span> has modulus 6 and argument <span class="math inline">\(90^\circ\)</span>, so <span class="math inline">\(zw=6i\)</span>.</p>
+</div>
+<p>Multiplication by <span class="math inline">\(i\)</span> gives a quarter-turn counterclockwise: <span class="math inline">\(i(a+bi)=-b+ai\)</span>, so <span class="math inline">\((a,b)\)</span> becomes <span class="math inline">\((-b,a)\)</span>. Its length stays fixed. Multiplication by <span class="math inline">\(-1\)</span> gives a half-turn. Multiplication by a positive real number changes length while keeping direction.</p>
+<p>Use the <a href="../demos/polar_complex.html">Polar and Complex Explorer</a> to predict a product’s length and direction before displaying its rectangular coordinates.</p>
+<h2 id="powers-repeat-the-same-rotation-and-scaling">Powers repeat the same rotation and scaling</h2>
+<p>Raising a number to a positive integer power repeats its multiplication rule: <span class="math display">\[
+\bigl[r(\cos\theta+i\sin\theta)\bigr]^n
+=r^n(\cos n\theta+i\sin n\theta).
+\]</span> This is <strong>De Moivre’s theorem</strong>. It also holds for zero and negative integer powers when the original number is nonzero.</p>
+<p>For example, <span class="math inline">\((\cos(\pi/6)+i\sin(\pi/6))^3\)</span> has modulus 1 and angle <span class="math inline">\(\pi/2\)</span>, so it equals <span class="math inline">\(i\)</span>. The exponent multiplies the original angle by 3.</p>
+<p>To find roots, reverse those two changes. Suppose <span class="math display">\[
+z^n=R(\cos\phi+i\sin\phi),\qquad R&gt;0.
+\]</span> The root modulus is <span class="math inline">\(R^{1/n}\)</span>. For the angles, include all complete turns before dividing: <span class="math display">\[
+\theta_k=\frac{\phi+2\pi k}{n},\qquad k=0,1,\ldots,n-1.
+\]</span> The roots are equally spaced around a circle.</p>
+<figure>
+<img src="../assets/learning/m07-roots.svg" alt="The cube roots of one are separated by 120 degrees; the fourth roots are separated by 90 degrees." />
+<figcaption aria-hidden="true">The cube roots of one are separated by 120 degrees; the fourth roots are separated by 90 degrees.</figcaption>
+</figure>
+<div class="example">
+<p><strong>Worked example: three cube roots of 1.</strong> Use <span class="math inline">\(R=1,\phi=0,n=3\)</span>. The angles are <span class="math inline">\(0,2\pi/3,4\pi/3\)</span>, giving <span class="math display">\[
+1,\qquad-\frac12+\frac{\sqrt3}{2}i,\qquad
+-\frac12-\frac{\sqrt3}{2}i.
+\]</span> Cubing any of these multiplies its angle by 3, producing a whole number of turns.</p>
+</div>
+<p>For the four fourth roots of 1, the angles are <span class="math inline">\(0,\pi/2,\pi,3\pi/2\)</span>, giving <span class="math inline">\(1,i,-1,-i\)</span>.</p>
+<p><strong>Try it.</strong> Find all square roots of <span class="math inline">\(4i\)</span>. Begin with modulus 4 and argument <span class="math inline">\(\pi/2\)</span>.</p>
+<h2 id="a-polar-equation-draws-points-by-changing-the-radius">A polar equation draws points by changing the radius</h2>
+<p>In a polar equation such as <span class="math inline">\(r=2\cos\theta\)</span>, each angle supplies a radius. Compute a few pairs, convert them to points, and look for the curve. When the formula supplies a negative radius, reverse the ray as described earlier.</p>
+<figure>
+<img src="../assets/learning/m07-polar-curve.svg" alt="Sample polar coordinates for r equal to twice cosine trace a circle whose center is displaced from the origin." />
+<figcaption aria-hidden="true">Sample polar coordinates for r equal to twice cosine trace a circle whose center is displaced from the origin.</figcaption>
+</figure>
+<p>Algebra identifies this particular curve. Multiply by <span class="math inline">\(r\)</span>, then use <span class="math inline">\(r^2=x^2+y^2\)</span> and <span class="math inline">\(r\cos\theta=x\)</span>: <span class="math display">\[
+r=2\cos\theta
+\ \Longrightarrow\
+x^2+y^2=2x
+\ \Longrightarrow\
+(x-1)^2+y^2=1.
+\]</span> It is a circle with center <span class="math inline">\((1,0)\)</span> and radius 1. Multiplying by <span class="math inline">\(r\)</span> deserves a check at <span class="math inline">\(r=0\)</span>; here the origin belongs to the original curve, since <span class="math inline">\(\cos\theta=0\)</span> for suitable angles.</p>
+<p>The curve is traced once as <span class="math inline">\(\theta\)</span> runs from 0 to <span class="math inline">\(\pi\)</span>. From <span class="math inline">\(\pi/2\)</span> onward, the radius is negative, but the resulting points continue around the lower half of the same circle.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>Convert <span class="math inline">\((5,2\pi/3)\)</span> to Cartesian coordinates.</li>
+<li>Give two distinct polar representations of <span class="math inline">\((\sqrt2,\sqrt2)\)</span>, including one with negative radius.</li>
+<li>Write <span class="math inline">\(-1-\sqrt3i\)</span> in polar form with argument in <span class="math inline">\([0,2\pi)\)</span>.</li>
+<li>Calculate <span class="math inline">\((2+i)(1-3i)\)</span> in rectangular form.</li>
+<li>Describe multiplication by <span class="math inline">\(-i\)</span> geometrically.</li>
+<li>Evaluate <span class="math inline">\((\cos(\pi/4)+i\sin(\pi/4))^4\)</span>.</li>
+<li>Find and plot all three cube roots of 1.</li>
+<li>Convert <span class="math inline">\(r=4\sin\theta\)</span> to Cartesian form and identify the curve.</li>
+<li>Find all square roots of <span class="math inline">\(-9\)</span>.</li>
+<li>Explain what happens to modulus and argument when a nonzero complex number is squared.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>The first Try it gives <span class="math inline">\((3,-3\sqrt3)\)</span>, with positive angle <span class="math inline">\(5\pi/3\)</span>. The square roots of <span class="math inline">\(4i\)</span> have modulus 2 and arguments <span class="math inline">\(\pi/4,5\pi/4\)</span>; in rectangular form they are <span class="math inline">\(\sqrt2+\sqrt2i\)</span> and <span class="math inline">\(-\sqrt2-\sqrt2i\)</span>.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

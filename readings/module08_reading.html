@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Parametric Equations and Conic Sections | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 8 · Dr. Lee</p><h1>Parametric Equations and Conic Sections</h1><nav class="module-nav" aria-label="Module 8 resources"><a href="../readings/module08_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week08.pdf">Reading PDF</a><a href="../demos/conic_explorer.html">Explorer</a><a href="../labs/week08_lab.html">Guided lab</a><a href="../applications/week08_applications.html">Applications</a><a href="../quizzes/week08_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#let-two-coordinates-depend-on-one-input">Let two coordinates depend on one input</a><a href="#the-same-curve-can-carry-different-motions">The same curve can carry different motions</a><a href="#follow-a-projectile-with-two-equations">Follow a projectile with two equations</a><a href="#a-circle-fixes-one-distance">A circle fixes one distance</a><a href="#an-ellipse-fixes-a-sum-of-distances">An ellipse fixes a sum of distances</a><a href="#a-parabola-balances-distance-to-a-point-and-a-line">A parabola balances distance to a point and a line</a><a href="#a-hyperbola-fixes-a-difference-of-distances">A hyperbola fixes a difference of distances</a><a href="#connect-the-descriptions">Connect the descriptions</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>A curve shows where a moving object can go. To describe its motion, we also need to know where it is at each time. Parametric equations supply that information by letting both coordinates depend on one parameter.</p>
+<p>We will use moving points to understand curves, then examine the distance rules defining circles, ellipses, parabolas, and hyperbolas. These are different ways to describe the same geometric objects.</p>
+<h2 id="let-two-coordinates-depend-on-one-input">Let two coordinates depend on one input</h2>
+<p>A parametric curve has the form <span class="math display">\[
+x=f(t),\qquad y=g(t).
+\]</span> Choose a value of <span class="math inline">\(t\)</span>, calculate both coordinates, and plot their ordered pair. If <span class="math inline">\(t\)</span> represents time, that pair is a position at that instant.</p>
+<p>For <span class="math inline">\(x=t+2,\ y=3t-1\)</span>, the values <span class="math inline">\(t=-1,0,1\)</span> give <span class="math inline">\((1,-4),(2,-1),(3,2)\)</span>. The point moves right and up as <span class="math inline">\(t\)</span> increases. Solving <span class="math inline">\(t=x-2\)</span> and substituting gives <span class="math inline">\(y=3x-7\)</span>, so the path is a line.</p>
+<p><strong>Eliminating the parameter</strong> means finding an equation involving only <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Keep the original interval for <span class="math inline">\(t\)</span> in mind. For <span class="math inline">\(0\le t\le1\)</span>, the preceding equations trace only the segment from <span class="math inline">\((2,-1)\)</span> to <span class="math inline">\((3,2)\)</span>.</p>
+<h2 id="the-same-curve-can-carry-different-motions">The same curve can carry different motions</h2>
+<p>For <span class="math inline">\(x=\cos t,\ y=\sin t\)</span>, the point moves counterclockwise around the unit circle. At <span class="math inline">\(t=0\)</span> it is <span class="math inline">\((1,0)\)</span>; at <span class="math inline">\(t=\pi/2\)</span> it reaches <span class="math inline">\((0,1)\)</span>.</p>
+<p>Replace <span class="math inline">\(t\)</span> by <span class="math inline">\(2t\)</span>. The point still lies on the unit circle, because <span class="math inline">\(\cos^2(2t)+\sin^2(2t)=1\)</span>. It now completes a revolution in <span class="math inline">\(\pi\)</span> units of time.</p>
+<figure>
+<img src="../assets/learning/m08-timing.svg" alt="The two motions occupy the same circle but reach different positions at the same time." />
+<figcaption aria-hidden="true">The two motions occupy the same circle but reach different positions at the same time.</figcaption>
+</figure>
+<p>On <span class="math inline">\(0\le t\le2\pi\)</span>, <span class="math inline">\((\cos t,\sin t)\)</span> travels around once, while <span class="math inline">\((\cos2t,\sin2t)\)</span> travels twice. Replacing <span class="math inline">\(t\)</span> by <span class="math inline">\(-t\)</span> reverses the direction. The Cartesian equation <span class="math inline">\(x^2+y^2=1\)</span> describes all three paths, but contains no timing information.</p>
+<div class="example">
+<p><strong>Worked example: eliminate a trig parameter.</strong> Suppose <span class="math display">\[
+x=4\cos t,\qquad y=3\sin t.
+\]</span> Divide by the two scale factors, square, and add: <span class="math display">\[
+\left(\frac{x}{4}\right)^2+\left(\frac{y}{3}\right)^2
+=\cos^2t+\sin^2t=1.
+\]</span> Thus the curve is <span class="math inline">\(x^2/16+y^2/9=1\)</span>. A full turn of <span class="math inline">\(t\)</span> traces the whole ellipse; <span class="math inline">\(0\le t\le\pi\)</span> traces its upper half.</p>
+</div>
+<p><strong>Try it.</strong> Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x=2t+1,\ y=t-3\)</span>, with <span class="math inline">\(0\le t\le4\)</span>. Give both the line equation and the endpoints of the traced segment.</p>
+<h2 id="follow-a-projectile-with-two-equations">Follow a projectile with two equations</h2>
+<p>In an idealized projectile model, horizontal velocity stays constant while gravity changes the vertical motion. If the object begins at <span class="math inline">\((x_0,y_0)\)</span>, with launch speed <span class="math inline">\(v_0\)</span> at angle <span class="math inline">\(\theta\)</span>, then <span class="math display">\[
+x(t)=x_0+v_0\cos\theta\,t,\qquad
+y(t)=y_0+v_0\sin\theta\,t-\frac12gt^2.
+\]</span> Use <span class="math inline">\(g=9.8\text{ m/s}^2\)</span> when distances are in meters and time is in seconds. The model ignores air resistance.</p>
+<div class="example">
+<p><strong>Worked example: a launch from the origin.</strong> Let <span class="math inline">\(v_0=20\)</span> m/s and <span class="math inline">\(\theta=30^\circ\)</span>. Then <span class="math display">\[
+x(t)=10\sqrt3\,t,\qquad y(t)=10t-4.9t^2.
+\]</span> At <span class="math inline">\(t=1\)</span>, the position is <span class="math inline">\((10\sqrt3,5.1)\)</span> meters. To find the landing time on level ground, set <span class="math inline">\(y(t)=0\)</span>: <span class="math display">\[
+t(10-4.9t)=0.
+\]</span> The launch is at <span class="math inline">\(t=0\)</span>; landing occurs at <span class="math inline">\(t=100/49\approx2.04\)</span> s. The physical trajectory uses that time interval.</p>
+</div>
+<figure>
+<img src="../assets/learning/m08-projectile.svg" alt="Equal time steps produce equal horizontal changes, while vertical changes vary under gravity." />
+<figcaption aria-hidden="true">Equal time steps produce equal horizontal changes, while vertical changes vary under gravity.</figcaption>
+</figure>
+<p>Eliminating <span class="math inline">\(t=x/(10\sqrt3)\)</span> produces a quadratic equation in <span class="math inline">\(x\)</span>, so the path is a parabola. The time equations additionally tell us which direction the object moves and when it reaches each point.</p>
+<h2 id="a-circle-fixes-one-distance">A circle fixes one distance</h2>
+<p>A circle is the set of points a fixed distance <span class="math inline">\(r&gt;0\)</span> from a center <span class="math inline">\((h,k)\)</span>. The distance formula gives <span class="math display">\[
+(x-h)^2+(y-k)^2=r^2.
+\]</span> For <span class="math inline">\((x-2)^2+(y+1)^2=16\)</span>, the center is <span class="math inline">\((2,-1)\)</span> and the radius is 4. A parameterization is <span class="math inline">\(x=2+4\cos t,\ y=-1+4\sin t\)</span>.</p>
+<p>The signs inside the squares tell you which point makes both squared terms zero. This is a reliable way to read the center.</p>
+<h2 id="an-ellipse-fixes-a-sum-of-distances">An ellipse fixes a sum of distances</h2>
+<p>An ellipse consists of points whose distances to two fixed <strong>foci</strong> add to a constant. Imagine a loop of string around two pins: holding the string taut with a pencil traces an ellipse.</p>
+<p>For an ellipse centered at <span class="math inline">\((h,k)\)</span> with horizontal major axis, <span class="math display">\[
+\frac{(x-h)^2}{a^2}+\frac{(y-k)^2}{b^2}=1,\qquad a&gt;b&gt;0.
+\]</span> Its horizontal semiaxis has length <span class="math inline">\(a\)</span>, and its vertical semiaxis length <span class="math inline">\(b\)</span>. The foci are <span class="math inline">\((h-c,k),(h+c,k)\)</span>, with <span class="math display">\[
+c^2=a^2-b^2.
+\]</span></p>
+<figure>
+<img src="../assets/learning/m08-ellipse.svg" alt="The two focal distances add to 2a at every point of the ellipse. At the top, the distance formula gives a squared equal to b squared plus c squared." />
+<figcaption aria-hidden="true">The two focal distances add to 2a at every point of the ellipse. At the top, the distance formula gives a squared equal to b squared plus c squared.</figcaption>
+</figure>
+<p>At a horizontal vertex, the two focal distances add to <span class="math inline">\(2a\)</span>. At the top of the ellipse, symmetry makes each distance <span class="math inline">\(a\)</span>; the right triangle there gives <span class="math inline">\(a^2=b^2+c^2\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: identify the ellipse.</strong> For <span class="math inline">\(x^2/25+y^2/9=1\)</span>, the semiaxes are 5 and 3. Thus <span class="math inline">\(c=\sqrt{25-9}=4\)</span>, and the foci are <span class="math inline">\((\pm4,0)\)</span>. Every point on the curve has total focal distance 10.</p>
+</div>
+<p>If the larger denominator is under the <span class="math inline">\(y\)</span>-term, the major axis is vertical. Keep <span class="math inline">\(a\)</span> for the larger semiaxis; then the foci move vertically from the center. Equal denominators give a circle, with coincident foci.</p>
+<h2 id="a-parabola-balances-distance-to-a-point-and-a-line">A parabola balances distance to a point and a line</h2>
+<p>A parabola consists of points equally far from a focus and a line called the <strong>directrix</strong>. For <span class="math display">\[
+(x-h)^2=4p(y-k),\qquad p\ne0,
+\]</span> the vertex is <span class="math inline">\((h,k)\)</span>, focus <span class="math inline">\((h,k+p)\)</span>, and directrix <span class="math inline">\(y=k-p\)</span>. The sign of <span class="math inline">\(p\)</span> determines whether the curve opens upward or downward.</p>
+<figure>
+<img src="../assets/learning/m08-parabola.svg" alt="A point on the parabola is equally far from the focus and the directrix." />
+<figcaption aria-hidden="true">A point on the parabola is equally far from the focus and the directrix.</figcaption>
+</figure>
+<p>To derive the equation in the centered case, equate the distances from <span class="math inline">\((x,y)\)</span> to <span class="math inline">\((0,p)\)</span> and to <span class="math inline">\(y=-p\)</span>: <span class="math display">\[
+\sqrt{x^2+(y-p)^2}=|y+p|.
+\]</span> Squaring gives <span class="math inline">\(x^2+(y-p)^2=(y+p)^2\)</span>, which simplifies to <span class="math inline">\(x^2=4py\)</span>.</p>
+<p>For <span class="math inline">\(x^2=8y\)</span>, <span class="math inline">\(4p=8\)</span>, so <span class="math inline">\(p=2\)</span>. The focus is <span class="math inline">\((0,2)\)</span>, and the directrix is <span class="math inline">\(y=-2\)</span>. For <span class="math inline">\((x-1)^2=12(y+2)\)</span>, first locate the vertex <span class="math inline">\((1,-2)\)</span>; then <span class="math inline">\(p=3\)</span>, giving focus <span class="math inline">\((1,1)\)</span> and directrix <span class="math inline">\(y=-5\)</span>.</p>
+<h2 id="a-hyperbola-fixes-a-difference-of-distances">A hyperbola fixes a difference of distances</h2>
+<p>A hyperbola consists of points whose absolute difference of distances to two foci is constant. Its two branches lie near the two foci. For the horizontal form <span class="math display">\[
+\frac{(x-h)^2}{a^2}-\frac{(y-k)^2}{b^2}=1,
+\]</span> the vertices are <span class="math inline">\((h\pm a,k)\)</span>, the foci are <span class="math inline">\((h\pm c,k)\)</span>, and <span class="math display">\[
+c^2=a^2+b^2,\qquad
+y-k=\pm\frac ba(x-h)
+\]</span> are the two asymptotes.</p>
+<figure>
+<img src="../assets/learning/m08-hyperbola.svg" alt="The branches of a hyperbola approach two asymptotes. Its foci lie farther from the center than its vertices." />
+<figcaption aria-hidden="true">The branches of a hyperbola approach two asymptotes. Its foci lie farther from the center than its vertices.</figcaption>
+</figure>
+<p>For <span class="math inline">\(x^2/9-y^2/16=1\)</span>, we have <span class="math inline">\(a=3,b=4,c=5\)</span>. The vertices are <span class="math inline">\((\pm3,0)\)</span>, the foci <span class="math inline">\((\pm5,0)\)</span>, and the asymptotes <span class="math inline">\(y=\pm4x/3\)</span>. Far from the center, the constant 1 becomes small relative to the squared terms, explaining why the graph approaches those lines.</p>
+<p>The sign difference is important. Ellipses use a sum of positive squared terms and remain bounded. Hyperbolas use a difference and extend along two branches.</p>
+<h2 id="connect-the-descriptions">Connect the descriptions</h2>
+<p>Use the <a href="../demos/conic_explorer.html">Curves and Conics Explorer</a> to move a point along a selected curve. Its slider records the fraction of the displayed path traversed. For circles and ellipses, one complete traversal corresponds to an angle change of <span class="math inline">\(2\pi\)</span>.</p>
+<p>A parametric description helps with motion and plotting. A Cartesian equation helps identify centers, axes, and intercepts. A focal definition explains a distance relationship. Translate among these descriptions while keeping the parameter interval and orientation visible.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x=t+2,\ y=3t-1\)</span>, and describe the motion.</li>
+<li>Find the Cartesian equation for <span class="math inline">\(x=4\cos t,\ y=3\sin t\)</span>.</li>
+<li>Compare <span class="math inline">\((\cos t,\sin t)\)</span> and <span class="math inline">\((\cos3t,\sin3t)\)</span> on <span class="math inline">\([0,2\pi]\)</span>.</li>
+<li>Write the projectile equations for a launch from the origin at 20 m/s and <span class="math inline">\(30^\circ\)</span>.</li>
+<li>Identify center and radius of <span class="math inline">\((x-2)^2+(y+1)^2=16\)</span>.</li>
+<li>Find the foci of <span class="math inline">\(x^2/36+y^2/20=1\)</span>.</li>
+<li>Find the focus and directrix of <span class="math inline">\((x-1)^2=12(y+2)\)</span>.</li>
+<li>Find the vertices and asymptotes of <span class="math inline">\(x^2/4-y^2/9=1\)</span>.</li>
+<li>Parameterize the circle of radius 3 centered at <span class="math inline">\((-2,1)\)</span>.</li>
+<li>Give a parameter interval tracing only the lower half of <span class="math inline">\(x=4\cos t,\ y=3\sin t\)</span>.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>The Try it gives <span class="math inline">\(y=(x-7)/2\)</span>, with endpoints <span class="math inline">\((1,-3)\)</span> and <span class="math inline">\((9,1)\)</span>. The line equation describes a whole line; the parameter interval selects this particular segment and the direction from its first endpoint to its second.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

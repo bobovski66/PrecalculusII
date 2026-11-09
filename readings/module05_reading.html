@@ -1,0 +1,137 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trigonometric Equations and Applications | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 5 · Dr. Lee</p><h1>Trigonometric Equations and Applications</h1><nav class="module-nav" aria-label="Module 5 resources"><a href="../readings/module05_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week05.pdf">Reading PDF</a><a href="../demos/trig_equations.html">Explorer</a><a href="../labs/week05_lab.html">Guided lab</a><a href="../applications/week05_applications.html">Applications</a><a href="../quizzes/week05_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#find-the-angles-that-give-a-chosen-height">Find the angles that give a chosen height</a><a href="#solve-for-the-whole-inside-angle">Solve for the whole inside angle</a><a href="#let-algebra-organize-the-choices">Let algebra organize the choices</a><a href="#label-a-triangle-before-choosing-a-law">Label a triangle before choosing a law</a><a href="#why-two-triangles-can-fit-the-same-measurements">Why two triangles can fit the same measurements</a><a href="#use-the-included-angle-with-the-law-of-cosines">Use the included angle with the Law of Cosines</a><a href="#choose-a-method-and-interpret-the-result">Choose a method and interpret the result</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>An inverse trig button gives an angle. An equation can ask for several angles, or for an entire repeating family. The difference comes from the geometry we have been studying: a rotating point can return to the same height or horizontal position more than once.</p>
+<p>We will use that picture to solve equations, then use the same trigonometric relationships to find distances in triangles. Keep a sketch beside your algebra. It helps you decide how many answers to expect and whether your answers fit the situation.</p>
+<h2 id="find-the-angles-that-give-a-chosen-height">Find the angles that give a chosen height</h2>
+<p>Consider <span class="math inline">\(\sin x=\tfrac12\)</span>. Sine is the vertical coordinate on the unit circle, so we want every point on the circle whose height is <span class="math inline">\(\tfrac12\)</span>. A horizontal line at that height meets the circle twice. The angles are <span class="math inline">\(\pi/6\)</span> and <span class="math inline">\(5\pi/6\)</span>.</p>
+<figure>
+<img src="../assets/learning/m05-circle-solutions.svg" alt="A horizontal line finds two points on the circle and two intersections on one sine cycle." />
+<figcaption aria-hidden="true">A horizontal line finds two points on the circle and two intersections on one sine cycle.</figcaption>
+</figure>
+<p>On the interval <span class="math inline">\(0\le x&lt;2\pi\)</span>, those are the two answers. The left endpoint is included; the right endpoint is excluded. That choice represents one complete turn without counting its starting position twice.</p>
+<p>If the question asks for <strong>all real solutions</strong>, each angle may be followed by any whole number of turns:</p>
+<p><span class="math display">\[
+x=\frac{\pi}{6}+2\pi k
+\quad\text{or}\quad
+x=\frac{5\pi}{6}+2\pi k,\qquad k\in\mathbb Z.
+\]</span></p>
+<p>The integer <span class="math inline">\(k\)</span> includes turns in either direction. For example, <span class="math inline">\(k=-1\)</span> gives negative angles that reach the same two points.</p>
+<div class="example">
+<p><strong>Worked example: a negative horizontal coordinate.</strong> Solve <span class="math inline">\(\cos x=-\sqrt2/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>. The reference angle is <span class="math inline">\(\pi/4\)</span>. Cosine is negative on the left half of the circle, in Quadrants II and III. Therefore <span class="math display">\[
+x=\pi-\frac{\pi}{4}=\frac{3\pi}{4},
+\qquad
+x=\pi+\frac{\pi}{4}=\frac{5\pi}{4}.
+\]</span> Both answers give the requested horizontal coordinate.</p>
+</div>
+<p>For tangent, a half-turn restores the same slope. Thus <span class="math inline">\(\tan x=-1\)</span> has the family <span class="math inline">\(x=-\pi/4+k\pi\)</span>. On <span class="math inline">\([0,2\pi)\)</span>, the two members of that family are <span class="math inline">\(3\pi/4\)</span> and <span class="math inline">\(7\pi/4\)</span>.</p>
+<p><strong>Try it.</strong> Solve <span class="math inline">\(\sin x=-\sqrt3/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>. Mark the two points before writing their angles.</p>
+<h2 id="solve-for-the-whole-inside-angle">Solve for the whole inside angle</h2>
+<p>In <span class="math inline">\(\sin(2x)=\sqrt3/2\)</span>, the input to sine is <span class="math inline">\(2x\)</span>. Call that input <span class="math inline">\(u\)</span>. As <span class="math inline">\(x\)</span> runs through <span class="math inline">\([0,2\pi)\)</span>, the angle <span class="math inline">\(u=2x\)</span> runs through <span class="math inline">\([0,4\pi)\)</span>. We must search two turns.</p>
+<p>On the first turn, <span class="math inline">\(u=\pi/3\)</span> or <span class="math inline">\(2\pi/3\)</span>. Add <span class="math inline">\(2\pi\)</span> to get the second-turn answers <span class="math inline">\(7\pi/3\)</span> and <span class="math inline">\(8\pi/3\)</span>. Now divide <strong>each</strong> by 2:</p>
+<p><span class="math display">\[
+x=\frac{\pi}{6},\quad \frac{\pi}{3},\quad
+\frac{7\pi}{6},\quad \frac{4\pi}{3}.
+\]</span></p>
+<figure>
+<img src="../assets/learning/m05-frequency.svg" alt="Doubling the inside angle fits two sine cycles into the same interval and doubles the intersections with height one half." />
+<figcaption aria-hidden="true">Doubling the inside angle fits two sine cycles into the same interval and doubles the intersections with height one half.</figcaption>
+</figure>
+<p>The graph provides a useful count: <span class="math inline">\(\sin(2x)\)</span> completes two cycles on this interval, and the chosen positive height occurs twice per cycle. We expect four solutions. At a maximum or minimum there is just one intersection per cycle; a target outside <span class="math inline">\([-1,1]\)</span> gives none.</p>
+<div class="example">
+<p><strong>Worked example: a shifted inside angle.</strong> Solve <span class="math inline">\(\sin(x-\pi/4)=1/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>. Set <span class="math inline">\(u=x-\pi/4\)</span>; its interval is <span class="math inline">\([-\pi/4,7\pi/4)\)</span>. In that interval, <span class="math inline">\(u=\pi/6\)</span> or <span class="math inline">\(5\pi/6\)</span>. Adding <span class="math inline">\(\pi/4\)</span> gives <span class="math display">\[
+x=\frac{5\pi}{12}\quad\text{or}\quad\frac{13\pi}{12}.
+\]</span> Substituting either answer restores one of the two familiar sine angles.</p>
+</div>
+<p>Use the <a href="../demos/trig_equations.html">Equation Explorer</a> to compare frequencies 1, 2, and 3. Predict the number of intersections before displaying them.</p>
+<h2 id="let-algebra-organize-the-choices">Let algebra organize the choices</h2>
+<p>Start an equation such as <span class="math inline">\(2\cos x-1=0\)</span> by isolating its trig expression. We obtain <span class="math inline">\(\cos x=1/2\)</span>, then use the circle to find <span class="math inline">\(x=\pi/3,5\pi/3\)</span> on one turn.</p>
+<p>Equations that are quadratic in a trig expression can be factored just as quadratics in an ordinary variable:</p>
+<p><span class="math display">\[
+2\sin^2x-\sin x=0
+\quad\Longrightarrow\quad
+\sin x(2\sin x-1)=0.
+\]</span></p>
+<p>The zero-product rule gives two branches:</p>
+<p><span class="math display">\[
+\sin x=0
+\quad\text{or}\quad
+\sin x=\frac12.
+\]</span></p>
+<p>The first branch contributes <span class="math inline">\(0,\pi\)</span>; the second contributes <span class="math inline">\(\pi/6,5\pi/6\)</span>. There are four distinct solutions on <span class="math inline">\([0,2\pi)\)</span>. Dividing the original equation by <span class="math inline">\(\sin x\)</span> would remove the first branch. Factoring keeps it visible.</p>
+<p>An identity can also reveal a familiar equation. For <span class="math inline">\(2\cos^2x-1=0\)</span>, we get <span class="math inline">\(\cos x=\pm\sqrt2/2\)</span>. Each sign contributes two angles. When you use a quotient, reciprocal, or division, keep track of inputs excluded from the original expression. Check your final angles in that original expression.</p>
+<p><strong>Try it.</strong> Solve <span class="math inline">\(2\cos^2x-\cos x=0\)</span> on <span class="math inline">\([0,2\pi)\)</span>. First write the two equations produced by factoring.</p>
+<h2 id="label-a-triangle-before-choosing-a-law">Label a triangle before choosing a law</h2>
+<p>For any triangle, use capital letters <span class="math inline">\(A,B,C\)</span> for angles and the corresponding lowercase letters <span class="math inline">\(a,b,c\)</span> for the sides <strong>opposite</strong> them. Angle <span class="math inline">\(A\)</span> and side <span class="math inline">\(a\)</span> are separated across the triangle. Angles add to <span class="math inline">\(180^\circ\)</span>, or <span class="math inline">\(\pi\)</span> radians.</p>
+<p>Right-triangle ratios use an opposite side, adjacent side, and hypotenuse. For a triangle with no right angle, we need relationships that work without a hypotenuse.</p>
+<figure>
+<img src="../assets/learning/m05-sine-law.svg" alt="An altitude belongs to two right triangles. Expressing its height in two ways produces the Law of Sines." />
+<figcaption aria-hidden="true">An altitude belongs to two right triangles. Expressing its height in two ways produces the Law of Sines.</figcaption>
+</figure>
+<p>In the pictured triangle, the altitude has height <span class="math inline">\(h=b\sin A=a\sin B\)</span>. Equating these expressions and rearranging gives <span class="math inline">\(a/\sin A=b/\sin B\)</span>. The same reasoning with another altitude gives the <strong>Law of Sines</strong>:</p>
+<p><span class="math display">\[
+\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}.
+\]</span></p>
+<p>It is especially useful when an angle and its opposite side are both known. That complete pair supplies a ratio to compare with another pair.</p>
+<div class="example">
+<p><strong>Worked example: two angles and a side.</strong> Suppose <span class="math inline">\(A=40^\circ\)</span>, <span class="math inline">\(B=65^\circ\)</span>, and <span class="math inline">\(a=9\)</span> cm. First find <span class="math inline">\(C=180^\circ-40^\circ-65^\circ=75^\circ\)</span>. Pair <span class="math inline">\(a\)</span> with <span class="math inline">\(A\)</span>, and <span class="math inline">\(b\)</span> with <span class="math inline">\(B\)</span>: <span class="math display">\[
+\frac{b}{\sin65^\circ}=\frac{9}{\sin40^\circ},
+\qquad
+b=\frac{9\sin65^\circ}{\sin40^\circ}\approx12.69\text{ cm}.
+\]</span> The larger angle <span class="math inline">\(65^\circ\)</span> faces the longer side, which agrees with the result. Use degree mode for these measurements.</p>
+</div>
+<h2 id="why-two-triangles-can-fit-the-same-measurements">Why two triangles can fit the same measurements</h2>
+<p>Suppose <span class="math inline">\(A=30^\circ\)</span>, <span class="math inline">\(a=5\)</span>, and <span class="math inline">\(b=8\)</span>. The known angle is opposite the side of length 5. The Law of Sines gives</p>
+<p><span class="math display">\[
+\sin B=\frac{b\sin A}{a}
+=\frac{8\sin30^\circ}{5}=0.8.
+\]</span></p>
+<p>The calculator gives <span class="math inline">\(B_1=\arcsin(0.8)\approx53.13^\circ\)</span>. Sine also has that value at its supplement, <span class="math inline">\(B_2=180^\circ-B_1\approx126.87^\circ\)</span>. Check each candidate against the angle sum:</p>
+<p><span class="math display">\[
+C_1\approx96.87^\circ,\qquad C_2\approx23.13^\circ.
+\]</span></p>
+<p>Both remaining angles are positive, so both triangles work.</p>
+<figure>
+<img src="../assets/learning/m05-ssa.svg" alt="The same angle and two side lengths can form a shorter triangle or a longer triangle." />
+<figcaption aria-hidden="true">The same angle and two side lengths can form a shorter triangle or a longer triangle.</figcaption>
+</figure>
+<p>This is the <strong>ambiguous SSA case</strong>: two sides and a nonincluded angle are given. Follow three checks. If the calculated sine exceeds 1, no triangle exists. Otherwise find the principal angle and its supplement. Keep only distinct candidates for which <span class="math inline">\(A+B&lt;180^\circ\)</span>. Depending on the measurements, zero, one, or two triangles survive.</p>
+<p>For example, changing <span class="math inline">\(a\)</span> to 3 gives <span class="math inline">\(\sin B=4/3\)</span>, so there is no triangle. Changing <span class="math inline">\(a\)</span> to 8 gives candidates <span class="math inline">\(30^\circ\)</span> and <span class="math inline">\(150^\circ\)</span>; the latter leaves <span class="math inline">\(C=0^\circ\)</span>, so only the first is a triangle.</p>
+<h2 id="use-the-included-angle-with-the-law-of-cosines">Use the included angle with the Law of Cosines</h2>
+<p>If two sides and the angle <strong>between</strong> them are known, there is no complete opposite side-angle pair. The <strong>Law of Cosines</strong> supplies the missing side:</p>
+<p><span class="math display">\[
+c^2=a^2+b^2-2ab\cos C.
+\]</span></p>
+<p>To see where it comes from, place angle <span class="math inline">\(C\)</span> at the origin. One endpoint is <span class="math inline">\((b,0)\)</span>, and the other is <span class="math inline">\((a\cos C,a\sin C)\)</span>. Their squared distance is</p>
+<p><span class="math display">\[
+\begin{aligned}
+c^2&amp;=(a\cos C-b)^2+(a\sin C)^2\\
+&amp;=a^2(\cos^2C+\sin^2C)+b^2-2ab\cos C.
+\end{aligned}
+\]</span></p>
+<p>The Pythagorean identity reduces the first term to <span class="math inline">\(a^2\)</span>.</p>
+<div class="example">
+<p><strong>Worked example: a connector between two roads.</strong> Two roads extend 7 km and 10 km from a junction, separated by <span class="math inline">\(60^\circ\)</span>. The connector between their endpoints has length <span class="math display">\[
+c=\sqrt{7^2+10^2-2(7)(10)\cos60^\circ}
+=\sqrt{79}\approx8.89\text{ km}.
+\]</span> At <span class="math inline">\(90^\circ\)</span>, the cosine term is zero and the formula becomes the Pythagorean theorem. For the same side lengths, a wider included angle produces a longer connector.</p>
+</div>
+<p>If all three sides are known, rearrange the law to recover an angle: <span class="math display">\[
+C=\arccos\left(\frac{a^2+b^2-c^2}{2ab}\right).
+\]</span> The geometric angle lies between <span class="math inline">\(0^\circ\)</span> and <span class="math inline">\(180^\circ\)</span>, which matches the range of arccosine.</p>
+<h2 id="choose-a-method-and-interpret-the-result">Choose a method and interpret the result</h2>
+<p>For an equation, decide which interval to search, solve for the trig expression, and use periodicity to find every answer. For a triangle, draw and label the known measurements. A complete opposite pair suggests the Law of Sines; two sides with their included angle, or three sides, suggest the Law of Cosines.</p>
+<p>A shoreline survey illustrates the choice. Two observers stand 200 m apart and measure interior sight angles of <span class="math inline">\(47^\circ\)</span> and <span class="math inline">\(68^\circ\)</span> to an island marker. The third angle is <span class="math inline">\(65^\circ\)</span>. The known baseline is opposite that angle, so it supplies the complete pair for the Law of Sines. The geometry tells us which measurements belong together before we calculate.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>Solve <span class="math inline">\(\sin x=-\sqrt3/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>, then write all real solutions.</li>
+<li>Solve <span class="math inline">\(2\sin(3x)=1\)</span> on <span class="math inline">\([0,2\pi)\)</span>. Explain the number of answers.</li>
+<li>Solve <span class="math inline">\(2\cos^2x-\cos x=0\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</li>
+<li>Solve <span class="math inline">\(\tan x=-1\)</span> for all real <span class="math inline">\(x\)</span>.</li>
+<li>Solve <span class="math inline">\(\cos(2x)=1/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</li>
+<li>A triangle has <span class="math inline">\(A=35^\circ\)</span>, <span class="math inline">\(B=80^\circ\)</span>, <span class="math inline">\(a=12\)</span>. Find <span class="math inline">\(C\)</span> and <span class="math inline">\(b\)</span>.</li>
+<li>For <span class="math inline">\(A=30^\circ\)</span>, <span class="math inline">\(a=5\)</span>, <span class="math inline">\(b=8\)</span>, find both possible values of <span class="math inline">\(C\)</span>.</li>
+<li>Find the third side for sides 6 and 9 with included angle <span class="math inline">\(120^\circ\)</span>.</li>
+<li>Explain how the Law of Cosines includes the Pythagorean theorem.</li>
+<li>Solve <span class="math inline">\(\sin(x-\pi/6)=1/2\)</span> on <span class="math inline">\([0,2\pi)\)</span>.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>The first Try it has answers <span class="math inline">\(4\pi/3,5\pi/3\)</span>. For the factoring Try it, <span class="math inline">\(\cos x=0\)</span> or <span class="math inline">\(\cos x=1/2\)</span>, giving <span class="math inline">\(\pi/2,3\pi/2,\pi/3,5\pi/3\)</span>. Each branch contributes its own angles. A sketch or a substitution checks the result.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

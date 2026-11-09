@@ -71,4 +71,9 @@ def home():
     if addition not in s:s=s.replace(needle,addition+needle)
     p.write_text(s)
 if __name__=='__main__':
-    reading();demos();activities();quiz();practice();home();print('Built seven Module 1 pages and updated the course reading link.')
+    reading();demos();activities();quiz();practice();home()
+    # The current lab is generated with the course-wide guided workspaces.
+    from build_course_learning import labs
+    labs()
+    print('Built Module 1 pages, retained guided labs, and updated the reading link.')
+

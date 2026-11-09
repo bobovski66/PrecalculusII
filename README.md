@@ -1,44 +1,42 @@
 # MATH& 142 — Precalculus II
 
-Original, student-centered course materials for a ten-week Precalculus II course.
+A ten-module course connecting trigonometry, vectors, polar and complex coordinates, curves, sequences, and motion.
 
-## Course structure
+## Course materials
 
-Each module uses five components: **Reading, Demos, Weekly Lab, Applications, Weekly Quiz**. The readings are original LaTeX lecture notes, not assigned OpenStax chapters. OpenStax *Precalculus 2e* is a curricular reference.
+Every module includes a reading, interactive explorers, a guided lab, applications, and a practice quiz. Module 1 and Modules 5–10 have illustrated web readings as well as PDFs. Modules 2–4 use the previously expanded PDF chapters. The course home links all resources and the complete reader.
 
-## Notes
+All ten labs use the shared workspace in `assets/guided-lab.js` and `assets/learning.css`. Each of seven problems has two response fields, a hint, and an explanation available after an attempt. Numerical checks supplement written reasoning. Prepare Submission shows the current answers in the same tab, with Print / Save PDF, Download HTML, and Return to Lab controls. Submission files are uploaded to Canvas by the student.
 
-- `notes/preamble.tex` — shared typographic conventions and environments.
-- `notes/master.tex` — compiles the complete course reader.
-- `notes/week01.tex` ... `notes/week10.tex` — individual chapter source files.
-- `notes/standalone.tex` — compiles the first chapter as a standalone weekly handout (change the input path for subsequent weeks).
-- `pdfs/PrecalcII_Week01.pdf` — illustrated Module 1 reading with worked examples and solutions.
+Existing lab storage keys are preserved. Earlier whole-question responses appear in a separate saved-response area and are included in submissions alongside the new part-by-part work. Quiz questions retain their original indices; two transfer questions were appended to each of Modules 5–10.
 
-## Module 1
+## Editable sources
 
-`readings/module01_reading.html` develops coordinates, signed rotation, radian measure, arc length, speed, exact values, reference angles, periodicity, and a Ferris-wheel model. The seven module pages share `assets/module1/module1.css` and `module1.js`. Eighteen diagrams have paired SVG and PDF versions for the web and print.
+- `content/module05.md` through `content/module10.md`: shared web and print chapter content.
+- `scripts/lab_content.py`: all guided lab prompts, hints, checks, and solutions.
+- `scripts/build_learning_figures.py`: 24 mathematically scaled SVG/PDF figure pairs.
+- `scripts/extend_course_practice.py`: additional questions for the later quizzes.
+- `scripts/module1_content.py`: the Module 1 reading source.
+- `notes/week02.tex` through `notes/week04.tex`: expanded earlier chapters.
+- `notes/master.tex`: collected course reader.
 
-The original seven lab prompts, eleven application questions, ten quiz items, six chapter practice prompts, and thirteen review exercises are retained. Existing browser storage keys for the lab, quiz mastery, practice scores, and course dashboard remain compatible. Applications now support saved responses and printable/downloadable submissions. These files must still be uploaded to Canvas by the student.
+## Rebuild and verify
 
-Rebuild the Module 1 content and verify it from the repository root:
+From the repository root:
 
 ```sh
-python scripts/build_module1_figures.py
-python scripts/build_module1_pages.py
-python scripts/build_module1_chapter.py
-python scripts/verify_module1.py
-node scripts/test_module1.js
-python scripts/check_module1_pdf.py --out /tmp/precalc-module1-check --install
+python scripts/build_learning_figures.py
+python scripts/build_course_learning.py
+python scripts/extend_course_practice.py
+python scripts/verify_course_learning.py
 ```
 
-The generators require Python with Matplotlib, NumPy, and lxml; the PDF checker also uses PyMuPDF and Pillow. PDF compilation requires pdfLaTeX with the packages loaded in `notes/preamble.tex` and `notes/module1_setup.tex`. The runtime checks use Node.js and Python's standard library; no browser or network is required. The checker compiles until the table of contents stabilizes, verifies chapter page numbers, checks glyphs and text bounds, renders every page, and confirms that the remaining chapter sources are unchanged.
+The figure generator needs Matplotlib and NumPy. Reading generation needs Pandoc. The verification script uses Python's standard library and Node.js to check local links, lab structure, JavaScript syntax, and independent mathematical calculations. It also runs in the PDF publishing workflow.
 
-`scripts/module1_content.py` is the shared source for the web reading and printed chapter. `scripts/module1_original_contracts.json` records the original question text and storage keys. The question-contract check intentionally compares the other modules with the original base revision; update its baseline deliberately when beginning a later module overhaul.
+Compile individual readings with `latexmk -pdf module05.tex` (or the desired module) from `notes/`. Compile `master.tex` for the complete reader, and `standalone.tex` for Module 1. PDF generation needs the packages listed in the shared preambles. Publish the resulting files under the established names in `pdfs/`.
 
-## Build
+The original Module 1 generators remain available. Rebuilding its pages retains the newer shared labs. Its earlier contract snapshots and one-module validation scripts document the October revision; use `verify_course_learning.py` for the current course, whose later chapters and labs intentionally extend those snapshots.
 
-From `notes/`, run `pdflatex -jobname=PrecalcII_Week01 standalone.tex` for the first chapter or `pdflatex master.tex` for the collected book. Repeat until references and the table of contents stabilize (the expanded collected reader may require three passes). Move individual PDFs into `pdfs/` before deployment, or use the checker above to install the two updated PDFs. GitHub Actions rebuilds the course PDFs when notes or Module 1 diagram PDFs change.
+## Publication
 
-## Deployment
-
-Publish GitHub Pages from the `main` branch root. Unpublished resources are marked *Coming soon* rather than linked to missing files. Browser-local completion tracking counts only published resources.
+GitHub Pages serves the root of `main`. The Actions workflow validates the course and recompiles the weekly PDFs, combined reader, and examinations when notes or figure PDFs change. Browser-local dashboard progress tracks the same five resources per module.

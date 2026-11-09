@@ -1,89 +1,175 @@
+% Generated from content/module09.md by scripts/build_course_learning.py
 \section{Sequences and Series}
-\noindent\textbf{Central question.} How do repeated steps produce patterns, and how can we predict both a later value and a cumulative total?
+Suppose a theater adds two seats to each successive row. We can ask how many seats are in row 15, or how many seats are in the first 15 rows altogether. Those questions use the same pattern but ask for different quantities.
 
-\subsection{A sequence is an ordered list}
-A sequence assigns a number $a_n$ to each positive integer $n$. For example, $a_n=3+2(n-1)$ produces $3,5,7,9,\ldots$. We distinguish the \emph{term} $a_n$ from a \emph{partial sum} $S_n=a_1+\cdots+a_n$.
+A sequence records individual values. A series adds them. We will build formulas from repeated addition and multiplication, keeping the meaning of each index and total in view.
 
-\subsection{Arithmetic sequences: repeated addition}
-An arithmetic sequence has a fixed common difference $d$:
-\[
-a_{n+1}=a_n+d,\qquad \boxed{a_n=a_1+(n-1)d}.
-\]
-\begin{example}
-A theater's first row has 12 seats, with two more seats in each successive row. Row 15 has $12+14(2)=40$ seats.
-\end{example}
-Adding the first and last terms in reverse order gives
-\[
-\boxed{S_n=\frac{n}{2}(a_1+a_n)
-=\frac{n}{2}\bigl(2a_1+(n-1)d\bigr)}.
-\]
+\hypertarget{m9-separate-a-term-from-a-running-total}{%
+\subsection{Separate a term from a running total}\label{m9-separate-a-term-from-a-running-total}}
 
-\begin{center}
-\begin{tikzpicture}[x=.78cm,y=.55cm]
-\draw[->,gray] (0,0)--(7,0) node[right] {$n$};
-\draw[->,gray] (0,0)--(0,6.2) node[above] {$a_n$};
-\foreach \n/\y in {1/5,2/3.5,3/2.45,4/1.715,5/1.2,6/.84}
-{\fill[courseblue] (\n,\y) circle (.07);}
-\draw[courseblue,thick] (1,5)--(2,3.5)--(3,2.45)--(4,1.715)--(5,1.2)--(6,.84);
-\draw[dashed,coursegreen] (0,0)--(6.8,0);
-\node at (4.7,4.45) {$a_n=5(0.7)^{n-1}$};
-\end{tikzpicture}
-\end{center}
+A sequence assigns a number \(a_n\) to each integer index in a specified list. Usually we begin at \(n=1\), though a time model may begin at \(n=0\). The first terms of \(a_n=3+2(n-1)\) are \(3,5,7,9,\ldots\).
 
-\subsection{Geometric sequences: repeated multiplication}
-A geometric sequence has a fixed common ratio $q$:
-\[
-a_{n+1}=qa_n,\qquad \boxed{a_n=a_1q^{n-1}}.
-\]
-When $q>1$, positive terms grow exponentially. When $0<q<1$, they decay toward zero.
-\begin{example}
-A population of 500 organisms increases by 8 percent each generation. The model is $a_n=500(1.08)^{n-1}$ if generation 1 is the initial observation.
-\end{example}
-For $q\ne1$, multiply the finite sum by $q$ and subtract:
-\[
-S_n=a_1+a_1q+\cdots+a_1q^{n-1},\qquad
-\boxed{S_n=a_1\frac{1-q^n}{1-q}}.
-\]
-If $q=1$, the sum is $na_1$. The formulas refer to \emph{finite} sums and work for ratios outside the interval $(0,1)$ as well.
+The tenth term is \(a_{10}\). The sum of the first ten terms is \(S_{10}\): \[
+S_n=a_1+a_2+\cdots+a_n.
+\] The subscript tells you how far along the list to go. It does not mean multiplication.
 
-\subsection{Sigma notation}
-The compact expression $\sum_{k=1}^{n}a_k$ means add the terms for integer indices $k=1,\ldots,n$. For instance,
-\[
-\sum_{k=1}^{4}(2k+1)=3+5+7+9=24.
-\]
-The symbol $\sum$ tells us to add, while its bounds tell us which indices are included.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,height=.42\textheight,keepaspectratio]{../assets/learning/m09-terms-sums.pdf}
+\caption{Individual terms of a sequence and the sums accumulated through those terms answer different questions.}
+\end{figure}
 
-\subsection{Infinite geometric series}
-If $|q|<1$, then $q^n\to0$. The finite geometric sum approaches
-\[
-\boxed{\sum_{n=0}^{\infty}aq^n=\frac{a}{1-q}},\qquad |q|<1.
-\]
-The condition matters: the series $1+2+4+\cdots$ does not approach a finite sum.
-\begin{example}
-A ball bounces to $60\%$ of its previous height. Released from height 5 m, the total vertical travel after infinitely many idealized bounces is
-$5+2(5)(0.6+0.6^2+\cdots)=5+10(0.6/0.4)=20$ m.
-\end{example}
+For \(3,5,7,9,\ldots\), the first four partial sums are \(3,8,15,24\). The fourth term is 9, while the fourth partial sum is 24.
 
-\subsection{Recursive rules beyond arithmetic and geometric patterns}
-Not every sequence is arithmetic or geometric. Consider
-\[
+\textbf{Try it.} List the first five terms of \(a_n=7-3(n-1)\), then calculate their sum. Some terms are negative; include their signs.
+
+\hypertarget{m9-repeated-addition-produces-an-arithmetic-sequence}{%
+\subsection{Repeated addition produces an arithmetic sequence}\label{m9-repeated-addition-produces-an-arithmetic-sequence}}
+
+An \textbf{arithmetic sequence} adds the same common difference \(d\) at each step: \[
+a_{n+1}=a_n+d.
+\] Starting from \(a_1\), reaching term \(n\) requires \(n-1\) additions. Therefore \[
+a_n=a_1+(n-1)d.
+\] The recursive rule tells you how to take a step; the explicit formula lets you jump directly to any term.
+
+\textbf{Worked example: theater rows.} The first row has 12 seats, and each next row has 2 more. Row 15 has \[
+a_{15}=12+(15-1)(2)=40
+\] seats. There are 14 increases between the first and fifteenth rows.
+
+To add the rows, write the sequence forward and backward: \[
+\begin{aligned}
+S_n&=a_1+a_2+\cdots+a_n,\\
+S_n&=a_n+a_{n-1}+\cdots+a_1.
+\end{aligned}
+\] Each column adds to \(a_1+a_n\), and there are \(n\) columns. Thus \[
+S_n=\frac n2(a_1+a_n)
+=\frac n2\bigl(2a_1+(n-1)d\bigr).
+\] For the first 15 rows, the average of the endpoint counts is \((12+40)/2=26\). Multiplying by 15 gives 390 seats. The formula also works for an odd number of terms: the middle term equals that same average.
+
+\hypertarget{m9-repeated-multiplication-produces-a-geometric-sequence}{%
+\subsection{Repeated multiplication produces a geometric sequence}\label{m9-repeated-multiplication-produces-a-geometric-sequence}}
+
+A \textbf{geometric sequence} multiplies by the same ratio \(q\) at each step: \[
+a_{n+1}=qa_n,\qquad a_n=a_1q^{n-1}.
+\] For \(a_1=80,q=1/2\), the terms are \(80,40,20,10,5,\ldots\). With \(0<q<1\), positive terms decrease toward zero. With \(q>1\), positive terms grow. Negative ratios alternate signs.
+
+A percentage change specifies a multiplication factor. An 8\% increase multiplies by \(1.08\); a 12\% decrease multiplies by \(0.88\).
+
+\textbf{Worked example: define the initial index.} A population begins at 500 and grows 8\% per generation. If \(P_0=500\) records the initial population, then \[
+P_n=500(1.08)^n.
+\] If the initial observation is labeled \(a_1=500\), the formula is \(a_n=500(1.08)^{n-1}\). The physical model is the same; the labels differ by one.
+
+\hypertarget{m9-add-a-finite-geometric-pattern}{%
+\subsection{Add a finite geometric pattern}\label{m9-add-a-finite-geometric-pattern}}
+
+Write a partial sum and its multiple by \(q\): \[
+\begin{aligned}
+S_n&=a_1+a_1q+\cdots+a_1q^{n-1},\\
+qS_n&=\phantom{a_1+{}}a_1q+\cdots+a_1q^{n-1}+a_1q^n.
+\end{aligned}
+\] Subtracting cancels every middle term: \[
+(1-q)S_n=a_1-a_1q^n,\qquad
+S_n=a_1\frac{1-q^n}{1-q}\quad(q\ne1).
+\] For \(q=1\), all terms equal \(a_1\), so the total is \(na_1\).
+
+\textbf{Worked example: a finite total.} For \(5,3,1.8,\ldots\), the ratio is \(0.6\). The sum through term 5 is \[
+S_5=5\frac{1-0.6^5}{1-0.6}=11.528.
+\] This adds five terms. The fifth term alone is \(a_5=5(0.6)^4=0.648\).
+
+The finite-sum formula works for growing, decreasing, or alternating geometric patterns, provided \(q\ne1\). It does not require convergence.
+
+\hypertarget{m9-read-sigma-notation-as-an-instruction-to-add}{%
+\subsection{Read sigma notation as an instruction to add}\label{m9-read-sigma-notation-as-an-instruction-to-add}}
+
+The notation \[
+\sum_{k=1}^{4}(2k+1)
+\] says: substitute \(k=1,2,3,4\), then add the four results. It becomes \(3+5+7+9=24\).
+
+The letter \(k\) is an index used inside the instruction. The bottom and top bounds determine which values to use. For \(\sum_{k=0}^{5}2(3/2)^k\), there are six terms, since both endpoints count.
+
+Before applying a formula, write the first few terms and the last term. This checks the first value, ratio, and number of terms.
+
+\hypertarget{m9-can-infinitely-many-additions-have-a-finite-total}{%
+\subsection{Can infinitely many additions have a finite total?}\label{m9-can-infinitely-many-additions-have-a-finite-total}}
+
+For the geometric pattern with \(|q|<1\), the power \(q^n\) approaches zero. The finite-sum formula then approaches \[
+\sum_{n=0}^{\infty}aq^n=\frac{a}{1-q}.
+\] An infinite sum means the limit of its partial sums. We calculate finite totals and ask what value they approach.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,height=.42\textheight,keepaspectratio]{../assets/learning/m09-geometric-limit.pdf}
+\caption{Geometric terms approach zero while their running totals approach a finite value. Ratios with magnitude at least one behave differently for nonzero first terms.}
+\end{figure}
+
+For \(5+3+1.8+\cdots\), the limiting total is \(5/(1-0.6)=12.5\). After \(n\) terms, the remaining amount is \[
+\frac{5(0.6)^n}{1-0.6}.
+\] This also measures how close a partial sum is to the limit.
+
+\textbf{Worked example: idealized bouncing.} Drop a ball from 5 m, with each rebound reaching 60\% of the previous height. The first drop contributes 5 m. Each later rebound height contributes twice, once upward and once downward: \[
+5+2(5)(0.6+0.6^2+\cdots)
+=5+10\frac{0.6}{1-0.6}=20\text{ m}.
+\] The model describes infinitely many idealized rebounds with a finite total travel distance.
+
+For a geometric series with nonzero first term, \(|q|\ge1\) prevents convergence. With \(q=2\), terms grow; with \(q=-1\), partial sums oscillate. Also, terms approaching zero alone do not guarantee convergence for every kind of series; the conclusion above follows from the geometric formula.
+
+\textbf{Try it.} Find the sum of \(4-2+1-\tfrac12+\cdots\). Identify its ratio and explain why the alternating signs are allowed.
+
+\hypertarget{m9-a-feedback-rule-can-hide-a-geometric-pattern}{%
+\subsection{A feedback rule can hide a geometric pattern}\label{m9-a-feedback-rule-can-hide-a-geometric-pattern}}
+
+Consider \[
 a_{n+1}=\frac{a_n+6}{2},\qquad a_1=0.
-\]
-The first terms are $0,3,4.5,5.25,\ldots$. Let $e_n=a_n-6$ denote the difference from the fixed point. Then $e_{n+1}=e_n/2$, so $e_n=-6(1/2)^{n-1}$ and
-\[
-a_n=6-6(1/2)^{n-1}.
-\]
-The original recursion is not geometric, but its \emph{error from equilibrium} is. This is a useful bridge to feedback and dynamical models.
+\] Each step averages the current value with 6. The first terms are \(0,3,4.5,5.25,5.625,\ldots\). The changes are not constant, and neither are the ratios of consecutive terms.
 
-\subsection{Exercises}
+Find the equilibrium by asking which value would remain fixed: \[
+L=\frac{L+6}{2}\quad\Longrightarrow\quad L=6.
+\] Now examine the difference \(e_n=a_n-6\). Subtracting 6 from the recurrence gives \[
+e_{n+1}=\frac{e_n}{2}.
+\] The \textbf{difference from equilibrium} is geometric, even though the original sequence is not. Since \(e_1=-6\), \[
+a_n=6-6\left(\frac12\right)^{n-1}.
+\]
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth,height=.42\textheight,keepaspectratio]{../assets/learning/m09-feedback.pdf}
+\caption{A feedback sequence approaches its equilibrium while the remaining gap halves at every step.}
+\end{figure}
+
+Use the \href{https://bobovski66.github.io/PrecalculusII/demos/sequence_explorer.html}{Sequence Explorer} to compare terms and partial sums of arithmetic and geometric sequences. For the feedback example, compute the terms by hand and use the formula for the remaining gap to explain the approach.
+
+\Needspace{20\baselineskip}
+\hypertarget{m9-review-exercises}{%
+\subsection{Review exercises}\label{m9-review-exercises}}
+
 \begin{enumerate}
-\item Write the first five terms of $a_n=7-3(n-1)$ and find $a_{20}$.
-\item An arithmetic sequence has $a_1=4$, $d=5$. Calculate $S_{30}$.
-\item A geometric sequence has $a_1=81$, $q=1/3$. Find $a_6$.
-\item Compute $\sum_{k=0}^{5}2(3/2)^k$ exactly.
-\item Explain the difference between $\sum_{k=1}^{n}k$ and its final term $n$.
-\item Determine whether $5+5/2+5/4+\cdots$ converges and find its sum.
-\item A machine loses 12 percent of its value per year. Express its value after $n$ years if it initially costs \$12,000.
-\item For $a_{n+1}=(a_n+10)/2$, $a_1=2$, find the fixed point and an explicit formula for $a_n$.
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  List five terms of \(a_n=7-3(n-1)\), and find \(a_{20}\).
+\item
+  For \(a_1=4,d=5\), calculate \(S_{30}\).
+\item
+  For \(a_1=81,q=1/3\), find \(a_6\).
+\item
+  Compute \(\sum_{k=0}^{5}2(3/2)^k\) exactly.
+\item
+  Explain the difference between \(\sum_{k=1}^{n}k\) and its final term \(n\).
+\item
+  Find the sum of \(5+5/2+5/4+\cdots\).
+\item
+  A machine initially worth \$12,000 loses 12\% of its value each year. Write its value after \(n\) years.
+\item
+  For \(a_{n+1}=(a_n+10)/2,\ a_1=2\), find the equilibrium and an explicit formula.
+\item
+  A theater has 20 rows, with 14 seats in the first and 3 more in each next row. Find the total.
+\item
+  Explain why \(1-1+1-1+\cdots\) has no limiting partial sum.
 \end{enumerate}
+
+\hypertarget{m9-check-your-understanding}{%
+\subsection{Check your understanding}\label{m9-check-your-understanding}}
+
+The first Try it gives \(7,4,1,-2,-5\), with sum 5. The alternating geometric series has ratio \(-1/2\) and sum \(4/(1+1/2)=8/3\). Its partial sums approach the limit from alternating sides.
+
 \clearpage

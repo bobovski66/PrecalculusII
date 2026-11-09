@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthesis: Motion and Patterns | MATH&amp; 142</title><link rel="stylesheet" href="../assets/learning.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'none'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><a class="skip" href="#main">Skip to content</a><header class="masthead"><a href="../index.html">← Precalculus II</a><p class="eyebrow">MATH&amp; 142 · Module 10 · Dr. Lee</p><h1>Synthesis: Motion and Patterns</h1><nav class="module-nav" aria-label="Module 10 resources"><a href="../readings/module10_reading.html">Reading</a><a href="../pdfs/PrecalcII_Week10.pdf">Reading PDF</a><a href="../demos/motion_synthesis.html">Explorer</a><a href="../labs/week10_lab.html">Guided lab</a><a href="../applications/week10_applications.html">Applications</a><a href="../quizzes/week10_quiz.html">Practice quiz</a></nav></header><div class="layout"><aside class="rail"><h2>In this reading</h2><nav aria-label="Reading sections"><a href="#begin-with-a-physical-description">Begin with a physical description</a><a href="#compare-position-displacement-and-distance-traveled">Compare position, displacement, and distance traveled</a><a href="#sampling-turns-continuous-motion-into-a-sequence">Sampling turns continuous motion into a sequence</a><a href="#decide-whether-sampled-positions-repeat">Decide whether sampled positions repeat</a><a href="#add-a-scale-change-at-each-step">Add a scale change at each step</a><a href="#adding-step-vectors-builds-a-different-sequence">Adding step vectors builds a different sequence</a><a href="#choose-a-representation-that-answers-the-question">Choose a representation that answers the question</a><a href="#review-exercises">Review exercises</a><a href="#check-your-understanding">Check your understanding</a></nav></aside><main id="main"><p>Imagine a light attached to a rotating wheel. We can record its angle, plot its coordinates, describe its position as a complex number, or take a photograph every few seconds. Each description records a different aspect of one motion.</p>
+<p>This chapter brings those descriptions together. We will first follow a continuous rotation, then sample it, and finally combine repeated rotation with shrinking or growing distances. The goal is to choose and connect the tools developed throughout the course.</p>
+<h2 id="begin-with-a-physical-description">Begin with a physical description</h2>
+<p>A point moves counterclockwise on a circle of radius 5 m, completing one turn every 20 s. It begins at the rightmost point.</p>
+<p>The angular speed is one full turn divided by the time per turn: <span class="math display">\[
+\omega=\frac{2\pi}{20}=\frac{\pi}{10}\text{ rad/s}.
+\]</span> At time <span class="math inline">\(t\)</span>, the angle is <span class="math inline">\(\theta(t)=\pi t/10\)</span>. If the point had begun at another angle <span class="math inline">\(\theta_0\)</span>, we would add that initial angle.</p>
+<p>The unit-circle formulas give the position: <span class="math display">\[
+x(t)=5\cos\left(\frac{\pi t}{10}\right),\qquad
+y(t)=5\sin\left(\frac{\pi t}{10}\right).
+\]</span> Polar coordinates record <span class="math inline">\((r,\theta)=(5,\pi t/10)\)</span>, while complex form records <span class="math display">\[
+z(t)=5\left(\cos\frac{\pi t}{10}+i\sin\frac{\pi t}{10}\right).
+\]</span> All three describe a position 5 m from the origin at the same angle.</p>
+<figure>
+<img src="../assets/learning/m10-one-motion.svg" alt="A point on a circle produces horizontal and vertical coordinate waves with the same period." />
+<figcaption aria-hidden="true">A point on a circle produces horizontal and vertical coordinate waves with the same period.</figcaption>
+</figure>
+<p>The coordinate waves have amplitude 5 and period 20 s. The circle itself has equation <span class="math inline">\(x^2+y^2=25\)</span>. That equation records the path; the time formulas additionally record orientation and timing.</p>
+<h2 id="compare-position-displacement-and-distance-traveled">Compare position, displacement, and distance traveled</h2>
+<p>After 5 seconds, the point moves from <span class="math inline">\((5,0)\)</span> to <span class="math inline">\((0,5)\)</span>. Its displacement is <span class="math display">\[
+\Delta\mathbf r=\langle0-5,5-0\rangle=\langle-5,5\rangle,
+\]</span> with magnitude <span class="math inline">\(5\sqrt2\)</span> m.</p>
+<p>The distance traveled is a quarter of the circumference: <span class="math display">\[
+s=5\left(\frac{\pi}{2}\right)=\frac{5\pi}{2}\text{ m}.
+\]</span> The curved distance exceeds the straight displacement magnitude. The average velocity over this interval is the displacement divided by elapsed time, <span class="math inline">\(\langle-1,1\rangle\)</span> m/s. The average speed is distance divided by time, <span class="math inline">\(\pi/2\)</span> m/s.</p>
+<p>For constant angular speed, speed along the circle is <span class="math inline">\(R|\omega|\)</span>. The instantaneous direction is tangent to the circle. We can recognize that geometric direction without differentiating the coordinate formulas.</p>
+<p><strong>Try it.</strong> For this same motion, compare displacement and distance traveled over a complete 20-second turn.</p>
+<h2 id="sampling-turns-continuous-motion-into-a-sequence">Sampling turns continuous motion into a sequence</h2>
+<p>Suppose a camera records the position every 5 seconds. The angle advances by <span class="math display">\[
+\delta=\omega\Delta t=\frac{\pi}{10}(5)=\frac{\pi}{2}
+\]</span> between photographs. Beginning with index <span class="math inline">\(n=0\)</span>, the first five positions are <span class="math display">\[
+z_0=5,\quad z_1=5i,\quad z_2=-5,\quad
+z_3=-5i,\quad z_4=5.
+\]</span></p>
+<figure>
+<img src="../assets/learning/m10-sampling.svg" alt="Sampling every quarter-turn yields four distinct positions; other sampling intervals can reveal different patterns of the same motion." />
+<figcaption aria-hidden="true">Sampling every quarter-turn yields four distinct positions; other sampling intervals can reveal different patterns of the same motion.</figcaption>
+</figure>
+<p>Each sample is the previous one multiplied by <span class="math inline">\(i\)</span>. We have both a recurrence and an explicit formula: <span class="math display">\[
+z_{n+1}=iz_n,\qquad z_n=5i^n.
+\]</span> De Moivre’s theorem expresses the same result as <span class="math display">\[
+z_n=5\bigl(\cos(n\pi/2)+i\sin(n\pi/2)\bigr).
+\]</span></p>
+<p>More generally, a fixed angle step <span class="math inline">\(\delta\)</span> corresponds to <span class="math display">\[
+u=\cos\delta+i\sin\delta,\qquad z_{n+1}=uz_n.
+\]</span> Repeated multiplication gives <span class="math inline">\(z_n=u^nz_0\)</span>.</p>
+<p>The sampling interval matters. Photographing the original wheel every 20 seconds would always capture the same point. Those photographs alone would conceal the motion between them. Sampling every 10 seconds gives two alternating positions.</p>
+<h2 id="decide-whether-sampled-positions-repeat">Decide whether sampled positions repeat</h2>
+<p>For a nonzero starting point and unit-length multiplier, a sample returns to its start when the accumulated angle is a whole number of turns: <span class="math display">\[
+n\delta=2\pi k
+\]</span> for integers <span class="math inline">\(n&gt;0,k\)</span>.</p>
+<p>If <span class="math inline">\(\delta/(2\pi)=p/q\)</span> in lowest terms with <span class="math inline">\(q&gt;0\)</span>, the first return is after <span class="math inline">\(q\)</span> steps. For example, <span class="math inline">\(\delta=4\pi/5\)</span> is <span class="math inline">\(2/5\)</span> of a turn, so five steps close the sampled orbit. The points are visited in a star order rather than around consecutive edges.</p>
+<p>If <span class="math inline">\(\delta/(2\pi)\)</span> is irrational, no positive integer number of steps gives an exact return. A finite computer display can look almost closed, so distinguish a close approach from mathematical equality.</p>
+<h2 id="add-a-scale-change-at-each-step">Add a scale change at each step</h2>
+<p>Now let the multiplier have modulus <span class="math inline">\(\rho&gt;0\)</span>: <span class="math display">\[
+q=\rho(\cos\delta+i\sin\delta),\qquad z_{n+1}=qz_n.
+\]</span> After <span class="math inline">\(n\)</span> steps, <span class="math display">\[
+z_n=q^nz_0,\qquad |z_n|=\rho^n|z_0|.
+\]</span> The angle advances by <span class="math inline">\(n\delta\)</span>, measured modulo full turns. The distance from the origin follows a geometric sequence.</p>
+<figure>
+<img src="../assets/learning/m10-spirals.svg" alt="A repeated quarter-turn stays on a circle when the scale is one, spirals inward for a scale below one, and outward for a scale above one." />
+<figcaption aria-hidden="true">A repeated quarter-turn stays on a circle when the scale is one, spirals inward for a scale below one, and outward for a scale above one.</figcaption>
+</figure>
+<p>For <span class="math inline">\(0&lt;\rho&lt;1\)</span>, radii shrink toward zero. For <span class="math inline">\(\rho=1\)</span>, they stay constant. For <span class="math inline">\(\rho&gt;1\)</span>, they grow. These statements describe a nonzero starting point. The origin stays fixed.</p>
+<div class="example">
+<p><strong>Worked example: track three shrinking quarter-turns.</strong> Start at <span class="math inline">\(z_0=4\)</span> and multiply by <span class="math inline">\(q=i/2\)</span>: <span class="math display">\[
+z_1=2i,\qquad z_2=-1,\qquad z_3=-\frac12i.
+\]</span> The radius halves each step: <span class="math inline">\(4,2,1,1/2\)</span>. The angle adds <span class="math inline">\(90^\circ\)</span>: <span class="math inline">\(0^\circ,90^\circ,180^\circ,270^\circ\)</span>. The explicit formula is <span class="math display">\[
+z_n=4\left(\frac12\right)^n
+\bigl(\cos(n\pi/2)+i\sin(n\pi/2)\bigr).
+\]</span> The angular pattern repeats, while the positions do not: their nonzero magnitudes keep decreasing.</p>
+</div>
+<p><strong>Try it.</strong> Begin with <span class="math inline">\(z_0=2\)</span> and use <span class="math inline">\(q=\tfrac12(\cos60^\circ+i\sin60^\circ)\)</span>. Find the modulus, direction, and rectangular value of <span class="math inline">\(z_3\)</span>.</p>
+<h2 id="adding-step-vectors-builds-a-different-sequence">Adding step vectors builds a different sequence</h2>
+<p>The recurrence above multiplies the <strong>position</strong> at each step. Another model specifies the <strong>displacement</strong> during each step. If those steps are <span class="math inline">\(\Delta z_n=aq^n\)</span>, starting from position <span class="math inline">\(z_0\)</span>, then <span class="math display">\[
+z_N-z_0=\sum_{n=0}^{N-1}aq^n
+=a\frac{1-q^N}{1-q}\qquad(q\ne1).
+\]</span> The geometric-sum algebra also works for complex numbers, since multiplication and subtraction obey the same distributive rules.</p>
+<figure>
+<img src="../assets/learning/m10-displacements.svg" alt="Adding four quarter-turn step vectors makes a closed polygon. The step vectors are different from the running positions." />
+<figcaption aria-hidden="true">Adding four quarter-turn step vectors makes a closed polygon. The step vectors are different from the running positions.</figcaption>
+</figure>
+<p>For steps <span class="math inline">\(1,i,i^2,i^3\)</span>, the total displacement is <span class="math inline">\(1+i-1-i=0\)</span>. From the origin, the running positions are <span class="math inline">\(0,1,1+i,i,0\)</span>. Those positions are the corners of a square.</p>
+<p>For shrinking steps <span class="math inline">\(a(i/2)^n\)</span>, the step lengths approach zero. Their total displacement approaches <span class="math inline">\(a/(1-i/2)\)</span>. The final position depends on both that sum and the starting point. Always decide whether a formula describes locations or movements between locations.</p>
+<h2 id="choose-a-representation-that-answers-the-question">Choose a representation that answers the question</h2>
+<p>A model begins with quantities and units. For rotating machinery, angle and period may be the natural measurements. For navigation, components help add movements. For repeated scaling and rotation, complex multiplication gives a compact rule. For a path with a particular timing, parametric equations supply both coordinates at each instant.</p>
+<p>These choices also reveal the assumptions. A constant-speed circle needs a fixed radius and angular speed. An ellipse has a different relation between its horizontal and vertical coordinates. An idealized projectile uses constant horizontal velocity and downward acceleration. Select a model because its assumptions fit the question.</p>
+<p>Use the <a href="../demos/motion_synthesis.html">Motion Synthesizer</a> to vary the scale and angle independently. Fix one control while investigating the other. Then explain the plotted pattern through its radius sequence and angle sequence.</p>
+<h2 id="review-exercises">Review exercises</h2>
+<ol type="1">
+<li>Write Cartesian, polar, and complex formulas for radius 5 and period 20 s, starting on the positive horizontal axis.</li>
+<li>Sample every 5 s. Give the first five complex positions and the repetition period in samples.</li>
+<li>For <span class="math inline">\(z_{n+1}=iz_n,\ z_0=1+i\)</span>, find <span class="math inline">\(z_1,\ldots,z_4\)</span>.</li>
+<li>For <span class="math inline">\(z_{n+1}=(i/2)z_n,\ z_0=4\)</span>, find <span class="math inline">\(z_4\)</span> and describe its magnitude and direction.</li>
+<li>Eliminate <span class="math inline">\(t\)</span> from <span class="math inline">\(x=3\cos t,\ y=2\sin t\)</span>.</li>
+<li>Explain why a circle can repeat while a shrinking spiral from a nonzero point does not.</li>
+<li>Interpret <span class="math inline">\(1+i+i^2+i^3\)</span> as four step vectors.</li>
+<li>Describe one process with at least three mathematical representations from the course.</li>
+<li>A circle is sampled with angle step <span class="math inline">\(4\pi/5\)</span>. How many steps give its first return?</li>
+<li>Explain what photographs every full revolution would reveal and what information they would miss.</li>
+</ol>
+<h2 id="check-your-understanding">Check your understanding</h2>
+<p>Over a complete turn, displacement is zero and traveled distance is <span class="math inline">\(10\pi\)</span> m. In the shrinking <span class="math inline">\(60^\circ\)</span> example, after three steps the modulus is <span class="math inline">\(2(1/2)^3=1/4\)</span>, the direction is <span class="math inline">\(180^\circ\)</span>, and <span class="math inline">\(z_3=-1/4\)</span>.</p>
+</main></div><footer>MATH&amp; 142 · Centralia College · Dr. Lee<br><a href="../index.html">Course home</a> · <a href="../pdfs/PrecalculusII_Complete_Reader.pdf">Complete course reader</a></footer></body></html>

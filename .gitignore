@@ -1,0 +1,14 @@
+notes/*.aux
+notes/*.log
+notes/*.out
+notes/*.toc
+notes/*.fls
+notes/*.fdb_latexmk
+notes/*.pdf
+assessments/*.aux
+assessments/*.log
+assessments/*.out
+assessments/*.pdf
+__pycache__/
+.openai/
+dist/
